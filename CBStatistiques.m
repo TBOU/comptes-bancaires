@@ -37,7 +37,7 @@
 - (void)ajouteMontant:(NSDecimalNumber *)aMontant pourCategorie:(CBCategorieMouvement *)aCategorie 
 													nombreMoisPeriode:(NSDecimalNumber *)aNombreMoisPeriode
 {
-	int index = NSNotFound;
+	NSUInteger index = NSNotFound;
 	CBStatistiqueCategorie *myStatCategorie;
 	
 	NSEnumerator *enumerator = [statistiquesCategories objectEnumerator];

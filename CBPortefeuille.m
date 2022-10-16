@@ -14,8 +14,9 @@
 
 @implementation CBPortefeuille
 
-+ (void)initialize {
-	[self setKeys:[NSArray arrayWithObjects:@"nom", @"prenom", nil] triggerChangeNotificationsForDependentKey:@"nomPrenom"];
++ (NSSet *)keyPathsForValuesAffectingNomPrenom
+{
+	return [NSSet setWithObjects:@"nom", @"prenom", nil];
 }
 
 - (id)init

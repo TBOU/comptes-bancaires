@@ -12,8 +12,9 @@
 
 @implementation CBMouvementPeriodique
 
-+ (void)initialize {
-	[self setKeys:[NSArray arrayWithObjects:@"dateDebut", nil] triggerChangeNotificationsForDependentKey:@"nombreEcrituresEnSuspens"];
++ (NSSet *)keyPathsForValuesAffectingNombreEcrituresEnSuspens
+{
+	return [NSSet setWithObjects:@"dateDebut", nil];
 }
 
 - (id)init

@@ -13,8 +13,8 @@ NSString *CBIntervalleMinMoyenneDefaultKey = @"CBIntervalleMinMoyenneDefaultKey"
 NSString *CBAppArchiveVersion = @"2.1";
 NSString *CBAppErrorDomain = @"com.thierryboudiere.ComptesBancaires.ErrorDomain";
 
-NSString *CBTypeDocumentBinaire = @"Comptes Bancaires";
-NSString *CBTypeDocumentXML = @"Comptes Bancaires XML";
+NSString *CBTypeDocumentBinaire = @"com.thierryboudiere.comptesbancaires.cba";
+NSString *CBTypeDocumentXML = @"com.thierryboudiere.comptesbancaires.cbx";
 
 
 CBSigneMouvement CBSignePourTypeMouvement(CBTypeMouvement typeMouvement)

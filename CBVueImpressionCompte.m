@@ -183,7 +183,7 @@
 	return YES;
 }
 
-- (NSRect)rectForPage:(int)pageNumber
+- (NSRect)rectForPage:(NSInteger)pageNumber
 {
 	NSRect theResult;
 	NSRect theBounds = [self bounds];

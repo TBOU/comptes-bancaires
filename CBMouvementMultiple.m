@@ -12,10 +12,19 @@
 
 @implementation CBMouvementMultiple
 
-+ (void)initialize {
-	[self setKeys:[NSArray arrayWithObjects:@"operation", nil] triggerChangeNotificationsForDependentKey:@"operationIndefinie"];
-	[self setKeys:[NSArray arrayWithObjects:@"operation", nil] triggerChangeNotificationsForDependentKey:@"cheque"];
-	[self setKeys:[NSArray arrayWithObjects:@"operation", nil] triggerChangeNotificationsForDependentKey:@"chequeEmploiService"];
++ (NSSet *)keyPathsForValuesAffectingOperationIndefinie
+{
+	return [NSSet setWithObjects:@"operation", nil];
+}
+
++ (NSSet *)keyPathsForValuesAffectingCheque
+{
+	return [NSSet setWithObjects:@"operation", nil];
+}
+
++ (NSSet *)keyPathsForValuesAffectingChequeEmploiService
+{
+	return [NSSet setWithObjects:@"operation", nil];
 }
 
 - (id)init

@@ -12,12 +12,29 @@
 
 @implementation CBMouvement
 
-+ (void)initialize {
-	[self setKeys:[NSArray arrayWithObjects:@"operation", @"numeroCheque", @"numeroChequeEmploiService", nil] triggerChangeNotificationsForDependentKey:@"libelleOperation"];
-	[self setKeys:[NSArray arrayWithObjects:@"operation", @"montant", nil] triggerChangeNotificationsForDependentKey:@"debit"];
-	[self setKeys:[NSArray arrayWithObjects:@"operation", @"montant", nil] triggerChangeNotificationsForDependentKey:@"credit"];
-	[self setKeys:[NSArray arrayWithObjects:@"operation", nil] triggerChangeNotificationsForDependentKey:@"cheque"];
-	[self setKeys:[NSArray arrayWithObjects:@"operation", nil] triggerChangeNotificationsForDependentKey:@"chequeEmploiService"];
++ (NSSet *)keyPathsForValuesAffectingLibelleOperation
+{
+	return [NSSet setWithObjects:@"operation", @"numeroCheque", @"numeroChequeEmploiService", nil];
+}
+
++ (NSSet *)keyPathsForValuesAffectingDebit
+{
+	return [NSSet setWithObjects:@"operation", @"montant", nil];
+}
+
++ (NSSet *)keyPathsForValuesAffectingCredit
+{
+	return [NSSet setWithObjects:@"operation", @"montant", nil];
+}
+
++ (NSSet *)keyPathsForValuesAffectingCheque
+{
+	return [NSSet setWithObjects:@"operation", nil];
+}
+
++ (NSSet *)keyPathsForValuesAffectingChequeEmploiService
+{
+	return [NSSet setWithObjects:@"operation", nil];
 }
 
 - (id)init

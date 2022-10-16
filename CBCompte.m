@@ -17,8 +17,9 @@
 
 @implementation CBCompte
 
-+ (void)initialize {
-	[self setKeys:[NSArray arrayWithObjects:@"banque", @"numeroCompte", nil] triggerChangeNotificationsForDependentKey:@"numeroCompteBanque"];
++ (NSSet *)keyPathsForValuesAffectingNumeroCompteBanque
+{
+	return [NSSet setWithObjects:@"banque", @"numeroCompte", nil];
 }
 
 - (id)init

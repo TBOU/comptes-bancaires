@@ -247,10 +247,12 @@
 	NSSortDescriptor *libellesPredefinisDescriptor = [[NSSortDescriptor alloc] initWithKey:@"libelle" ascending:YES];
 	[libellesPredefinisControler setSortDescriptors:[NSArray arrayWithObject:libellesPredefinisDescriptor]];
 	[libellesPredefinisDescriptor release];
+	[libellesPredefinisControler rearrangeObjects];
 
 	NSSortDescriptor *categoriesMouvementDescriptor = [[NSSortDescriptor alloc] initWithKey:@"titre" ascending:YES];
 	[categoriesMouvementControler setSortDescriptors:[NSArray arrayWithObject:categoriesMouvementDescriptor]];
 	[categoriesMouvementDescriptor release];
+	[categoriesMouvementControler rearrangeObjects];
 
 	[fenetreEditerMouvementSingle makeFirstResponder:[fenetreEditerMouvementSingle initialFirstResponder]];
 	[NSApp beginSheet:fenetreEditerMouvementSingle modalForWindow:[self window] 
@@ -278,10 +280,12 @@
 			NSSortDescriptor *libellesPredefinisDescriptor = [[NSSortDescriptor alloc] initWithKey:@"libelle" ascending:YES];
 			[libellesPredefinisControler setSortDescriptors:[NSArray arrayWithObject:libellesPredefinisDescriptor]];
 			[libellesPredefinisDescriptor release];
+			[libellesPredefinisControler rearrangeObjects];
 
 			NSSortDescriptor *categoriesMouvementDescriptor = [[NSSortDescriptor alloc] initWithKey:@"titre" ascending:YES];
 			[categoriesMouvementControler setSortDescriptors:[NSArray arrayWithObject:categoriesMouvementDescriptor]];
 			[categoriesMouvementDescriptor release];
+			[categoriesMouvementControler rearrangeObjects];
 
 			[fenetreEditerMouvementSingle makeFirstResponder:[fenetreEditerMouvementSingle initialFirstResponder]];
 			[NSApp beginSheet:fenetreEditerMouvementSingle modalForWindow:[self window] 
@@ -303,10 +307,12 @@
 			NSSortDescriptor *libellesPredefinisDescriptor = [[NSSortDescriptor alloc] initWithKey:@"libelle" ascending:YES];
 			[libellesPredefinisControler setSortDescriptors:[NSArray arrayWithObject:libellesPredefinisDescriptor]];
 			[libellesPredefinisDescriptor release];
+			[libellesPredefinisControler rearrangeObjects];
 
 			NSSortDescriptor *categoriesMouvementDescriptor = [[NSSortDescriptor alloc] initWithKey:@"titre" ascending:YES];
 			[categoriesMouvementControler setSortDescriptors:[NSArray arrayWithObject:categoriesMouvementDescriptor]];
 			[categoriesMouvementDescriptor release];
+			[categoriesMouvementControler rearrangeObjects];
 
 			[fenetreEditerMouvementMultiple makeFirstResponder:[fenetreEditerMouvementMultiple initialFirstResponder]];
 			[NSApp beginSheet:fenetreEditerMouvementMultiple modalForWindow:[self window] 
@@ -440,6 +446,7 @@
 	NSSortDescriptor *mouvementsPeriodiquesDescriptor = [[NSSortDescriptor alloc] initWithKey:@"titre" ascending:YES];
 	[mouvementsPeriodiquesControler setSortDescriptors:[NSArray arrayWithObject:mouvementsPeriodiquesDescriptor]];
 	[mouvementsPeriodiquesDescriptor release];
+	[mouvementsPeriodiquesControler rearrangeObjects];
 
 	if ([[mouvementsPeriodiquesControler arrangedObjects] count] > 0)
 		[mouvementsPeriodiquesControler setSelectionIndex:0];
@@ -454,10 +461,12 @@
 	NSSortDescriptor *libellesPredefinisDescriptor = [[NSSortDescriptor alloc] initWithKey:@"libelle" ascending:YES];
 	[libellesPredefinisControler setSortDescriptors:[NSArray arrayWithObject:libellesPredefinisDescriptor]];
 	[libellesPredefinisDescriptor release];
+	[libellesPredefinisControler rearrangeObjects];
 
 	NSSortDescriptor *categoriesMouvementDescriptor = [[NSSortDescriptor alloc] initWithKey:@"titre" ascending:YES];
 	[categoriesMouvementControler setSortDescriptors:[NSArray arrayWithObject:categoriesMouvementDescriptor]];
 	[categoriesMouvementDescriptor release];
+	[categoriesMouvementControler rearrangeObjects];
 
 	[fenetreEditerMouvementsPeriodiques makeFirstResponder:[fenetreEditerMouvementsPeriodiques initialFirstResponder]];
 
@@ -516,6 +525,7 @@
 	NSSortDescriptor *libellesPredefinisDescriptor = [[NSSortDescriptor alloc] initWithKey:@"libelle" ascending:YES];
 	[libellesPredefinisControler setSortDescriptors:[NSArray arrayWithObject:libellesPredefinisDescriptor]];
 	[libellesPredefinisDescriptor release];
+	[libellesPredefinisControler rearrangeObjects];
 
 	if ([[libellesPredefinisControler arrangedObjects] count] > 0)
 		[libellesPredefinisControler setSelectionIndex:0];
@@ -580,6 +590,7 @@
 	NSSortDescriptor *statistiquesCategoriesDescriptor = [[NSSortDescriptor alloc] initWithKey:@"categorie.titre" ascending:YES];
 	[tempStatistiquesCategoriesControler setSortDescriptors:[NSArray arrayWithObject:statistiquesCategoriesDescriptor]];
 	[statistiquesCategoriesDescriptor release];
+	[tempStatistiquesCategoriesControler rearrangeObjects];
 
 	if ([[tempStatistiquesCategoriesControler arrangedObjects] count] > 0)
 		[tempStatistiquesCategoriesControler setSelectionIndex:0];
@@ -846,7 +857,7 @@
 	}
 }
 
-- (BOOL)validateMenuItem:(id <NSMenuItem>)menuItem
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
 	if ([menuItem action] == @selector(debutEditionMouvement:) && ![mouvementsControler canRemove])  {
 		return NO;

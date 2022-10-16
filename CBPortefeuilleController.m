@@ -64,6 +64,7 @@
 	[boutonVirement setEnabled:[[comptesControler  arrangedObjects] count] > 1];
 	
 	[self debutSelectionEcrituresAutomatiques:self];
+	[[self window] makeKeyAndOrderFront:self];
 }
 
 - (void)dealloc
@@ -211,6 +212,7 @@
 		[desc1 release];
 		[desc2 release];
 		[desc3 release];
+		[ecrituresAutomatiquesControler rearrangeObjects];
 		
 		if ([[ecrituresAutomatiquesControler arrangedObjects] count] > 0)
 			[ecrituresAutomatiquesControler setSelectionIndex:0];
@@ -244,6 +246,7 @@
 		}
 
 		CBEcritureAutomatique *anObject;
+		NSMutableArray *ecrituresToRemove = [NSMutableArray array];
 		while (anObject = (CBEcritureAutomatique *)[enumerator nextObject]) {
 			
 			if ([sender tag] == CBGenereEcritureAutomatique || [sender tag] == CBGenereToutesEcrituresAutomatiques) {
@@ -251,9 +254,10 @@
 				[managedPortefeuille calculeSoldes];
 				[[self document] updateChangeCount:NSChangeDone];
 			}
-			[ecrituresAutomatiquesControler removeObject:anObject];
+			[ecrituresToRemove addObject:anObject];
 		}
 		
+		[ecrituresAutomatiquesControler removeObjects:ecrituresToRemove];
 		[ecrituresAutomatiquesControler rearrangeObjects];
 		
 		if ([[ecrituresAutomatiquesControler arrangedObjects] count] == 0) {
@@ -341,10 +345,12 @@
 	NSSortDescriptor *libellesPredefinisDescriptor = [[NSSortDescriptor alloc] initWithKey:@"libelle" ascending:YES];
 	[libellesPredefinisControler setSortDescriptors:[NSArray arrayWithObject:libellesPredefinisDescriptor]];
 	[libellesPredefinisDescriptor release];
+	[libellesPredefinisControler rearrangeObjects];
 
 	NSSortDescriptor *categoriesMouvementDescriptor = [[NSSortDescriptor alloc] initWithKey:@"titre" ascending:YES];
 	[categoriesMouvementControler setSortDescriptors:[NSArray arrayWithObject:categoriesMouvementDescriptor]];
 	[categoriesMouvementDescriptor release];
+	[categoriesMouvementControler rearrangeObjects];
 
 	[fenetreVirement makeFirstResponder:[fenetreVirement initialFirstResponder]];
 	[NSApp beginSheet:fenetreVirement modalForWindow:[self window] 
@@ -424,6 +430,7 @@
 	NSSortDescriptor *categoriesMouvementDescriptor = [[NSSortDescriptor alloc] initWithKey:@"titre" ascending:YES];
 	[categoriesMouvementControler setSortDescriptors:[NSArray arrayWithObject:categoriesMouvementDescriptor]];
 	[categoriesMouvementDescriptor release];
+	[categoriesMouvementControler rearrangeObjects];
 
 	if ([[categoriesMouvementControler arrangedObjects] count] > 0)
 		[categoriesMouvementControler setSelectionIndex:0];
@@ -686,7 +693,7 @@
 	}
 }
 
-- (BOOL)validateMenuItem:(id <NSMenuItem>)menuItem
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
 	if ([menuItem action] == @selector(editerCompte:) && ![comptesControler canRemove])  {
 		return NO;

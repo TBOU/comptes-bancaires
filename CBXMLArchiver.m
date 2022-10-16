@@ -48,7 +48,7 @@
 	
 	myElement = [[NSXMLElement alloc] initWithName:key];
 
-	int index = [objectsArray indexOfObjectIdenticalTo:objv];
+	NSUInteger index = [objectsArray indexOfObjectIdenticalTo:objv];
 	if (index != NSNotFound) {
 		[myElement addAttribute:[NSXMLNode attributeWithName:@"IDREF" stringValue:[NSString stringWithFormat:@"%d", index]]];
 	}

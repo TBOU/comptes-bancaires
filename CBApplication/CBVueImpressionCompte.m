@@ -377,7 +377,7 @@
 				// Dessin du pointage
 				theFrameRect = NSMakeRect(horizontalPosition, verticalPosition, colPointageWidth, tableauLigneHeight);
 				if ([theMouvement pointage])
-					[self dessineString:[NSString stringWithString:@"*"] inRect:theFrameRect withAttributes:tableauLigneAttributes alignRight:YES];
+					[self dessineString:@"*" inRect:theFrameRect withAttributes:tableauLigneAttributes alignRight:YES];
 				horizontalPosition += colPointageWidth;
 
 				// Dessin du crédit

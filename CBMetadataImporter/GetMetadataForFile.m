@@ -19,8 +19,8 @@ Boolean GetMetadataForFile(void* thisInterface,
 	NSAutoreleasePool *pool;
 	pool = [[NSAutoreleasePool alloc] init];
 	
-	NSString *cbaUTI = [NSString stringWithString:@"com.thierryboudiere.comptesbancaires.cba"];
-	NSString *cbxUTI = [NSString stringWithString:@"com.thierryboudiere.comptesbancaires.cbx"];
+	NSString *cbaUTI = @"com.thierryboudiere.comptesbancaires.cba";
+	NSString *cbxUTI = @"com.thierryboudiere.comptesbancaires.cbx";
 	
 	if ([cbaUTI isEqualToString:(NSString *)contentTypeUTI]) {
 		

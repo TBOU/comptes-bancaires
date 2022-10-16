@@ -625,7 +625,7 @@
 		if([self sauvegardeCloture]) {
 			
 			NSString *nomFichier;
-			nomFichier = [NSString stringWithString:@"~"];
+			nomFichier = @"~";
 			nomFichier = [nomFichier stringByAppendingPathComponent:@"Desktop"];
 			nomFichier = [nomFichier stringByAppendingPathComponent:[[[self document] displayName] stringByDeletingPathExtension]];
 			nomFichier = [nomFichier stringByAppendingString:CBStringFromDate([self dateCloture], @"_dd_MM_yyyy")];
@@ -721,13 +721,12 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
 	[[aNotification object] scrollRowToVisible:[[aNotification object] selectedRow]];
-
 }
 
 - (void)keyDown:(NSEvent *)theEvent
 {
-	NSCharacterSet *carSetEnter = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%C%C", 0x0003, 0x000D]];
-	NSCharacterSet *carSetDel = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%C", 0x007F]];
+	NSCharacterSet *carSetEnter = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%C%C", (unichar)0x0003, (unichar)0x000D]];
+	NSCharacterSet *carSetDel = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%C", (unichar)0x007F]];
 	
     if( [[theEvent characters] rangeOfCharacterFromSet:carSetEnter].location != NSNotFound && [comptesControler canRemove] ) {
 		[self editerCompte:self];

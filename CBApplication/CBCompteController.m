@@ -897,8 +897,8 @@
 
 - (void)keyDown:(NSEvent *)theEvent
 {
-	NSCharacterSet *carSetEnter = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%C%C", 0x0003, 0x000D]];
-	NSCharacterSet *carSetDel = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%C", 0x007F]];
+	NSCharacterSet *carSetEnter = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%C%C", (unichar)0x0003, (unichar)0x000D]];
+	NSCharacterSet *carSetDel = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%C", (unichar)0x007F]];
 	
     if( [[theEvent characters] rangeOfCharacterFromSet:carSetEnter].location != NSNotFound && [mouvementsControler canRemove] ) {
 		[self debutEditionMouvement:self];

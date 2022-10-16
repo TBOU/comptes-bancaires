@@ -50,12 +50,12 @@
 
 	NSUInteger index = [objectsArray indexOfObjectIdenticalTo:objv];
 	if (index != NSNotFound) {
-		[myElement addAttribute:[NSXMLNode attributeWithName:@"IDREF" stringValue:[NSString stringWithFormat:@"%d", index]]];
+		[myElement addAttribute:[NSXMLNode attributeWithName:@"IDREF" stringValue:[NSString stringWithFormat:@"%d", (int)index]]];
 	}
 	else if (isID) {
 		[objectsArray addObject:objv];
 		index = [objectsArray indexOfObjectIdenticalTo:objv];
-		[myElement addAttribute:[NSXMLNode attributeWithName:@"ID" stringValue:[NSString stringWithFormat:@"%d", index]]];
+		[myElement addAttribute:[NSXMLNode attributeWithName:@"ID" stringValue:[NSString stringWithFormat:@"%d", (int)index]]];
 	}
 	
 	[currentElement addChild:myElement];
@@ -177,9 +177,9 @@
 	NSXMLElement *myElement;
 	
 	if (boolv)
-		myValue = [NSString stringWithString:@"1"];
+		myValue = @"1";
 	else
-		myValue = [NSString stringWithString:@"0"];
+		myValue = @"0";
 	myElement = [[NSXMLElement alloc] initWithName:key stringValue:myValue];
 	[currentElement addChild:myElement];
 	[myElement release];

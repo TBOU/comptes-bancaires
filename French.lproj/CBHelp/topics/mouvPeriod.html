@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/sgml/loosedtd.html">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link media="all" rel="stylesheet" href="../sty/task_style.css">
+<title>Mouvements périodiques</title>
+<meta name="keywords" content="mouvements périodiques">
+<meta name="description" content="Cette rubrique explique comment définir des mouvements périodiques.">
+</head>
+<body>
+<div id="banner">
+<a name="mouvPeriod"></a><a name="gestCompte"></a><a name="foncAv"></a>
+<div id="machelp">
+<a class="bread" href="help:anchor='access' bookID='Aide Comptes Bancaires'">Aide Comptes Bancaires</a>
+</div>
+<div id="index">
+<a class="leftborder" href="help:anchor='xall' bookID='Aide Comptes Bancaires'">Index</a>
+</div>
+</div>
+<div id="mainbox">
+<div id="caticon">
+<img width="32" height="32" alt="Icône de Comptes Bancaires" src="../images/LogoCB.gif">
+</div>
+<div id="pagetitle">
+<h1>Mouvements périodiques</h1>
+</div>
+<p>L'application <b>Comptes Bancaires</b> permet de définir des mouvements périodiques (par exemple un prélèvement d'assurance de 50 € tous les 7 du mois). A l'ouverture d'un document, <b>Comptes Bancaires</b> parcourt l'ensemble des définitions de mouvements périodiques, calcule les nouvelles écritures à générer en fonction de la date du jour et les affiche dans une fenêtre : vous pouvez alors les générer immédiatement ou bien les remettre à plus tard (elle vous seront alors reproposées la prochaine fois).</p>
+<p>Un mouvement périodique est défini par les éléments suivants :
+<ul>
+<li>Un titre (qui apparaît dans la liste des mouvements périodiques)
+<li>Une date de début
+<li>Une date de fin (facultative)
+<li>Une valeur pour la fréquence des écritures (nombre entier)
+<li>Une unité pour la fréquence des écritures (jour, mois ou année)
+<li>Un nombre de jours d'anticipation pour la génération des écritures (une écriture mensuelle en date du 7 sera générée dès le 4 du mois s'il y a 3 jours d'anticipation)
+<li>Un témoin d'anticipation au premier jour du mois pour la génération des écritures (une écriture mensuelle en date du 7 sera générée dès le premier jour du mois si le témoin est coché)
+<li>La date de la prochaine écriture et le nombre d'écritures en suspens (champs calculés automatiquement, disponibles en lecture seule)
+<li>Les paramètres des mouvements générés (type d'opération, libellé, catégorie et montant)
+</ul>
+</p>
+<div summary="To do this" id="taskbox">
+<ol>
+<li>Lorsque la fenêtre de détail du compte est active, choisissez le menu <b>Compte &gt; Mouvements périodiques</b>.
+<li>Pour ajouter un mouvement périodique, cliquez sur le bouton <b>"+"</b>.
+<li>Pour modifier les informations associées à un mouvement périodique, éditez les champs de la partie droite de la fenêtre.
+<li>Pour supprimer un mouvement périodique, cliquez sur le bouton <b>"-"</b>.
+<li>Cliquez sur <b>Fermer</b> pour terminer.
+</ol>
+</div>
+<p>Les types d'opération gérés pour les mouvements périodiques sont le prélèvement, le virement débiteur et le virement créditeur.</p>
+<p>Si la date de début est modifiée, la date de prochaine écriture est réinitialisée et les écritures en suspens sont supprimées.</p>
+<p>Si la date de fin est modifiée et devient inférieure à la date de prochaine écriture, cette dernière est effacée (mais les écritures en suspens sont gardées). Pour réinitialiser le mouvement périodique, il faut alors repositionner la date de début.</p>
+<p>Si la date de début est modifiée et devient supérieure à la date de fin, cette dernière est positionnée à la date de début (et réciproquement lorsque l'on modifie la date de fin).</p>
+<h2 class="seealso">Voir aussi :</h2>
+<p class="seealso"><a href="help:anchor='ecrAuto' bookID='Aide Comptes Bancaires'">Ecritures automatiques en suspens</a></p>
+</div>
+</body>
+</html>

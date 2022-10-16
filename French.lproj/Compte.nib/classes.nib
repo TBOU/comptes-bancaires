@@ -1,0 +1,115 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                ajoutLibellesPredefinis = id; 
+                ajoutMouvementsPeriodiques = id; 
+                calculeStatistiques = id; 
+                debutAjoutMouvement = id; 
+                debutEditionLibellesPredefinis = id; 
+                debutEditionMouvement = id; 
+                debutEditionMouvementsPeriodiques = id; 
+                debutEditionParametresCompte = id; 
+                debutStatistiques = id; 
+                finEditionLibellesPredefinis = id; 
+                finEditionMouvementMultiple = id; 
+                finEditionMouvementSingle = id; 
+                finEditionMouvementsPeriodiques = id; 
+                finEditionParametresCompte = id; 
+                finStatistiques = id; 
+                lancerImpression = id; 
+                pointageDidChange = id; 
+                printDocument = id; 
+                sauveFichierTXT = id; 
+                suppressionLibellesPredefinis = id; 
+                suppressionMouvement = id; 
+                suppressionMouvementsPeriodiques = id; 
+                togglePointageMouvement = id; 
+                updateMontantMouvementMultiple = id; 
+                updateMontantMouvementPeriodique = id; 
+                updateMontantMouvementSingle = id; 
+            }; 
+            CLASS = CBCompteController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                categoriesMouvementControler = NSArrayController; 
+                champBanque = NSTextField; 
+                champDateProchaineEcriture = NSTextField; 
+                champJoursAnticipation = NSTextField; 
+                champLibelleMouvementMultiple = NSTextField; 
+                champLibelleMouvementPeriodique = NSTextField; 
+                champLibelleMouvementSingle = NSTextField; 
+                champMontantMouvementMultiple = NSTextField; 
+                champMontantMouvementPeriodique = NSTextField; 
+                champMontantMouvementSingle = NSTextField; 
+                champNombreEcrituresEnSuspens = NSTextField; 
+                champNumeroChequeEmploiServiceMultiple = NSTextField; 
+                champNumeroChequeEmploiServiceSingle = NSTextField; 
+                champNumeroChequeMultiple = NSTextField; 
+                champNumeroChequeSingle = NSTextField; 
+                champNumeroCompte = NSTextField; 
+                champNumeroProchainCheque = NSTextField; 
+                champNumeroProchainChequeEmploiService = NSTextField; 
+                champSoldeBanque = NSTextField; 
+                champSoldeCBEnCours = NSTextField; 
+                champSoldeInitial = NSTextField; 
+                champSoldeMouvementsFiltres = NSTextField; 
+                champSoldeReel = NSTextField; 
+                champStatistiquesCreditMensuel = NSTextField; 
+                champStatistiquesCreditPeriode = NSTextField; 
+                champStatistiquesDebitMensuel = NSTextField; 
+                champStatistiquesDebitPeriode = NSTextField; 
+                champTitreMouvementPeriodique = NSTextField; 
+                champValeurPeriodicite = NSTextField; 
+                colonneAvoir = NSTableColumn; 
+                colonneCredit = NSTableColumn; 
+                colonneDate = NSTableColumn; 
+                colonneDebit = NSTableColumn; 
+                colonneLibellePredefini = NSTableColumn; 
+                colonneMontantPredefini = NSTableColumn; 
+                colonneStatistiquesSoldeMensuel = NSTableColumn; 
+                colonneStatistiquesSoldePeriode = NSTableColumn; 
+                compteControler = NSObjectController; 
+                fenetreDateImpression = NSWindow; 
+                fenetreEditerMouvementMultiple = NSWindow; 
+                fenetreEditerMouvementSingle = NSWindow; 
+                fenetreEditerMouvementsPeriodiques = NSWindow; 
+                fenetreLibellesPredefinis = NSWindow; 
+                fenetreParametres = NSWindow; 
+                fenetreStatistiques = NSWindow; 
+                libellesPredefinisControler = CBLibellesPredefinisArrayController; 
+                mouvementsControler = CBMouvementsArrayController; 
+                mouvementsPeriodiquesControler = NSArrayController; 
+                operationMenu = NSPopUpButton; 
+                tableLibellesPredefinis = NSTableView; 
+                tableMouvements = NSTableView; 
+                tableMouvementsPeriodiques = NSTableView; 
+                tempCompteControler = NSObjectController; 
+                tempMouvementControler = NSObjectController; 
+                tempMouvementMultipleControler = NSObjectController; 
+                tempStatistiquesCategoriesControler = NSArrayController; 
+                tempStatistiquesControler = NSObjectController; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            ACTIONS = {filtreLibellesPredefinis = id; }; 
+            CLASS = CBLibellesPredefinisArrayController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSArrayController; 
+        }, 
+        {
+            ACTIONS = {
+                filtreMouvementsMotClef = id; 
+                filtreMouvementsOperation = id; 
+                filtreMouvementsPointage = id; 
+            }; 
+            CLASS = CBMouvementsArrayController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSArrayController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSDatePicker; LANGUAGE = ObjC; SUPERCLASS = NSControl; }
+    ); 
+    IBVersion = 1; 
+}

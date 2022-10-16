@@ -1,0 +1,43 @@
+
+******************************************************************************************************************
+Plan de l'aide (penser à réindexer l'aide à chaque modification)
+
+*** Overview
+pres Présentation de Comptes Bancaires
+fonc Fonctionnalités de Comptes Bancaires
+
+*** Topic list
+gestPortefeuille Gestion de la liste des comptes
+gestCompte Gestion d'un compte
+param Définition des paramètres
+impExp Imports / Exports
+foncAv Fonctionnalités avancées
+stats Statistiques
+
+*** Topic
+ajoutCompte Ajout d'un compte	gestPortefeuille
+editCompte Edition d'un compte	gestPortefeuille
+supprCompte Suppression d'un compte	gestPortefeuille
+virCompte Virement de compte à compte	gestPortefeuille	foncAv
+paramGen Paramètres généraux	gestPortefeuille	param
+catMouv Catégories de mouvements	gestPortefeuille	stats
+ecrAuto Ecritures automatiques en suspens	gestPortefeuille	foncAv
+clotureExo Clôture de l'exercice	gestPortefeuille	foncAv
+triCompte Tri des comptes	gestPortefeuille
+ajoutMouv Ajout d'un mouvement (7 types d'opérations)	gestCompte
+editMouv Edition d'un mouvement	gestCompte
+pointMouv Pointage d'un mouvement	gestCompte
+supprMouv Suppression d'un mouvement	gestCompte
+majMult Mise à jour multiple	gestCompte	foncAv
+triMouv Tri des mouvements	gestCompte
+filtreMouv Filtrage des mouvements	gestCompte
+statCompte Statistiques d'un compte	gestCompte	stats
+paramCompte Paramètres d'un compte	gestCompte	param
+mouvPeriod Mouvements périodiques	gestCompte	foncAv
+libPredef Libellés prédéfinis (7 types d'opérations)	gestCompte	foncAv
+docuCB Documents Comptes Bancaires et formats associés	gestPortefeuille	impExp
+exportTxt Export au format texte	impExp
+impress Impression	impExp
+pref Préférences	param	stats
+
+******************************************************************************************************************

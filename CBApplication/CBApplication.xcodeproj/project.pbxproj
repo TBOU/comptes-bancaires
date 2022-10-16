@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D15AC310486D014006FF6A4 /* CBDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* CBDocument.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		E40A5EB8098A8DBE00EC9B5C /* CBMouvementPeriodique.m in Sources */ = {isa = PBXBuildFile; fileRef = E40A5EB7098A8DBE00EC9B5C /* CBMouvementPeriodique.m */; };
+		E40A5EC7098A90D500EC9B5C /* CBMouvementMultiple.m in Sources */ = {isa = PBXBuildFile; fileRef = E40A5EC6098A90D500EC9B5C /* CBMouvementMultiple.m */; };
+		E41A8F2A099130CB00CBFB98 /* CBEcritureAutomatique.m in Sources */ = {isa = PBXBuildFile; fileRef = E41A8F29099130CB00CBFB98 /* CBEcritureAutomatique.m */; };
+		E41DF6B909A7A483008A1C37 /* CBHelp in Resources */ = {isa = PBXBuildFile; fileRef = E41DF68A09A7A483008A1C37 /* CBHelp */; };
+		E42F8AE009717B45000C8BD4 /* Compte.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8AD909717B45000C8BD4 /* Compte.m */; };
+		E42F8AE109717B45000C8BD4 /* ListeLibelles.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADB09717B45000C8BD4 /* ListeLibelles.m */; };
+		E42F8AE209717B45000C8BD4 /* Mouvement.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADD09717B45000C8BD4 /* Mouvement.m */; };
+		E42F8AE309717B45000C8BD4 /* Portefeuille.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADF09717B45000C8BD4 /* Portefeuille.m */; };
+		E46A9C890995491800F38C30 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E46A9C870995491800F38C30 /* Credits.rtf */; };
+		E46A9CAF0995499100F38C30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46A9CAD0995499100F38C30 /* InfoPlist.strings */; };
+		E46A9CB20995499F00F38C30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46A9CB00995499F00F38C30 /* Localizable.strings */; };
+		E478368809717BE700867CC7 /* CBPortefeuille.m in Sources */ = {isa = PBXBuildFile; fileRef = E478368709717BE700867CC7 /* CBPortefeuille.m */; };
+		E478368B09717C1300867CC7 /* CBCompte.m in Sources */ = {isa = PBXBuildFile; fileRef = E478368A09717C1300867CC7 /* CBCompte.m */; };
+		E478368E09717C2700867CC7 /* CBMouvement.m in Sources */ = {isa = PBXBuildFile; fileRef = E478368D09717C2700867CC7 /* CBMouvement.m */; };
+		E47836C4097188A400867CC7 /* CBPortefeuilleController.m in Sources */ = {isa = PBXBuildFile; fileRef = E47836C3097188A400867CC7 /* CBPortefeuilleController.m */; };
+		E47836C8097188BC00867CC7 /* CBCompteController.m in Sources */ = {isa = PBXBuildFile; fileRef = E47836C7097188BC00867CC7 /* CBCompteController.m */; };
+		E47A870B097162720067ACE0 /* CBAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E47A870A097162720067ACE0 /* CBAppController.m */; };
+		E47A8710097162DE0067ACE0 /* CBPrefController.m in Sources */ = {isa = PBXBuildFile; fileRef = E47A870F097162DE0067ACE0 /* CBPrefController.m */; };
+		E490F27809ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m in Sources */ = {isa = PBXBuildFile; fileRef = E490F27609ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m */; };
+		E490F27E09ABA8B20098E7B7 /* CBVueImpressionCompte.m in Sources */ = {isa = PBXBuildFile; fileRef = E490F27C09ABA8B20098E7B7 /* CBVueImpressionCompte.m */; };
+		E493795E0CE6176E00231427 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E493795C0CE6176E00231427 /* MainMenu.xib */; };
+		E49379610CE6178600231427 /* Pref.xib in Resources */ = {isa = PBXBuildFile; fileRef = E493795F0CE6178600231427 /* Pref.xib */; };
+		E49379640CE6179700231427 /* Portefeuille.xib in Resources */ = {isa = PBXBuildFile; fileRef = E49379620CE6179700231427 /* Portefeuille.xib */; };
+		E49379670CE617A900231427 /* Compte.xib in Resources */ = {isa = PBXBuildFile; fileRef = E49379650CE617A900231427 /* Compte.xib */; };
+		E4A10F370975496800FD4446 /* CBCategorieMouvement.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A10F360975496800FD4446 /* CBCategorieMouvement.m */; };
+		E4A10F49097549A100FD4446 /* CBLibellePredefini.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A10F48097549A100FD4446 /* CBLibellePredefini.m */; };
+		E4B3BD5B0995507C000563B6 /* CBStatistiqueCategorie.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B3BD5A0995507C000563B6 /* CBStatistiqueCategorie.m */; };
+		E4B3BD64099551A7000563B6 /* CBStatistiques.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B3BD63099551A7000563B6 /* CBStatistiques.m */; };
+		E4BE11890994BF7C00EB9E92 /* CBChaineFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BE11880994BF7C00EB9E92 /* CBChaineFormatter.m */; };
+		E4BF66E60994207400E1D20B /* CBChoixCompteArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BF66E50994207400E1D20B /* CBChoixCompteArrayController.m */; };
+		E4BFF97309A5EBE500C59BC4 /* CBMetadataImporter.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4BFF96409A5EB3200C59BC4 /* CBMetadataImporter.txt */; };
+		E4C7226C0993979800334B2C /* DocCBXML.icns in Resources */ = {isa = PBXBuildFile; fileRef = E4C7226B0993979800334B2C /* DocCBXML.icns */; };
+		E4C722F80993A63600334B2C /* CBVirement.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C722F70993A63600334B2C /* CBVirement.m */; };
+		E4D4566B09A383CD00DC6D26 /* CBXMLArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4566A09A383CD00DC6D26 /* CBXMLArchiver.m */; };
+		E4D4567009A383DB00DC6D26 /* CBXMLUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4566F09A383DB00DC6D26 /* CBXMLUnarchiver.m */; };
+		E4D475F709863C4200818433 /* CBLibellesPredefinisArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D475F609863C4200818433 /* CBLibellesPredefinisArrayController.m */; };
+		E4D8239509882D610033EE2D /* CBGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D8239409882D610033EE2D /* CBGlobal.m */; };
+		E4DCE17209A5FE4800FAEC71 /* CBMetadataCreateur.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DCE17009A5FE4800FAEC71 /* CBMetadataCreateur.m */; };
+		E4E69E7B0988179300128D66 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4E69E7A0988179300128D66 /* UserDefaults.plist */; };
+		E4F3583209893237002804C2 /* CBNombreFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F3583109893237002804C2 /* CBNombreFormatter.m */; };
+		E4F4CED7097155C800BADDA1 /* AppCB.icns in Resources */ = {isa = PBXBuildFile; fileRef = E4F4CED5097155C800BADDA1 /* AppCB.icns */; };
+		E4F4CED8097155C800BADDA1 /* DocCB.icns in Resources */ = {isa = PBXBuildFile; fileRef = E4F4CED6097155C800BADDA1 /* DocCB.icns */; };
+		E4F9849F09858C2C00A83FCE /* CBMouvementsArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F9849E09858C2C00A83FCE /* CBMouvementsArrayController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4BFF96809A5EB6600C59BC4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/Spotlight;
+			dstSubfolderSpec = 1;
+			files = (
+				E4BFF97309A5EBE500C59BC4 /* CBMetadataImporter.txt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FBA07B3F13500E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		2A37F4ACFDCFA73011CA2CEA /* CBDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDocument.m; sourceTree = "<group>"; };
+		2A37F4AEFDCFA73011CA2CEA /* CBDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBDocument.h; sourceTree = "<group>"; };
+		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32DBCF750370BD2300C91783 /* Comptes Bancaires_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Comptes Bancaires_Prefix.pch"; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D15AC370486D014006FF6A4 /* Comptes Bancaires.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comptes Bancaires.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40A5EB6098A8DBE00EC9B5C /* CBMouvementPeriodique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMouvementPeriodique.h; sourceTree = "<group>"; };
+		E40A5EB7098A8DBE00EC9B5C /* CBMouvementPeriodique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMouvementPeriodique.m; sourceTree = "<group>"; };
+		E40A5EC5098A90D500EC9B5C /* CBMouvementMultiple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMouvementMultiple.h; sourceTree = "<group>"; };
+		E40A5EC6098A90D500EC9B5C /* CBMouvementMultiple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMouvementMultiple.m; sourceTree = "<group>"; };
+		E41A8F28099130CB00CBFB98 /* CBEcritureAutomatique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBEcritureAutomatique.h; sourceTree = "<group>"; };
+		E41A8F29099130CB00CBFB98 /* CBEcritureAutomatique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBEcritureAutomatique.m; sourceTree = "<group>"; };
+		E41DF68B09A7A483008A1C37 /* French */ = {isa = PBXFileReference; lastKnownFileType = folder; name = French; path = French.lproj/CBHelp; sourceTree = "<group>"; };
+		E42F8AD809717B45000C8BD4 /* Compte.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Compte.h; sourceTree = "<group>"; };
+		E42F8AD909717B45000C8BD4 /* Compte.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Compte.m; sourceTree = "<group>"; };
+		E42F8ADA09717B45000C8BD4 /* ListeLibelles.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ListeLibelles.h; sourceTree = "<group>"; };
+		E42F8ADB09717B45000C8BD4 /* ListeLibelles.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ListeLibelles.m; sourceTree = "<group>"; };
+		E42F8ADC09717B45000C8BD4 /* Mouvement.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Mouvement.h; sourceTree = "<group>"; };
+		E42F8ADD09717B45000C8BD4 /* Mouvement.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Mouvement.m; sourceTree = "<group>"; };
+		E42F8ADE09717B45000C8BD4 /* Portefeuille.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Portefeuille.h; sourceTree = "<group>"; };
+		E42F8ADF09717B45000C8BD4 /* Portefeuille.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Portefeuille.m; sourceTree = "<group>"; };
+		E46A9C880995491800F38C30 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = French; path = French.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E46A9CAE0995499100F38C30 /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E46A9CB10995499F00F38C30 /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E478368609717BE700867CC7 /* CBPortefeuille.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPortefeuille.h; sourceTree = "<group>"; };
+		E478368709717BE700867CC7 /* CBPortefeuille.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPortefeuille.m; sourceTree = "<group>"; };
+		E478368909717C1300867CC7 /* CBCompte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCompte.h; sourceTree = "<group>"; };
+		E478368A09717C1300867CC7 /* CBCompte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCompte.m; sourceTree = "<group>"; };
+		E478368C09717C2700867CC7 /* CBMouvement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMouvement.h; sourceTree = "<group>"; };
+		E478368D09717C2700867CC7 /* CBMouvement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMouvement.m; sourceTree = "<group>"; };
+		E47836C2097188A400867CC7 /* CBPortefeuilleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPortefeuilleController.h; sourceTree = "<group>"; };
+		E47836C3097188A400867CC7 /* CBPortefeuilleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPortefeuilleController.m; sourceTree = "<group>"; };
+		E47836C6097188BC00867CC7 /* CBCompteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCompteController.h; sourceTree = "<group>"; };
+		E47836C7097188BC00867CC7 /* CBCompteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCompteController.m; sourceTree = "<group>"; };
+		E47A8709097162720067ACE0 /* CBAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAppController.h; sourceTree = "<group>"; };
+		E47A870A097162720067ACE0 /* CBAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAppController.m; sourceTree = "<group>"; };
+		E47A870E097162DE0067ACE0 /* CBPrefController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPrefController.h; sourceTree = "<group>"; };
+		E47A870F097162DE0067ACE0 /* CBPrefController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrefController.m; sourceTree = "<group>"; };
+		E47A871B097164200067ACE0 /* CBGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGlobal.h; sourceTree = "<group>"; };
+		E490F27509ABA89F0098E7B7 /* CBVueImpressionPortefeuille.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVueImpressionPortefeuille.h; sourceTree = "<group>"; };
+		E490F27609ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVueImpressionPortefeuille.m; sourceTree = "<group>"; };
+		E490F27B09ABA8B20098E7B7 /* CBVueImpressionCompte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVueImpressionCompte.h; sourceTree = "<group>"; };
+		E490F27C09ABA8B20098E7B7 /* CBVueImpressionCompte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVueImpressionCompte.m; sourceTree = "<group>"; };
+		E493795D0CE6176E00231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E49379600CE6178600231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Pref.xib; sourceTree = "<group>"; };
+		E49379630CE6179700231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Portefeuille.xib; sourceTree = "<group>"; };
+		E49379660CE617A900231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Compte.xib; sourceTree = "<group>"; };
+		E4A10F350975496800FD4446 /* CBCategorieMouvement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCategorieMouvement.h; sourceTree = "<group>"; };
+		E4A10F360975496800FD4446 /* CBCategorieMouvement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCategorieMouvement.m; sourceTree = "<group>"; };
+		E4A10F47097549A100FD4446 /* CBLibellePredefini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLibellePredefini.h; sourceTree = "<group>"; };
+		E4A10F48097549A100FD4446 /* CBLibellePredefini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLibellePredefini.m; sourceTree = "<group>"; };
+		E4B3002E0994F9650008E9AD /* CBXMLCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBXMLCoding.h; sourceTree = "<group>"; };
+		E4B3BD590995507C000563B6 /* CBStatistiqueCategorie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStatistiqueCategorie.h; sourceTree = "<group>"; };
+		E4B3BD5A0995507C000563B6 /* CBStatistiqueCategorie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStatistiqueCategorie.m; sourceTree = "<group>"; };
+		E4B3BD62099551A7000563B6 /* CBStatistiques.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStatistiques.h; sourceTree = "<group>"; };
+		E4B3BD63099551A7000563B6 /* CBStatistiques.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStatistiques.m; sourceTree = "<group>"; };
+		E4BE11870994BF7C00EB9E92 /* CBChaineFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBChaineFormatter.h; sourceTree = "<group>"; };
+		E4BE11880994BF7C00EB9E92 /* CBChaineFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBChaineFormatter.m; sourceTree = "<group>"; };
+		E4BF66E40994207400E1D20B /* CBChoixCompteArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBChoixCompteArrayController.h; sourceTree = "<group>"; };
+		E4BF66E50994207400E1D20B /* CBChoixCompteArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBChoixCompteArrayController.m; sourceTree = "<group>"; };
+		E4BFF96409A5EB3200C59BC4 /* CBMetadataImporter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBMetadataImporter.txt; sourceTree = "<group>"; };
+		E4C6DFCA09750132007C2BC8 /* Spécifications.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Spécifications.txt"; sourceTree = "<group>"; };
+		E4C7226B0993979800334B2C /* DocCBXML.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DocCBXML.icns; sourceTree = "<group>"; };
+		E4C722F60993A63600334B2C /* CBVirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVirement.h; sourceTree = "<group>"; };
+		E4C722F70993A63600334B2C /* CBVirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVirement.m; sourceTree = "<group>"; };
+		E4D4566909A383CD00DC6D26 /* CBXMLArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBXMLArchiver.h; sourceTree = "<group>"; };
+		E4D4566A09A383CD00DC6D26 /* CBXMLArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBXMLArchiver.m; sourceTree = "<group>"; };
+		E4D4566E09A383DB00DC6D26 /* CBXMLUnarchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBXMLUnarchiver.h; sourceTree = "<group>"; };
+		E4D4566F09A383DB00DC6D26 /* CBXMLUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBXMLUnarchiver.m; sourceTree = "<group>"; };
+		E4D475F509863C4200818433 /* CBLibellesPredefinisArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLibellesPredefinisArrayController.h; sourceTree = "<group>"; };
+		E4D475F609863C4200818433 /* CBLibellesPredefinisArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLibellesPredefinisArrayController.m; sourceTree = "<group>"; };
+		E4D8239409882D610033EE2D /* CBGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBGlobal.m; sourceTree = "<group>"; };
+		E4DCE16F09A5FE4800FAEC71 /* CBMetadataCreateur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMetadataCreateur.h; sourceTree = "<group>"; };
+		E4DCE17009A5FE4800FAEC71 /* CBMetadataCreateur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMetadataCreateur.m; sourceTree = "<group>"; };
+		E4E69E7A0988179300128D66 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = UserDefaults.plist; sourceTree = "<group>"; };
+		E4F3583009893237002804C2 /* CBNombreFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNombreFormatter.h; sourceTree = "<group>"; };
+		E4F3583109893237002804C2 /* CBNombreFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNombreFormatter.m; sourceTree = "<group>"; };
+		E4F4CED5097155C800BADDA1 /* AppCB.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppCB.icns; sourceTree = "<group>"; };
+		E4F4CED6097155C800BADDA1 /* DocCB.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DocCB.icns; sourceTree = "<group>"; };
+		E4F9849D09858C2C00A83FCE /* CBMouvementsArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBMouvementsArrayController.h; sourceTree = "<group>"; };
+		E4F9849E09858C2C00A83FCE /* CBMouvementsArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMouvementsArrayController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D15AC330486D014006FF6A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
+				13E42FBA07B3F13500E4EEF1 /* CoreData.framework */,
+				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D15AC370486D014006FF6A4 /* Comptes Bancaires.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* Comptes Bancaires */ = {
+			isa = PBXGroup;
+			children = (
+				E4C6DFCA09750132007C2BC8 /* Spécifications.txt */,
+				2A37F4ABFDCFA73011CA2CEA /* Classes */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				E4F4CED30971559A00BADDA1 /* Images */,
+				2A37F4B8FDCFA73011CA2CEA /* Resources */,
+				E4BFF96109A5EAFC00C59BC4 /* CBMetadataImporter */,
+				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = "Comptes Bancaires";
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E47A8706097161EF0067ACE0 /* Controller objects */,
+				E464B5E5098FF69800D201E3 /* Utility objects */,
+				E47A8705097161DD0067ACE0 /* Model objects */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF750370BD2300C91783 /* Comptes Bancaires_Prefix.pch */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+				E47A871B097164200067ACE0 /* CBGlobal.h */,
+				E4D8239409882D610033EE2D /* CBGlobal.m */,
+				E4B3002E0994F9650008E9AD /* CBXMLCoding.h */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E41DF68A09A7A483008A1C37 /* CBHelp */,
+				E46A9C870995491800F38C30 /* Credits.rtf */,
+				E493795C0CE6176E00231427 /* MainMenu.xib */,
+				E493795F0CE6178600231427 /* Pref.xib */,
+				E49379620CE6179700231427 /* Portefeuille.xib */,
+				E49379650CE617A900231427 /* Compte.xib */,
+				8D15AC360486D014006FF6A4 /* Info.plist */,
+				E46A9CAD0995499100F38C30 /* InfoPlist.strings */,
+				E4E69E7A0988179300128D66 /* UserDefaults.plist */,
+				E46A9CB00995499F00F38C30 /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E42F8AD709717ADB000C8BD4 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				E42F8ADE09717B45000C8BD4 /* Portefeuille.h */,
+				E42F8ADF09717B45000C8BD4 /* Portefeuille.m */,
+				E42F8AD809717B45000C8BD4 /* Compte.h */,
+				E42F8AD909717B45000C8BD4 /* Compte.m */,
+				E42F8ADA09717B45000C8BD4 /* ListeLibelles.h */,
+				E42F8ADB09717B45000C8BD4 /* ListeLibelles.m */,
+				E42F8ADC09717B45000C8BD4 /* Mouvement.h */,
+				E42F8ADD09717B45000C8BD4 /* Mouvement.m */,
+			);
+			name = Legacy;
+			sourceTree = "<group>";
+		};
+		E464B5E5098FF69800D201E3 /* Utility objects */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3583009893237002804C2 /* CBNombreFormatter.h */,
+				E4F3583109893237002804C2 /* CBNombreFormatter.m */,
+				E4BE11870994BF7C00EB9E92 /* CBChaineFormatter.h */,
+				E4BE11880994BF7C00EB9E92 /* CBChaineFormatter.m */,
+				E4D4566909A383CD00DC6D26 /* CBXMLArchiver.h */,
+				E4D4566A09A383CD00DC6D26 /* CBXMLArchiver.m */,
+				E4D4566E09A383DB00DC6D26 /* CBXMLUnarchiver.h */,
+				E4D4566F09A383DB00DC6D26 /* CBXMLUnarchiver.m */,
+				E4DCE16F09A5FE4800FAEC71 /* CBMetadataCreateur.h */,
+				E4DCE17009A5FE4800FAEC71 /* CBMetadataCreateur.m */,
+				E490F27509ABA89F0098E7B7 /* CBVueImpressionPortefeuille.h */,
+				E490F27609ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m */,
+				E490F27B09ABA8B20098E7B7 /* CBVueImpressionCompte.h */,
+				E490F27C09ABA8B20098E7B7 /* CBVueImpressionCompte.m */,
+			);
+			name = "Utility objects";
+			sourceTree = "<group>";
+		};
+		E47A8705097161DD0067ACE0 /* Model objects */ = {
+			isa = PBXGroup;
+			children = (
+				E478368609717BE700867CC7 /* CBPortefeuille.h */,
+				E478368709717BE700867CC7 /* CBPortefeuille.m */,
+				E478368909717C1300867CC7 /* CBCompte.h */,
+				E478368A09717C1300867CC7 /* CBCompte.m */,
+				E478368C09717C2700867CC7 /* CBMouvement.h */,
+				E478368D09717C2700867CC7 /* CBMouvement.m */,
+				E4A10F350975496800FD4446 /* CBCategorieMouvement.h */,
+				E4A10F360975496800FD4446 /* CBCategorieMouvement.m */,
+				E4A10F47097549A100FD4446 /* CBLibellePredefini.h */,
+				E4A10F48097549A100FD4446 /* CBLibellePredefini.m */,
+				E40A5EB6098A8DBE00EC9B5C /* CBMouvementPeriodique.h */,
+				E40A5EB7098A8DBE00EC9B5C /* CBMouvementPeriodique.m */,
+				E40A5EC5098A90D500EC9B5C /* CBMouvementMultiple.h */,
+				E40A5EC6098A90D500EC9B5C /* CBMouvementMultiple.m */,
+				E41A8F28099130CB00CBFB98 /* CBEcritureAutomatique.h */,
+				E41A8F29099130CB00CBFB98 /* CBEcritureAutomatique.m */,
+				E4C722F60993A63600334B2C /* CBVirement.h */,
+				E4C722F70993A63600334B2C /* CBVirement.m */,
+				E4B3BD62099551A7000563B6 /* CBStatistiques.h */,
+				E4B3BD63099551A7000563B6 /* CBStatistiques.m */,
+				E4B3BD590995507C000563B6 /* CBStatistiqueCategorie.h */,
+				E4B3BD5A0995507C000563B6 /* CBStatistiqueCategorie.m */,
+				E42F8AD709717ADB000C8BD4 /* Legacy */,
+			);
+			name = "Model objects";
+			sourceTree = "<group>";
+		};
+		E47A8706097161EF0067ACE0 /* Controller objects */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4AEFDCFA73011CA2CEA /* CBDocument.h */,
+				2A37F4ACFDCFA73011CA2CEA /* CBDocument.m */,
+				E47A8709097162720067ACE0 /* CBAppController.h */,
+				E47A870A097162720067ACE0 /* CBAppController.m */,
+				E47A870E097162DE0067ACE0 /* CBPrefController.h */,
+				E47A870F097162DE0067ACE0 /* CBPrefController.m */,
+				E47836C2097188A400867CC7 /* CBPortefeuilleController.h */,
+				E47836C3097188A400867CC7 /* CBPortefeuilleController.m */,
+				E47836C6097188BC00867CC7 /* CBCompteController.h */,
+				E47836C7097188BC00867CC7 /* CBCompteController.m */,
+				E4F9849D09858C2C00A83FCE /* CBMouvementsArrayController.h */,
+				E4F9849E09858C2C00A83FCE /* CBMouvementsArrayController.m */,
+				E4D475F509863C4200818433 /* CBLibellesPredefinisArrayController.h */,
+				E4D475F609863C4200818433 /* CBLibellesPredefinisArrayController.m */,
+				E4BF66E40994207400E1D20B /* CBChoixCompteArrayController.h */,
+				E4BF66E50994207400E1D20B /* CBChoixCompteArrayController.m */,
+			);
+			name = "Controller objects";
+			sourceTree = "<group>";
+		};
+		E4BFF96109A5EAFC00C59BC4 /* CBMetadataImporter */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFF96409A5EB3200C59BC4 /* CBMetadataImporter.txt */,
+			);
+			name = CBMetadataImporter;
+			sourceTree = "<group>";
+		};
+		E4F4CED30971559A00BADDA1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E4F4CED5097155C800BADDA1 /* AppCB.icns */,
+				E4F4CED6097155C800BADDA1 /* DocCB.icns */,
+				E4C7226B0993979800334B2C /* DocCBXML.icns */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D15AC270486D014006FF6A4 /* Comptes Bancaires */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "Comptes Bancaires" */;
+			buildPhases = (
+				8D15AC2B0486D014006FF6A4 /* Resources */,
+				E4BFF96809A5EB6600C59BC4 /* CopyFiles */,
+				8D15AC300486D014006FF6A4 /* Sources */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Comptes Bancaires";
+			productInstallPath = "$(HOME)/Applications";
+			productName = "Comptes Bancaires";
+			productReference = 8D15AC370486D014006FF6A4 /* Comptes Bancaires.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
+			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "CBApplication" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Comptes Bancaires */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D15AC270486D014006FF6A4 /* Comptes Bancaires */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D15AC2B0486D014006FF6A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F4CED7097155C800BADDA1 /* AppCB.icns in Resources */,
+				E4F4CED8097155C800BADDA1 /* DocCB.icns in Resources */,
+				E4E69E7B0988179300128D66 /* UserDefaults.plist in Resources */,
+				E4C7226C0993979800334B2C /* DocCBXML.icns in Resources */,
+				E46A9C890995491800F38C30 /* Credits.rtf in Resources */,
+				E46A9CAF0995499100F38C30 /* InfoPlist.strings in Resources */,
+				E46A9CB20995499F00F38C30 /* Localizable.strings in Resources */,
+				E41DF6B909A7A483008A1C37 /* CBHelp in Resources */,
+				E493795E0CE6176E00231427 /* MainMenu.xib in Resources */,
+				E49379610CE6178600231427 /* Pref.xib in Resources */,
+				E49379640CE6179700231427 /* Portefeuille.xib in Resources */,
+				E49379670CE617A900231427 /* Compte.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D15AC300486D014006FF6A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC310486D014006FF6A4 /* CBDocument.m in Sources */,
+				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				E47A870B097162720067ACE0 /* CBAppController.m in Sources */,
+				E47A8710097162DE0067ACE0 /* CBPrefController.m in Sources */,
+				E42F8AE009717B45000C8BD4 /* Compte.m in Sources */,
+				E42F8AE109717B45000C8BD4 /* ListeLibelles.m in Sources */,
+				E42F8AE209717B45000C8BD4 /* Mouvement.m in Sources */,
+				E42F8AE309717B45000C8BD4 /* Portefeuille.m in Sources */,
+				E478368809717BE700867CC7 /* CBPortefeuille.m in Sources */,
+				E478368B09717C1300867CC7 /* CBCompte.m in Sources */,
+				E478368E09717C2700867CC7 /* CBMouvement.m in Sources */,
+				E47836C4097188A400867CC7 /* CBPortefeuilleController.m in Sources */,
+				E47836C8097188BC00867CC7 /* CBCompteController.m in Sources */,
+				E4A10F370975496800FD4446 /* CBCategorieMouvement.m in Sources */,
+				E4A10F49097549A100FD4446 /* CBLibellePredefini.m in Sources */,
+				E4F9849F09858C2C00A83FCE /* CBMouvementsArrayController.m in Sources */,
+				E4D475F709863C4200818433 /* CBLibellesPredefinisArrayController.m in Sources */,
+				E4D8239509882D610033EE2D /* CBGlobal.m in Sources */,
+				E4F3583209893237002804C2 /* CBNombreFormatter.m in Sources */,
+				E40A5EB8098A8DBE00EC9B5C /* CBMouvementPeriodique.m in Sources */,
+				E40A5EC7098A90D500EC9B5C /* CBMouvementMultiple.m in Sources */,
+				E41A8F2A099130CB00CBFB98 /* CBEcritureAutomatique.m in Sources */,
+				E4C722F80993A63600334B2C /* CBVirement.m in Sources */,
+				E4BF66E60994207400E1D20B /* CBChoixCompteArrayController.m in Sources */,
+				E4BE11890994BF7C00EB9E92 /* CBChaineFormatter.m in Sources */,
+				E4B3BD5B0995507C000563B6 /* CBStatistiqueCategorie.m in Sources */,
+				E4B3BD64099551A7000563B6 /* CBStatistiques.m in Sources */,
+				E4D4566B09A383CD00DC6D26 /* CBXMLArchiver.m in Sources */,
+				E4D4567009A383DB00DC6D26 /* CBXMLUnarchiver.m in Sources */,
+				E4DCE17209A5FE4800FAEC71 /* CBMetadataCreateur.m in Sources */,
+				E490F27809ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m in Sources */,
+				E490F27E09ABA8B20098E7B7 /* CBVueImpressionCompte.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E41DF68A09A7A483008A1C37 /* CBHelp */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E41DF68B09A7A483008A1C37 /* French */,
+			);
+			name = CBHelp;
+			sourceTree = "<group>";
+		};
+		E46A9C870995491800F38C30 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E46A9C880995491800F38C30 /* French */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E46A9CAD0995499100F38C30 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E46A9CAE0995499100F38C30 /* French */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E46A9CB00995499F00F38C30 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E46A9CB10995499F00F38C30 /* French */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E493795C0CE6176E00231427 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E493795D0CE6176E00231427 /* French */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E493795F0CE6178600231427 /* Pref.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E49379600CE6178600231427 /* French */,
+			);
+			name = Pref.xib;
+			sourceTree = "<group>";
+		};
+		E49379620CE6179700231427 /* Portefeuille.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E49379630CE6179700231427 /* French */,
+			);
+			name = Portefeuille.xib;
+			sourceTree = "<group>";
+		};
+		E49379650CE617A900231427 /* Compte.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E49379660CE617A900231427 /* French */,
+			);
+			name = Compte.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C05733C808A9546B00998B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Comptes Bancaires";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C05733C908A9546B00998B17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Comptes Bancaires";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C05733CC08A9546B00998B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C05733CD08A9546B00998B17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "Comptes Bancaires" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05733C808A9546B00998B17 /* Debug */,
+				C05733C908A9546B00998B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "CBApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05733CC08A9546B00998B17 /* Debug */,
+				C05733CD08A9546B00998B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}

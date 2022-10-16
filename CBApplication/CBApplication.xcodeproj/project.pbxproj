@@ -28,6 +28,7 @@
 		E47836C8097188BC00867CC7 /* CBCompteController.m in Sources */ = {isa = PBXBuildFile; fileRef = E47836C7097188BC00867CC7 /* CBCompteController.m */; };
 		E47A870B097162720067ACE0 /* CBAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E47A870A097162720067ACE0 /* CBAppController.m */; };
 		E47A8710097162DE0067ACE0 /* CBPrefController.m in Sources */ = {isa = PBXBuildFile; fileRef = E47A870F097162DE0067ACE0 /* CBPrefController.m */; };
+		E4905A9D1AA32D4700E3ACE9 /* NSTableView+CBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E4905A9C1AA32D4700E3ACE9 /* NSTableView+CBExtension.m */; };
 		E490F27809ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m in Sources */ = {isa = PBXBuildFile; fileRef = E490F27609ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m */; };
 		E490F27E09ABA8B20098E7B7 /* CBVueImpressionCompte.m in Sources */ = {isa = PBXBuildFile; fileRef = E490F27C09ABA8B20098E7B7 /* CBVueImpressionCompte.m */; };
 		E493795E0CE6176E00231427 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E493795C0CE6176E00231427 /* MainMenu.xib */; };
@@ -112,6 +113,8 @@
 		E47A870E097162DE0067ACE0 /* CBPrefController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPrefController.h; sourceTree = "<group>"; };
 		E47A870F097162DE0067ACE0 /* CBPrefController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPrefController.m; sourceTree = "<group>"; };
 		E47A871B097164200067ACE0 /* CBGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBGlobal.h; sourceTree = "<group>"; };
+		E4905A9B1AA32D4700E3ACE9 /* NSTableView+CBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableView+CBExtension.h"; sourceTree = "<group>"; };
+		E4905A9C1AA32D4700E3ACE9 /* NSTableView+CBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTableView+CBExtension.m"; sourceTree = "<group>"; };
 		E490F27509ABA89F0098E7B7 /* CBVueImpressionPortefeuille.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVueImpressionPortefeuille.h; sourceTree = "<group>"; };
 		E490F27609ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVueImpressionPortefeuille.m; sourceTree = "<group>"; };
 		E490F27B09ABA8B20098E7B7 /* CBVueImpressionCompte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVueImpressionCompte.h; sourceTree = "<group>"; };
@@ -134,7 +137,7 @@
 		E4BF66E40994207400E1D20B /* CBChoixCompteArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBChoixCompteArrayController.h; sourceTree = "<group>"; };
 		E4BF66E50994207400E1D20B /* CBChoixCompteArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBChoixCompteArrayController.m; sourceTree = "<group>"; };
 		E4BFF96409A5EB3200C59BC4 /* CBMetadataImporter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBMetadataImporter.txt; sourceTree = "<group>"; };
-		E4C6DFCA09750132007C2BC8 /* Spécifications.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Spécifications.txt"; sourceTree = "<group>"; };
+		E4C6DFCA09750132007C2BC8 /* Spécifications.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Spécifications.txt"; sourceTree = "<group>"; };
 		E4C7226B0993979800334B2C /* DocCBXML.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DocCBXML.icns; sourceTree = "<group>"; };
 		E4C722F60993A63600334B2C /* CBVirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVirement.h; sourceTree = "<group>"; };
 		E4C722F70993A63600334B2C /* CBVirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVirement.m; sourceTree = "<group>"; };
@@ -197,7 +200,7 @@
 		2A37F4AAFDCFA73011CA2CEA /* Comptes Bancaires */ = {
 			isa = PBXGroup;
 			children = (
-				E4C6DFCA09750132007C2BC8 /* Spécifications.txt */,
+				E4C6DFCA09750132007C2BC8 /* Spécifications.txt */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
 				E4F4CED30971559A00BADDA1 /* Images */,
@@ -289,6 +292,8 @@
 				E490F27609ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m */,
 				E490F27B09ABA8B20098E7B7 /* CBVueImpressionCompte.h */,
 				E490F27C09ABA8B20098E7B7 /* CBVueImpressionCompte.m */,
+				E4905A9B1AA32D4700E3ACE9 /* NSTableView+CBExtension.h */,
+				E4905A9C1AA32D4700E3ACE9 /* NSTableView+CBExtension.m */,
 			);
 			name = "Utility objects";
 			sourceTree = "<group>";
@@ -392,7 +397,7 @@
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "CBApplication" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -469,6 +474,7 @@
 				E4DCE17209A5FE4800FAEC71 /* CBMetadataCreateur.m in Sources */,
 				E490F27809ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m in Sources */,
 				E490F27E09ABA8B20098E7B7 /* CBVueImpressionCompte.m in Sources */,
+				E4905A9D1AA32D4700E3ACE9 /* NSTableView+CBExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +551,6 @@
 		C05733C808A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -563,7 +568,6 @@
 		C05733C908A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -578,9 +582,9 @@
 		C05733CC08A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -588,7 +592,6 @@
 		C05733CD08A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = macosx;

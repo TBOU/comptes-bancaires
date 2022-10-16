@@ -127,6 +127,10 @@ NSDate *CBDateFromString(NSString *aString, NSString *aFormat)
 
 int CBDaysSinceReferenceDate(NSDate *aDate)
 {
+    if (aDate == nil) {
+        return 0;
+    }
+    
 	NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
 	unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
 	NSDateComponents *comps = [gregorian components:unitFlags fromDate:aDate];

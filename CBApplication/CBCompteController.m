@@ -15,6 +15,7 @@
 #import "CBStatistiqueCategorie.h"
 #import "CBVueImpressionCompte.h"
 #import "CBGlobal.h"
+#import "NSTableView+CBExtension.h"
 
 
 @implementation CBCompteController
@@ -71,6 +72,8 @@
 
 	if ([[mouvementsControler arrangedObjects] count] > 0)
 		[mouvementsControler setSelectionIndex:[[mouvementsControler arrangedObjects] count] - 1];
+    
+    [tableMouvements cbRepairLayoutDeferred];
 }
 
 - (void)dealloc
@@ -469,7 +472,7 @@
 	[categoriesMouvementControler rearrangeObjects];
 
 	[fenetreEditerMouvementsPeriodiques makeFirstResponder:[fenetreEditerMouvementsPeriodiques initialFirstResponder]];
-
+    [tableMouvementsPeriodiques cbRepairLayoutDeferred];
 	[NSApp beginSheet:fenetreEditerMouvementsPeriodiques modalForWindow:[self window] 
 								modalDelegate:self 
 								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
@@ -531,7 +534,7 @@
 		[libellesPredefinisControler setSelectionIndex:0];
 	
 	[fenetreLibellesPredefinis makeFirstResponder:[fenetreLibellesPredefinis initialFirstResponder]];
-
+    [tableLibellesPredefinis cbRepairLayoutDeferred];
 	[NSApp beginSheet:fenetreLibellesPredefinis modalForWindow:[self window] 
 								modalDelegate:self 
 								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
@@ -596,6 +599,7 @@
 		[tempStatistiquesCategoriesControler setSelectionIndex:0];
 
 	[fenetreStatistiques makeFirstResponder:[fenetreStatistiques initialFirstResponder]];
+    [tableTempStatistiquesCategories cbRepairLayoutDeferred];
 	[NSApp beginSheet:fenetreStatistiques modalForWindow:[self window] 
 								modalDelegate:self 
 								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 

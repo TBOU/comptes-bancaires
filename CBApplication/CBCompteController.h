@@ -47,6 +47,7 @@
 	IBOutlet NSTableView *tableMouvements;
 	IBOutlet NSTableView *tableLibellesPredefinis;
 	IBOutlet NSTableView *tableMouvementsPeriodiques;
+    IBOutlet NSTableView *tableTempStatistiquesCategories;
 	
 	// Eléments nécessitant un formateur
 	IBOutlet NSTextField *champSoldeReel;

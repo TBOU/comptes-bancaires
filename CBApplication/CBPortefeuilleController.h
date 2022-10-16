@@ -40,6 +40,7 @@
 	IBOutlet NSButton *boutonVirement;
 	IBOutlet NSTableView *tableComptes;
 	IBOutlet NSTableView *tableCategoriesMouvement;
+    IBOutlet NSTableView *tableEcrituresAutomatiques;
 	
 	// Eléments nécessitant un formateur
 	IBOutlet NSTextField *champNom;

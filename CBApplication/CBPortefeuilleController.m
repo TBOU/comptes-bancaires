@@ -16,6 +16,7 @@
 #import "CBEcritureAutomatique.h"
 #import "CBVueImpressionPortefeuille.h"
 #import "CBGlobal.h"
+#import "NSTableView+CBExtension.h"
 
 
 @implementation CBPortefeuilleController
@@ -67,6 +68,7 @@
         [self debutSelectionEcrituresAutomatiques:self];
     }
     
+    [tableComptes cbRepairLayoutDeferred];
 	[[self window] makeKeyAndOrderFront:self];
 }
 
@@ -221,7 +223,7 @@
 			[ecrituresAutomatiquesControler setSelectionIndex:0];
 		
 		[fenetreEcrituresAutomatiques makeFirstResponder:[fenetreEcrituresAutomatiques initialFirstResponder]];
-		
+		[tableEcrituresAutomatiques cbRepairLayoutDeferred];
 		[NSApp runModalForWindow:fenetreEcrituresAutomatiques];
 	}
 	else if (sender != self) {
@@ -439,7 +441,7 @@
 		[categoriesMouvementControler setSelectionIndex:0];
 	
 	[fenetreCategoriesMouvement makeFirstResponder:[fenetreCategoriesMouvement initialFirstResponder]];
-
+    [tableCategoriesMouvement cbRepairLayoutDeferred];
 	[NSApp beginSheet:fenetreCategoriesMouvement modalForWindow:[self window] 
 								modalDelegate:self 
 								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 

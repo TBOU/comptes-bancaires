@@ -1,2 +1,3 @@
 # comptes-bancaires
-Comptes Bancaires
+
+Logiciel "Comptes Bancaires" pour macOS.

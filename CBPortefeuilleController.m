@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 08/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBPortefeuilleController.h"
@@ -15,6 +15,7 @@
 #import "CBMouvement.h"
 #import "CBEcritureAutomatique.h"
 #import "CBVueImpressionPortefeuille.h"
+#import "CBGlobal.h"
 
 
 @implementation CBPortefeuilleController
@@ -24,7 +25,7 @@
 	if (self = [super initWithWindowNibName:@"Portefeuille"]) {
 		managedPortefeuille = [aPortefeuille retain];
 		ecrituresAutomatiques = [[NSMutableArray alloc] initWithCapacity:7];
-		dateCloture = [[NSCalendarDate calendarDate] retain];
+		dateCloture = [[NSDate date] retain];
 		[self setShouldCloseDocument:YES];
 		[self setShouldCascadeWindows:NO];
 		[self setWindowFrameAutosaveName:@"PortefeuilleWindow"];
@@ -42,7 +43,17 @@
 											selector:@selector(textDidChange:) 
 											name:@"NSControlTextDidChangeNotification" 
 											object:tableCategoriesMouvement];
-	
+
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											selector:@selector(tableViewSelectionDidChange:) 
+											name:@"NSTableViewSelectionDidChangeNotification" 
+											object:tableComptes];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											selector:@selector(tableViewSelectionDidChange:) 
+											name:@"NSTableViewSelectionDidChangeNotification" 
+											object:tableCategoriesMouvement];
+
 	NSSortDescriptor *comptesDescriptor = [[NSSortDescriptor alloc] initWithKey:@"banque" ascending:YES];
 	[comptesControler setSortDescriptors:[NSArray arrayWithObject:comptesDescriptor]];
 	[comptesDescriptor release];
@@ -85,12 +96,12 @@
 	return ecrituresAutomatiques;
 }
 
-- (NSCalendarDate *)dateCloture
+- (NSDate *)dateCloture
 {
 	return [[dateCloture copy] autorelease];
 }
 
-- (void)setDateCloture:(NSCalendarDate *)aDateCloture
+- (void)setDateCloture:(NSDate *)aDateCloture
 {
 	[dateCloture autorelease];
 	dateCloture = [aDateCloture copy];
@@ -141,7 +152,7 @@
 
 - (void)calculeEcrituresAutomatiques
 {
-	NSCalendarDate *dateJour = [NSCalendarDate calendarDate];
+	NSDate *dateJour = [NSDate date];
 	[ecrituresAutomatiques removeAllObjects];
 	
 	NSEnumerator *comptesEnumerateur;
@@ -157,9 +168,9 @@
 			[myMouvementPeriodique calculeDatesEcrituresEnSuspens:dateJour];
 			
 			NSEnumerator *datesEnumerateur;
-			NSCalendarDate *myDate;
+			NSDate *myDate;
 			datesEnumerateur = [[myMouvementPeriodique datesEcrituresEnSuspens] objectEnumerator];
-			while (myDate = (NSCalendarDate *)[datesEnumerateur nextObject]) {
+			while (myDate = (NSDate *)[datesEnumerateur nextObject]) {
 				
 				CBEcritureAutomatique *myEcritureAutomatique = [[CBEcritureAutomatique alloc] initWithCompte:myCompte 
 																								mouvementPeriodique:myMouvementPeriodique 
@@ -481,9 +492,8 @@
 	
 	
 	// On initialise les variables et on affiche la fenêtre de dialogue
-	NSCalendarDate *dateJour = [NSCalendarDate calendarDate];
-	[self setDateCloture:[NSCalendarDate dateWithYear:[dateJour yearOfCommonEra] month:1 day:1 
-												hour:0 minute:0 second:0 timeZone:[dateJour timeZone]]];
+	NSDate *dateJour = [NSDate date];
+	[self setDateCloture:CBFirstDayOfYear(dateJour)];
 	[self setSauvegardeCloture:YES];
 	
 	[fenetreCloturerExercice makeFirstResponder:[fenetreCloturerExercice initialFirstResponder]];
@@ -568,7 +578,7 @@
 			nomFichier = [NSString stringWithString:@"~"];
 			nomFichier = [nomFichier stringByAppendingPathComponent:@"Desktop"];
 			nomFichier = [nomFichier stringByAppendingPathComponent:[[[self document] displayName] stringByDeletingPathExtension]];
-			nomFichier = [nomFichier stringByAppendingString:[[self dateCloture] descriptionWithCalendarFormat:@"_%d_%m_%Y"]];
+			nomFichier = [nomFichier stringByAppendingString:CBStringFromDate([self dateCloture], @"_dd_MM_yyyy")];
 			nomFichier = [nomFichier stringByAppendingPathExtension:@"cba"];
 			nomFichier = [nomFichier stringByExpandingTildeInPath];
 			
@@ -693,6 +703,12 @@
 - (void)textDidChange:(NSNotification *)aNotification
 {
 	[[self document] updateChangeCount:NSChangeDone];
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+{
+	[[aNotification object] scrollRowToVisible:[[aNotification object] selectedRow]];
+
 }
 
 - (void)keyDown:(NSEvent *)theEvent

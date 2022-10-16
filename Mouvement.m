@@ -11,7 +11,7 @@
 
 @implementation Mouvement
 
-- (id)initWithDate:(NSCalendarDate *)date operation:(NSString *)operation libelle:(NSString *)libelle 
+- (id)initWithDate:(NSDate *)date operation:(NSString *)operation libelle:(NSString *)libelle 
                             montant:(NSDecimalNumber *)montant numeroCheque:(NSDecimalNumber *)numeroCheque
 {
     self = [super init];
@@ -84,7 +84,7 @@
     [super dealloc];
 }
 
-- (NSCalendarDate *)date
+- (NSDate *)date
 {
      return _date;
 }

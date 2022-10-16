@@ -3,10 +3,11 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 15/02/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBXMLUnarchiver.h"
+#import "CBGlobal.h"
 
 
 @implementation CBXMLUnarchiver
@@ -119,7 +120,7 @@
 		id anObject;
 		while (anObject = [enumerator nextObject]) {
 			
-			NSCalendarDate *myDate = [NSCalendarDate dateWithString:[anObject stringValue] calendarFormat:@"%Y-%m-%d"];
+			NSDate *myDate = CBDateFromString([anObject stringValue], @"yyyy-MM-dd");
 			
 			if (myDate != nil)
 				[myArray addObject:myDate];
@@ -188,7 +189,7 @@
 	}
 }
 
-- (NSCalendarDate *)decodeCalendarDateForKey:(NSString *)key
+- (NSDate *)decodeCalendarDateForKey:(NSString *)key
 {
 	NSArray *myChildElements = [currentElement elementsForName:key];
 
@@ -198,7 +199,7 @@
 	
 	NSString *myStringValue = [[myChildElements objectAtIndex:0] stringValue];
 	
-	return [NSCalendarDate dateWithString:myStringValue calendarFormat:@"%Y-%m-%d"];
+	return CBDateFromString(myStringValue, @"yyyy-MM-dd");
 }
 
 - (int)decodeIntForKey:(NSString *)key

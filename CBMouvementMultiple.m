@@ -3,10 +3,11 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 27/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBMouvementMultiple.h"
+#import "CBGlobal.h"
 
 
 @implementation CBMouvementMultiple
@@ -30,7 +31,7 @@
     return self;
 }
 
-- (void)setDate:(NSCalendarDate *)aDate
+- (void)setDate:(NSDate *)aDate
 {
 	[super setDate:aDate];
 	[self setDateUpdate:YES];
@@ -138,7 +139,7 @@
 {
 	BOOL isFirstMouvement = YES;
 	
-	NSCalendarDate *myCommonDate = nil;
+	NSDate *myCommonDate = nil;
 	BOOL isCommonDate = NO;
 	CBTypeMouvement myCommonOperation = CBTypeMouvementIndefini;
 	BOOL isCommonOperation = NO;
@@ -157,7 +158,7 @@
 			myCommonDate = [anObject date];
 			isCommonDate = YES;
 		}
-		else if ([myCommonDate dayOfCommonEra] != [[anObject date] dayOfCommonEra]) {
+		else if (CBDaysSinceReferenceDate(myCommonDate) != CBDaysSinceReferenceDate([anObject date])) {
 			isCommonDate = NO;
 		}
 

@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 01/02/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBEcritureAutomatique.h"
@@ -11,7 +11,7 @@
 
 @implementation CBEcritureAutomatique
 
-- (id)initWithCompte:(CBCompte *)aCompte mouvementPeriodique:(CBMouvementPeriodique *)aMouvementPeriodique dateEcriture:(NSCalendarDate *)aDateEcriture
+- (id)initWithCompte:(CBCompte *)aCompte mouvementPeriodique:(CBMouvementPeriodique *)aMouvementPeriodique dateEcriture:(NSDate *)aDateEcriture
 {
 	if (self = [super init]) {
 		compte = [aCompte retain];

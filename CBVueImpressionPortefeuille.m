@@ -3,9 +3,10 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 21/02/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
+#import "CBGlobal.h"
 #import "CBVueImpressionPortefeuille.h"
 #include <math.h>
 
@@ -233,7 +234,7 @@
 			// Dessin du bas de page
 			[NSBezierPath strokeLineFromPoint:NSMakePoint(NSMinX(pageRect) + theLeftMargin*0.9, NSMinY(pageRect) + theBottomMargin*0.9) toPoint:NSMakePoint(NSMaxX(pageRect) - theRightMargin*0.9, NSMinY(pageRect) + theBottomMargin*0.9)];
 			theFrameRect = NSMakeRect(NSMinX(pageRect) + theLeftMargin, NSMinY(pageRect) + theBottomMargin*0.9 - ornementsHeight, thePaperWidth - theLeftMargin - theRightMargin, ornementsHeight);
-			[self dessineString:[NSString stringWithFormat:NSLocalizedString(@"CBImpressionDate", nil), [[NSCalendarDate calendarDate] descriptionWithCalendarFormat:@"%d/%m/%Y"]] inRect:theFrameRect withAttributes:ornementsAttributes alignRight:NO];
+			[self dessineString:[NSString stringWithFormat:NSLocalizedString(@"CBImpressionDate", nil), CBStringFromDate([NSDate date], @"dd/MM/yyyy")] inRect:theFrameRect withAttributes:ornementsAttributes alignRight:NO];
 			[self dessineString:[NSString stringWithFormat:NSLocalizedString(@"CBImpressionNumeroPage", nil), indexPage, nbPages] inRect:theFrameRect withAttributes:ornementsAttributes alignRight:YES];
 			
 

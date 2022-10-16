@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 15/02/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -30,7 +30,7 @@
 - (NSString *)decodeStringForKey:(NSString *)key;
 - (NSDecimalNumber *)decodeDecimalNumberForKey:(NSString *)key;
 - (NSNumber *)decodeNumberForKey:(NSString *)key;
-- (NSCalendarDate *)decodeCalendarDateForKey:(NSString *)key;
+- (NSDate *)decodeCalendarDateForKey:(NSString *)key;
 - (int)decodeIntForKey:(NSString *)key;
 - (BOOL)decodeBoolForKey:(NSString *)key;
 

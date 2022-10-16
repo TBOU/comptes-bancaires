@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 04/02/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBChaineFormatter.h"

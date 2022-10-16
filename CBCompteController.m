@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 08/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBCompteController.h"
@@ -14,6 +14,7 @@
 #import "CBMouvementPeriodique.h"
 #import "CBStatistiqueCategorie.h"
 #import "CBVueImpressionCompte.h"
+#import "CBGlobal.h"
 
 
 @implementation CBCompteController
@@ -24,9 +25,8 @@
 		managedPortefeuille = [aPortefeuille retain];
 		managedCompte = [aCompte retain];
 
-		NSCalendarDate *dateJour = [NSCalendarDate calendarDate];
-		[self setDateDebutStatistiques:[NSCalendarDate dateWithYear:[dateJour yearOfCommonEra] month:1 day:1 
-																hour:0 minute:0 second:0 timeZone:[dateJour timeZone]]];
+		NSDate *dateJour = [NSDate date];
+		[self setDateDebutStatistiques:CBFirstDayOfYear(dateJour)];
 		[self setDateFinStatistiques:dateJour];
 		
 		[self setImpressionTousMouvements:YES];
@@ -50,6 +50,16 @@
 											name:@"NSControlTextDidChangeNotification" 
 											object:tableLibellesPredefinis];
 
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											selector:@selector(tableViewSelectionDidChange:) 
+											name:@"NSTableViewSelectionDidChangeNotification" 
+											object:tableMouvements];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											selector:@selector(tableViewSelectionDidChange:) 
+											name:@"NSTableViewSelectionDidChangeNotification" 
+											object:tableLibellesPredefinis];
+	
 	[[NSNotificationCenter defaultCenter] addObserver:self 
 											selector:@selector(tableViewSelectionDidChange:) 
 											name:@"NSTableViewSelectionDidChangeNotification" 
@@ -90,34 +100,34 @@
 	return managedCompte;
 }
 
-- (NSCalendarDate *)dateDebutStatistiques
+- (NSDate *)dateDebutStatistiques
 {
 	return [[dateDebutStatistiques copy] autorelease];
 }
 
-- (void)setDateDebutStatistiques:(NSCalendarDate *)aDateDebutStatistiques
+- (void)setDateDebutStatistiques:(NSDate *)aDateDebutStatistiques
 {
 	[dateDebutStatistiques autorelease];
 	dateDebutStatistiques = [aDateDebutStatistiques copy];
 
 	// On s'assure que dateDebutStatistiques <= dateFinStatistiques
-	if ([dateDebutStatistiques dayOfCommonEra] > [dateFinStatistiques dayOfCommonEra]) {
+	if (CBDaysSinceReferenceDate(dateDebutStatistiques) > CBDaysSinceReferenceDate(dateFinStatistiques)) {
 		[self setDateFinStatistiques:dateDebutStatistiques];
 	}
 }
 
-- (NSCalendarDate *)dateFinStatistiques
+- (NSDate *)dateFinStatistiques
 {
 	return [[dateFinStatistiques copy] autorelease];
 }
 
-- (void)setDateFinStatistiques:(NSCalendarDate *)aDateFinStatistiques
+- (void)setDateFinStatistiques:(NSDate *)aDateFinStatistiques
 {
 	[dateFinStatistiques autorelease];
 	dateFinStatistiques = [aDateFinStatistiques copy];
 
 	// On s'assure que dateDebutStatistiques <= dateFinStatistiques
-	if ([dateDebutStatistiques dayOfCommonEra] > [dateFinStatistiques dayOfCommonEra]) {
+	if (CBDaysSinceReferenceDate(dateDebutStatistiques) > CBDaysSinceReferenceDate(dateFinStatistiques)) {
 		[self setDateDebutStatistiques:dateFinStatistiques];
 	}
 }
@@ -132,34 +142,34 @@
 	impressionTousMouvements = anImpressionTousMouvements;
 }
 
-- (NSCalendarDate *)dateDebutImpression
+- (NSDate *)dateDebutImpression
 {
 	return [[dateDebutImpression copy] autorelease];
 }
 
-- (void)setDateDebutImpression:(NSCalendarDate *)aDateDebutImpression
+- (void)setDateDebutImpression:(NSDate *)aDateDebutImpression
 {
 	[dateDebutImpression autorelease];
 	dateDebutImpression = [aDateDebutImpression copy];
 
 	// On s'assure que dateDebutImpression <= dateFinImpression
-	if ([dateDebutImpression dayOfCommonEra] > [dateFinImpression dayOfCommonEra]) {
+	if (CBDaysSinceReferenceDate(dateDebutImpression) > CBDaysSinceReferenceDate(dateFinImpression)) {
 		[self setDateFinImpression:dateDebutImpression];
 	}
 }
 
-- (NSCalendarDate *)dateFinImpression
+- (NSDate *)dateFinImpression
 {
 	return [[dateFinImpression copy] autorelease];
 }
 
-- (void)setDateFinImpression:(NSCalendarDate *)aDateFinImpression
+- (void)setDateFinImpression:(NSDate *)aDateFinImpression
 {
 	[dateFinImpression autorelease];
 	dateFinImpression = [aDateFinImpression copy];
 
 	// On s'assure que dateDebutImpression <= dateFinImpression
-	if ([dateDebutImpression dayOfCommonEra] > [dateFinImpression dayOfCommonEra]) {
+	if (CBDaysSinceReferenceDate(dateDebutImpression) > CBDaysSinceReferenceDate(dateFinImpression)) {
 		[self setDateDebutImpression:dateFinImpression];
 	}
 }
@@ -595,7 +605,7 @@
 	
 	[[tempStatistiques statistiquesCategories] removeAllObjects];
 	
-	double nombreMoisPeriode = ([dateFinStatistiques dayOfCommonEra] - [dateDebutStatistiques dayOfCommonEra] + 1) * 12 / 365.25;
+	double nombreMoisPeriode = (CBDaysSinceReferenceDate(dateFinStatistiques) - CBDaysSinceReferenceDate(dateDebutStatistiques) + 1) * 12 / 365.25;
 	nombreMoisPeriodeDecimal = [[NSNumber numberWithDouble:nombreMoisPeriode] decimalValue];
 	
 	double intervalleMinMoyenne = [[[NSUserDefaults standardUserDefaults] objectForKey:CBIntervalleMinMoyenneDefaultKey] doubleValue];
@@ -613,8 +623,8 @@
 	CBMouvement *anObject;
 	while (anObject = (CBMouvement *)[enumerator nextObject]) {
 		
-		if ([[anObject date] dayOfCommonEra] >= [dateDebutStatistiques dayOfCommonEra] 
-		 && [[anObject date] dayOfCommonEra] <= [dateFinStatistiques dayOfCommonEra]) {
+		if (CBDaysSinceReferenceDate([anObject date]) >= CBDaysSinceReferenceDate(dateDebutStatistiques) 
+		 && CBDaysSinceReferenceDate([anObject date]) <= CBDaysSinceReferenceDate(dateFinStatistiques)) {
 
 			montant = [[anObject montant] decimalValue];
 			
@@ -857,14 +867,18 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-	NSArray *selection = [mouvementsPeriodiquesControler selectedObjects];
-	if ([selection count] == 1) {
-		[libellesPredefinisControler setOperation:[(CBMouvementPeriodique *)[selection objectAtIndex:0] operation]];
+	[[aNotification object] scrollRowToVisible:[[aNotification object] selectedRow]];
+
+	if ([aNotification object] == tableMouvementsPeriodiques) {
+		NSArray *selection = [mouvementsPeriodiquesControler selectedObjects];
+		if ([selection count] == 1) {
+			[libellesPredefinisControler setOperation:[(CBMouvementPeriodique *)[selection objectAtIndex:0] operation]];
+		}
+		else {
+			[libellesPredefinisControler setOperation:CBTypeMouvementPrelevement];
+		}
+		[libellesPredefinisControler rearrangeObjects];
 	}
-	else {
-		[libellesPredefinisControler setOperation:CBTypeMouvementPrelevement];
-	}
-	[libellesPredefinisControler rearrangeObjects];
 }
 
 - (IBAction)pointageDidChange:(id)sender
@@ -906,8 +920,8 @@
 	while (anObject = (CBMouvement *)[enumerator nextObject]) {
 		
 		if ( impressionTousMouvements || 
-			([[anObject date] dayOfCommonEra] >= [dateDebutImpression dayOfCommonEra] 
-		  && [[anObject date] dayOfCommonEra] <= [dateFinImpression dayOfCommonEra]) ) {
+			(CBDaysSinceReferenceDate([anObject date]) >= CBDaysSinceReferenceDate(dateDebutImpression) 
+		  && CBDaysSinceReferenceDate([anObject date]) <= CBDaysSinceReferenceDate(dateFinImpression)) ) {
 			
 			[mouvementsArray addObject:anObject];
 			

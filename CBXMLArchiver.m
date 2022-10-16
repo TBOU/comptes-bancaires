@@ -3,10 +3,11 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 15/02/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBXMLArchiver.h"
+#import "CBGlobal.h"
 
 
 @implementation CBXMLArchiver
@@ -95,7 +96,7 @@
 	CBXMLArchiver *myDerivedArchiver = [self derivedArchiverWithElement:myElement];
 
 	NSEnumerator *enumerator = [objv objectEnumerator];
-	NSCalendarDate *anItem;
+	NSDate *anItem;
 	while (anItem = [enumerator nextObject]) {
 		[myDerivedArchiver encodeCalendarDate:anItem forKey:keyItem];
 	}
@@ -145,7 +146,7 @@
 	[myElement release];
 }
 
-- (void)encodeCalendarDate:(NSCalendarDate *)objv forKey:(NSString *)key
+- (void)encodeCalendarDate:(NSDate *)objv forKey:(NSString *)key
 {
 	NSString *myValue;
 	NSXMLElement *myElement;
@@ -153,7 +154,7 @@
 	if (objv == nil)
 		return;
 	
-	myValue = [NSString stringWithString:[objv  descriptionWithCalendarFormat:@"%Y-%m-%d"]];
+	myValue = CBStringFromDate(objv, @"yyyy-MM-dd");
 	myElement = [[NSXMLElement alloc] initWithName:key stringValue:myValue];
 	[currentElement addChild:myElement];
 	[myElement release];

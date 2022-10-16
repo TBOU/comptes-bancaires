@@ -12,7 +12,7 @@
 @interface Mouvement : NSObject <NSCoding>
 {
 @private
-    NSCalendarDate *_date;
+    NSDate *_date;
     NSString *_operation;
     NSString *_libelle;
     NSDecimalNumber *_debit;
@@ -23,9 +23,9 @@
 
 }
 
-- (id)initWithDate:(NSCalendarDate *)date operation:(NSString *)operation libelle:(NSString *)libelle 
+- (id)initWithDate:(NSDate *)date operation:(NSString *)operation libelle:(NSString *)libelle 
                                 montant:(NSDecimalNumber *)montant numeroCheque:(NSDecimalNumber *)numeroCheque;
-- (NSCalendarDate *)date;
+- (NSDate *)date;
 - (NSString *)operation;
 - (NSString *)libelle;
 - (NSDecimalNumber *)debit;

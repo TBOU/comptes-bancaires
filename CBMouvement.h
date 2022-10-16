@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 08/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -18,7 +18,7 @@
 
 
 @interface CBMouvement : NSObject <NSCoding, CBXMLCoding> {
-	NSCalendarDate *date;
+	NSDate *date;
 	CBTypeMouvement operation;
 	NSString *libelle;
 	CBCategorieMouvement *categorie;
@@ -31,8 +31,8 @@
 
 - (id)initAvecAncienMouvement:(Mouvement *)ancienMouvement;
 
-- (NSCalendarDate *)date;
-- (void)setDate:(NSCalendarDate *)aDate;
+- (NSDate *)date;
+- (void)setDate:(NSDate *)aDate;
 
 - (CBTypeMouvement)operation;
 - (void)setOperation:(CBTypeMouvement)anOperation;

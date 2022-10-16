@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 27/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -13,28 +13,28 @@
 
 @interface CBMouvementPeriodique : CBMouvement {
 	NSString *titre;
-	NSCalendarDate *dateDebut;
+	NSDate *dateDebut;
 	BOOL dateFinPresente;
-	NSCalendarDate *dateFin;
+	NSDate *dateFin;
 	NSNumber *valeurPeriodicite;
 	CBUnitePeriodicite unitePeriodicite;
 	NSNumber *joursAnticipation;
 	BOOL anticipationDebutMois;
-	NSCalendarDate *dateProchaineEcriture;
+	NSDate *dateProchaineEcriture;
 	NSMutableArray *datesEcrituresEnSuspens;
 }
 
 - (NSString *)titre;
 - (void)setTitre:(NSString *)aTitre;
 
-- (NSCalendarDate *)dateDebut;
-- (void)setDateDebut:(NSCalendarDate *)aDateDebut;
+- (NSDate *)dateDebut;
+- (void)setDateDebut:(NSDate *)aDateDebut;
 
 - (BOOL)dateFinPresente;
 - (void)setDateFinPresente:(BOOL)aDateFinPresente;
 
-- (NSCalendarDate *)dateFin;
-- (void)setDateFin:(NSCalendarDate *)aDateFin;
+- (NSDate *)dateFin;
+- (void)setDateFin:(NSDate *)aDateFin;
 
 - (NSNumber *)valeurPeriodicite;
 - (void)setValeurPeriodicite:(NSNumber *)aValeurPeriodicite;
@@ -48,12 +48,12 @@
 - (BOOL)anticipationDebutMois;
 - (void)setAnticipationDebutMois:(BOOL)anAnticipationDebutMois;
 
-- (NSCalendarDate *)dateProchaineEcriture;
-- (void)setDateProchaineEcriture:(NSCalendarDate *)aDateProchaineEcriture;
+- (NSDate *)dateProchaineEcriture;
+- (void)setDateProchaineEcriture:(NSDate *)aDateProchaineEcriture;
 
 - (NSMutableArray *)datesEcrituresEnSuspens;
 - (int)nombreEcrituresEnSuspens;
 
-- (void)calculeDatesEcrituresEnSuspens:(NSCalendarDate *)dateJour;
+- (void)calculeDatesEcrituresEnSuspens:(NSDate *)dateJour;
 
 @end

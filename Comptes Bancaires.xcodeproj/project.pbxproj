@@ -14,10 +14,6 @@
 		E40A5EC7098A90D500EC9B5C /* CBMouvementMultiple.m in Sources */ = {isa = PBXBuildFile; fileRef = E40A5EC6098A90D500EC9B5C /* CBMouvementMultiple.m */; };
 		E41A8F2A099130CB00CBFB98 /* CBEcritureAutomatique.m in Sources */ = {isa = PBXBuildFile; fileRef = E41A8F29099130CB00CBFB98 /* CBEcritureAutomatique.m */; };
 		E41DF6B909A7A483008A1C37 /* CBHelp in Resources */ = {isa = PBXBuildFile; fileRef = E41DF68A09A7A483008A1C37 /* CBHelp */; };
-		E4226C180995481D00FDAD8B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E4226C160995481D00FDAD8B /* MainMenu.nib */; };
-		E4226C1B0995484000FDAD8B /* Pref.nib in Resources */ = {isa = PBXBuildFile; fileRef = E4226C190995484000FDAD8B /* Pref.nib */; };
-		E4226C1E0995485600FDAD8B /* Compte.nib in Resources */ = {isa = PBXBuildFile; fileRef = E4226C1C0995485600FDAD8B /* Compte.nib */; };
-		E4226C210995487100FDAD8B /* Portefeuille.nib in Resources */ = {isa = PBXBuildFile; fileRef = E4226C1F0995487100FDAD8B /* Portefeuille.nib */; };
 		E42F8AE009717B45000C8BD4 /* Compte.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8AD909717B45000C8BD4 /* Compte.m */; };
 		E42F8AE109717B45000C8BD4 /* ListeLibelles.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADB09717B45000C8BD4 /* ListeLibelles.m */; };
 		E42F8AE209717B45000C8BD4 /* Mouvement.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADD09717B45000C8BD4 /* Mouvement.m */; };
@@ -34,6 +30,10 @@
 		E47A8710097162DE0067ACE0 /* CBPrefController.m in Sources */ = {isa = PBXBuildFile; fileRef = E47A870F097162DE0067ACE0 /* CBPrefController.m */; };
 		E490F27809ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m in Sources */ = {isa = PBXBuildFile; fileRef = E490F27609ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m */; };
 		E490F27E09ABA8B20098E7B7 /* CBVueImpressionCompte.m in Sources */ = {isa = PBXBuildFile; fileRef = E490F27C09ABA8B20098E7B7 /* CBVueImpressionCompte.m */; };
+		E493795E0CE6176E00231427 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E493795C0CE6176E00231427 /* MainMenu.xib */; };
+		E49379610CE6178600231427 /* Pref.xib in Resources */ = {isa = PBXBuildFile; fileRef = E493795F0CE6178600231427 /* Pref.xib */; };
+		E49379640CE6179700231427 /* Portefeuille.xib in Resources */ = {isa = PBXBuildFile; fileRef = E49379620CE6179700231427 /* Portefeuille.xib */; };
+		E49379670CE617A900231427 /* Compte.xib in Resources */ = {isa = PBXBuildFile; fileRef = E49379650CE617A900231427 /* Compte.xib */; };
 		E4A10F370975496800FD4446 /* CBCategorieMouvement.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A10F360975496800FD4446 /* CBCategorieMouvement.m */; };
 		E4A10F49097549A100FD4446 /* CBLibellePredefini.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A10F48097549A100FD4446 /* CBLibellePredefini.m */; };
 		E4B3BD5B0995507C000563B6 /* CBStatistiqueCategorie.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B3BD5A0995507C000563B6 /* CBStatistiqueCategorie.m */; };
@@ -54,21 +54,6 @@
 		E4F4CED8097155C800BADDA1 /* DocCB.icns in Resources */ = {isa = PBXBuildFile; fileRef = E4F4CED6097155C800BADDA1 /* DocCB.icns */; };
 		E4F9849F09858C2C00A83FCE /* CBMouvementsArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F9849E09858C2C00A83FCE /* CBMouvementsArrayController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildStyle section */
-		4A9504D0FFE6A4CB11CA0CBA /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		4A9504D1FFE6A4CB11CA0CBA /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-			};
-			name = Release;
-		};
-/* End PBXBuildStyle section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E4BFF96809A5EB6600C59BC4 /* CopyFiles */ = {
@@ -101,10 +86,6 @@
 		E41A8F28099130CB00CBFB98 /* CBEcritureAutomatique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBEcritureAutomatique.h; sourceTree = "<group>"; };
 		E41A8F29099130CB00CBFB98 /* CBEcritureAutomatique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBEcritureAutomatique.m; sourceTree = "<group>"; };
 		E41DF68B09A7A483008A1C37 /* French */ = {isa = PBXFileReference; lastKnownFileType = folder; name = French; path = French.lproj/CBHelp; sourceTree = "<group>"; };
-		E4226C170995481D00FDAD8B /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		E4226C1A0995484000FDAD8B /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/Pref.nib; sourceTree = "<group>"; };
-		E4226C1D0995485600FDAD8B /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/Compte.nib; sourceTree = "<group>"; };
-		E4226C200995487100FDAD8B /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/Portefeuille.nib; sourceTree = "<group>"; };
 		E42F8AD809717B45000C8BD4 /* Compte.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Compte.h; sourceTree = "<group>"; };
 		E42F8AD909717B45000C8BD4 /* Compte.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Compte.m; sourceTree = "<group>"; };
 		E42F8ADA09717B45000C8BD4 /* ListeLibelles.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ListeLibelles.h; sourceTree = "<group>"; };
@@ -135,6 +116,10 @@
 		E490F27609ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVueImpressionPortefeuille.m; sourceTree = "<group>"; };
 		E490F27B09ABA8B20098E7B7 /* CBVueImpressionCompte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVueImpressionCompte.h; sourceTree = "<group>"; };
 		E490F27C09ABA8B20098E7B7 /* CBVueImpressionCompte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVueImpressionCompte.m; sourceTree = "<group>"; };
+		E493795D0CE6176E00231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E49379600CE6178600231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Pref.xib; sourceTree = "<group>"; };
+		E49379630CE6179700231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Portefeuille.xib; sourceTree = "<group>"; };
+		E49379660CE617A900231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Compte.xib; sourceTree = "<group>"; };
 		E4A10F350975496800FD4446 /* CBCategorieMouvement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCategorieMouvement.h; sourceTree = "<group>"; };
 		E4A10F360975496800FD4446 /* CBCategorieMouvement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCategorieMouvement.m; sourceTree = "<group>"; };
 		E4A10F47097549A100FD4446 /* CBLibellePredefini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLibellePredefini.h; sourceTree = "<group>"; };
@@ -251,10 +236,10 @@
 			children = (
 				E41DF68A09A7A483008A1C37 /* CBHelp */,
 				E46A9C870995491800F38C30 /* Credits.rtf */,
-				E4226C160995481D00FDAD8B /* MainMenu.nib */,
-				E4226C190995484000FDAD8B /* Pref.nib */,
-				E4226C1F0995487100FDAD8B /* Portefeuille.nib */,
-				E4226C1C0995485600FDAD8B /* Compte.nib */,
+				E493795C0CE6176E00231427 /* MainMenu.xib */,
+				E493795F0CE6178600231427 /* Pref.xib */,
+				E49379620CE6179700231427 /* Portefeuille.xib */,
+				E49379650CE617A900231427 /* Compte.xib */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
 				E46A9CAD0995499100F38C30 /* InfoPlist.strings */,
 				E4E69E7A0988179300128D66 /* UserDefaults.plist */,
@@ -393,8 +378,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-			};
 			dependencies = (
 			);
 			name = "Comptes Bancaires";
@@ -409,15 +392,11 @@
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "Comptes Bancaires" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				4A9504D0FFE6A4CB11CA0CBA /* Debug */,
-				4A9504D1FFE6A4CB11CA0CBA /* Release */,
-			);
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Comptes Bancaires */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8D15AC270486D014006FF6A4 /* Comptes Bancaires */,
 			);
@@ -433,14 +412,14 @@
 				E4F4CED8097155C800BADDA1 /* DocCB.icns in Resources */,
 				E4E69E7B0988179300128D66 /* UserDefaults.plist in Resources */,
 				E4C7226C0993979800334B2C /* DocCBXML.icns in Resources */,
-				E4226C180995481D00FDAD8B /* MainMenu.nib in Resources */,
-				E4226C1B0995484000FDAD8B /* Pref.nib in Resources */,
-				E4226C1E0995485600FDAD8B /* Compte.nib in Resources */,
-				E4226C210995487100FDAD8B /* Portefeuille.nib in Resources */,
 				E46A9C890995491800F38C30 /* Credits.rtf in Resources */,
 				E46A9CAF0995499100F38C30 /* InfoPlist.strings in Resources */,
 				E46A9CB20995499F00F38C30 /* Localizable.strings in Resources */,
 				E41DF6B909A7A483008A1C37 /* CBHelp in Resources */,
+				E493795E0CE6176E00231427 /* MainMenu.xib in Resources */,
+				E49379610CE6178600231427 /* Pref.xib in Resources */,
+				E49379640CE6179700231427 /* Portefeuille.xib in Resources */,
+				E49379670CE617A900231427 /* Compte.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,38 +476,6 @@
 			name = CBHelp;
 			sourceTree = "<group>";
 		};
-		E4226C160995481D00FDAD8B /* MainMenu.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4226C170995481D00FDAD8B /* French */,
-			);
-			name = MainMenu.nib;
-			sourceTree = "<group>";
-		};
-		E4226C190995484000FDAD8B /* Pref.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4226C1A0995484000FDAD8B /* French */,
-			);
-			name = Pref.nib;
-			sourceTree = "<group>";
-		};
-		E4226C1C0995485600FDAD8B /* Compte.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4226C1D0995485600FDAD8B /* French */,
-			);
-			name = Compte.nib;
-			sourceTree = "<group>";
-		};
-		E4226C1F0995487100FDAD8B /* Portefeuille.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4226C200995487100FDAD8B /* French */,
-			);
-			name = Portefeuille.nib;
-			sourceTree = "<group>";
-		};
 		E46A9C870995491800F38C30 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -551,6 +498,38 @@
 				E46A9CB10995499F00F38C30 /* French */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E493795C0CE6176E00231427 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E493795D0CE6176E00231427 /* French */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E493795F0CE6178600231427 /* Pref.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E49379600CE6178600231427 /* French */,
+			);
+			name = Pref.xib;
+			sourceTree = "<group>";
+		};
+		E49379620CE6179700231427 /* Portefeuille.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E49379630CE6179700231427 /* French */,
+			);
+			name = Portefeuille.xib;
+			sourceTree = "<group>";
+		};
+		E49379650CE617A900231427 /* Compte.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E49379660CE617A900231427 /* French */,
+			);
+			name = Compte.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

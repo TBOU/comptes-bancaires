@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 08/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBMouvement.h"
@@ -23,7 +23,7 @@
 - (id)init
 {
     if (self = [super init]) {
-		[self setDate:[NSCalendarDate calendarDate]];
+		[self setDate:[NSDate date]];
 		[self setOperation:CBTypeMouvementIndefini];
 		[self setLibelle:NSLocalizedString(@"CBDefautLibelleMouvement", nil)];
 		[self setCategorie:nil];
@@ -168,12 +168,12 @@
 	[super dealloc];
 }
 
-- (NSCalendarDate *)date
+- (NSDate *)date
 {
 	return [[date copy] autorelease];
 }
 
-- (void)setDate:(NSCalendarDate *)aDate
+- (void)setDate:(NSDate *)aDate
 {
 	[date autorelease];
 	date = [aDate copy];

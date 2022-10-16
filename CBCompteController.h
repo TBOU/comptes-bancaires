@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 08/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -20,12 +20,12 @@
 	CBPortefeuille *managedPortefeuille;
 	CBCompte *managedCompte;
 	
-	NSCalendarDate *dateDebutStatistiques;
-	NSCalendarDate *dateFinStatistiques;
+	NSDate *dateDebutStatistiques;
+	NSDate *dateFinStatistiques;
 
 	BOOL impressionTousMouvements;
-	NSCalendarDate *dateDebutImpression;
-	NSCalendarDate *dateFinImpression;
+	NSDate *dateDebutImpression;
+	NSDate *dateFinImpression;
 	
 	CBCompte *tempCompte;
 	CBMouvement *tempMouvement;
@@ -108,20 +108,20 @@
 - (CBPortefeuille *)managedPortefeuille;
 - (CBCompte *)managedCompte;
 
-- (NSCalendarDate *)dateDebutStatistiques;
-- (void)setDateDebutStatistiques:(NSCalendarDate *)aDateDebutStatistiques;
+- (NSDate *)dateDebutStatistiques;
+- (void)setDateDebutStatistiques:(NSDate *)aDateDebutStatistiques;
 
-- (NSCalendarDate *)dateFinStatistiques;
-- (void)setDateFinStatistiques:(NSCalendarDate *)aDateFinStatistiques;
+- (NSDate *)dateFinStatistiques;
+- (void)setDateFinStatistiques:(NSDate *)aDateFinStatistiques;
 
 - (BOOL)impressionTousMouvements;
 - (void)setImpressionTousMouvements:(BOOL)anImpressionTousMouvements;
 
-- (NSCalendarDate *)dateDebutImpression;
-- (void)setDateDebutImpression:(NSCalendarDate *)aDateDebutImpression;
+- (NSDate *)dateDebutImpression;
+- (void)setDateDebutImpression:(NSDate *)aDateDebutImpression;
 
-- (NSCalendarDate *)dateFinImpression;
-- (void)setDateFinImpression:(NSCalendarDate *)aDateFinImpression;
+- (NSDate *)dateFinImpression;
+- (void)setDateFinImpression:(NSDate *)aDateFinImpression;
 
 - (void)appliqueFormateurs;
 

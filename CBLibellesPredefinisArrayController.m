@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 24/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBLibellesPredefinisArrayController.h"
@@ -31,6 +31,10 @@
 {
 	[self setOperation:[[sender selectedItem]tag]];
 	[self rearrangeObjects];
+
+	if ([[self arrangedObjects] count] > 0)
+		[self setSelectionIndex:0];
+
 }
 
 - (NSArray *)arrangeObjects:(NSArray *)objects

@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 08/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBCompte.h"
@@ -12,6 +12,7 @@
 #import "CBLibellePredefini.h"
 #import "ListeLibelles.h"
 #import "CBMouvementPeriodique.h"
+#import "CBGlobal.h"
 
 
 @implementation CBCompte
@@ -409,7 +410,7 @@
 	[self setSoldeCBEnCours:[NSDecimalNumber decimalNumberWithDecimal:soldeCBEnCoursDecimal]];
 }
 
-- (void)clotureExercicePourDate:(NSCalendarDate *)dateCloture
+- (void)clotureExercicePourDate:(NSDate *)dateCloture
 {
 	NSDecimal soldeInitialDecimal;
 	NSDecimal montantAvecSigne;
@@ -423,7 +424,7 @@
 	// On parcourt les mouvements
 	while (anObject = (CBMouvement *)[enumerator nextObject]) {
 		
-		if ([anObject pointage] && [[anObject date] dayOfCommonEra] < [dateCloture dayOfCommonEra]) {
+		if ([anObject pointage] && CBDaysSinceReferenceDate([anObject date]) < CBDaysSinceReferenceDate(dateCloture)) {
 			
 			if (CBSignePourTypeMouvement([anObject operation]) == CBSigneMouvementDebit)
 				montantAvecSigne = [[[NSDecimalNumber zero] decimalNumberBySubtracting:[anObject montant]] decimalValue];

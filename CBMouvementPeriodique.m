@@ -3,10 +3,11 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 27/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import "CBMouvementPeriodique.h"
+#import "CBGlobal.h"
 
 
 @implementation CBMouvementPeriodique
@@ -22,7 +23,7 @@
 		[self setOperation:CBTypeMouvementPrelevement];
 		
 		[self setTitre:NSLocalizedString(@"CBDefautTitreMouvementPeriodique", nil)];
-		[self setDateDebut:[NSCalendarDate calendarDate]];
+		[self setDateDebut:[NSDate date]];
 		[self setDateFinPresente:NO];
 		[self setDateFin:nil];
 		[self setValeurPeriodicite:[NSNumber numberWithLongLong:1]];
@@ -155,18 +156,18 @@
 	titre = [aTitre copy];
 }
 
-- (NSCalendarDate *)dateDebut
+- (NSDate *)dateDebut
 {
 	return [[dateDebut copy] autorelease];
 }
 
-- (void)setDateDebut:(NSCalendarDate *)aDateDebut
+- (void)setDateDebut:(NSDate *)aDateDebut
 {
 	[dateDebut autorelease];
 	dateDebut = [aDateDebut copy];
 
 	// On s'assure que dateDebut <= dateFin
-	if (dateFin != nil && [dateDebut dayOfCommonEra] > [dateFin dayOfCommonEra]) {
+	if (dateFin != nil && CBDaysSinceReferenceDate(dateDebut) > CBDaysSinceReferenceDate(dateFin)) {
 		[self setDateFin:dateDebut];
 	}
 	
@@ -200,23 +201,23 @@
 	dateFinPresente = aDateFinPresente;
 }
 
-- (NSCalendarDate *)dateFin
+- (NSDate *)dateFin
 {
 	return [[dateFin copy] autorelease];
 }
 
-- (void)setDateFin:(NSCalendarDate *)aDateFin
+- (void)setDateFin:(NSDate *)aDateFin
 {
 	[dateFin autorelease];
 	dateFin = [aDateFin copy];
 
 	// On s'assure que dateProchaineEcriture <= dateFin
-	if (dateFin != nil && dateProchaineEcriture != nil && [dateProchaineEcriture dayOfCommonEra] > [dateFin dayOfCommonEra]) {
+	if (dateFin != nil && dateProchaineEcriture != nil && CBDaysSinceReferenceDate(dateProchaineEcriture) > CBDaysSinceReferenceDate(dateFin)) {
 		[self setDateProchaineEcriture:nil];
 	}
 	
 	// On s'assure que dateDebut <= dateFin
-	if (dateFin != nil && [dateDebut dayOfCommonEra] > [dateFin dayOfCommonEra]) {
+	if (dateFin != nil && CBDaysSinceReferenceDate(dateDebut) > CBDaysSinceReferenceDate(dateFin)) {
 		[self setDateDebut:dateFin];
 	}
 }
@@ -263,12 +264,12 @@
 	anticipationDebutMois = anAnticipationDebutMois;
 }
 
-- (NSCalendarDate *)dateProchaineEcriture
+- (NSDate *)dateProchaineEcriture
 {
 	return [[dateProchaineEcriture copy] autorelease];
 }
 
-- (void)setDateProchaineEcriture:(NSCalendarDate *)aDateProchaineEcriture
+- (void)setDateProchaineEcriture:(NSDate *)aDateProchaineEcriture
 {
 	[dateProchaineEcriture autorelease];
 	dateProchaineEcriture = [aDateProchaineEcriture copy];
@@ -284,23 +285,21 @@
 	return [datesEcrituresEnSuspens count];
 }
 
-- (void)calculeDatesEcrituresEnSuspens:(NSCalendarDate *)dateJour
+- (void)calculeDatesEcrituresEnSuspens:(NSDate *)dateJour
 {
 	if (dateProchaineEcriture != nil) {
 		
 		// Calcul de la date de référence
-		NSCalendarDate *dateReference;
+		NSDate *dateReference;
 		if (anticipationDebutMois) {
-			dateReference = [[NSCalendarDate dateWithYear:[dateJour yearOfCommonEra] month:[dateJour  monthOfYear] day:1 
-																		hour:0 minute:0 second:0 timeZone:[dateJour timeZone]] 
-									dateByAddingYears:0 months:1 days:-1 hours:0 minutes:0 seconds:0];
+			dateReference = CBDateByAddingYearsMonthsDays(CBFirstDayOfMonth(dateJour), 0, 1, -1);
 		}
 		else {
-			dateReference = [dateJour dateByAddingYears:0 months:0 days:[joursAnticipation intValue] hours:0 minutes:0 seconds:0];
+			dateReference = CBDateByAddingYearsMonthsDays(dateJour, 0, 0, [joursAnticipation intValue]);
 		}
 		
 		// On génère toutes les dates d'écritures ne dépassant pas la date de référence
-		while (dateProchaineEcriture != nil && [dateProchaineEcriture dayOfCommonEra] <= [dateReference dayOfCommonEra]) {
+		while (dateProchaineEcriture != nil && CBDaysSinceReferenceDate(dateProchaineEcriture) <= CBDaysSinceReferenceDate(dateReference)) {
 			
 			[datesEcrituresEnSuspens addObject:[self dateProchaineEcriture]];
 			
@@ -310,24 +309,21 @@
 			}
 			else {
 				
-				NSCalendarDate *nouvelleDateProchaineEcriture;
+				NSDate *nouvelleDateProchaineEcriture;
 				
 				if (unitePeriodicite == CBUnitePeriodiciteAnnee) {
-					nouvelleDateProchaineEcriture = [dateProchaineEcriture dateByAddingYears:[valeurPeriodicite intValue] months:0 days:0 
-																				hours:0 minutes:0 seconds:0];
+					nouvelleDateProchaineEcriture = CBDateByAddingYearsMonthsDays(dateProchaineEcriture, [valeurPeriodicite intValue], 0, 0);
 				}
 				else if (unitePeriodicite == CBUnitePeriodiciteJour) {
-					nouvelleDateProchaineEcriture = [dateProchaineEcriture dateByAddingYears:0 months:0 days:[valeurPeriodicite intValue] 
-																				hours:0 minutes:0 seconds:0];
+					nouvelleDateProchaineEcriture = CBDateByAddingYearsMonthsDays(dateProchaineEcriture, 0, 0, [valeurPeriodicite intValue]);
 				}
 				else {
-					nouvelleDateProchaineEcriture = [dateProchaineEcriture dateByAddingYears:0 months:[valeurPeriodicite intValue] days:0 
-																				hours:0 minutes:0 seconds:0];
+					nouvelleDateProchaineEcriture = CBDateByAddingYearsMonthsDays(dateProchaineEcriture, 0, [valeurPeriodicite intValue], 0);
 				}
 				
 				[self setDateProchaineEcriture:nouvelleDateProchaineEcriture];
 				
-				if (dateFin != nil && [dateProchaineEcriture dayOfCommonEra] > [dateFin dayOfCommonEra]) {
+				if (dateFin != nil && CBDaysSinceReferenceDate(dateProchaineEcriture) > CBDaysSinceReferenceDate(dateFin)) {
 					[self setDateProchaineEcriture:nil];
 				}
 				

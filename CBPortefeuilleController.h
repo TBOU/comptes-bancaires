@@ -3,7 +3,7 @@
 //  Comptes Bancaires
 //
 //  Created by Thierry Boudière on 08/01/06.
-//  Copyright 2006 Thierry Boudière. All rights reserved.
+//  Copyright 2007 Thierry Boudière. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -19,7 +19,7 @@
 	CBPortefeuille *managedPortefeuille;
 	NSMutableArray *ecrituresAutomatiques;
 	
-	NSCalendarDate *dateCloture;
+	NSDate *dateCloture;
 	BOOL sauvegardeCloture;
 
 	CBPortefeuille *tempPortefeuille;
@@ -81,8 +81,8 @@
 
 - (NSMutableArray *)ecrituresAutomatiques;
 
-- (NSCalendarDate *)dateCloture;
-- (void)setDateCloture:(NSCalendarDate *)aDateCloture;
+- (NSDate *)dateCloture;
+- (void)setDateCloture:(NSDate *)aDateCloture;
 
 - (BOOL)sauvegardeCloture;
 - (void)setSauvegardeCloture:(BOOL)aSauvegardeCloture;
@@ -125,5 +125,6 @@
 - (void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(int)returnCode  contextInfo:(void  *)contextInfo;
 - (BOOL)validateMenuItem:(id <NSMenuItem>)menuItem;
 - (void)textDidChange:(NSNotification *)aNotification;
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification;
 
 @end

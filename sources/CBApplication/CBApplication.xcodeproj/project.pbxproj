@@ -18,6 +18,7 @@
 		E42F8AE109717B45000C8BD4 /* ListeLibelles.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADB09717B45000C8BD4 /* ListeLibelles.m */; };
 		E42F8AE209717B45000C8BD4 /* Mouvement.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADD09717B45000C8BD4 /* Mouvement.m */; };
 		E42F8AE309717B45000C8BD4 /* Portefeuille.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADF09717B45000C8BD4 /* Portefeuille.m */; };
+		E43611172902EA72009FBB9B /* CBMetadataImporter.mdimporter in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = E43611162902EA72009FBB9B /* CBMetadataImporter.mdimporter */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E46A9C890995491800F38C30 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E46A9C870995491800F38C30 /* Credits.rtf */; };
 		E46A9CAF0995499100F38C30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46A9CAD0995499100F38C30 /* InfoPlist.strings */; };
 		E46A9CB20995499F00F38C30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46A9CB00995499F00F38C30 /* Localizable.strings */; };
@@ -41,7 +42,6 @@
 		E4B3BD64099551A7000563B6 /* CBStatistiques.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B3BD63099551A7000563B6 /* CBStatistiques.m */; };
 		E4BE11890994BF7C00EB9E92 /* CBChaineFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BE11880994BF7C00EB9E92 /* CBChaineFormatter.m */; };
 		E4BF66E60994207400E1D20B /* CBChoixCompteArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BF66E50994207400E1D20B /* CBChoixCompteArrayController.m */; };
-		E4BFF97309A5EBE500C59BC4 /* CBMetadataImporter.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4BFF96409A5EB3200C59BC4 /* CBMetadataImporter.txt */; };
 		E4C7226C0993979800334B2C /* DocCBXML.icns in Resources */ = {isa = PBXBuildFile; fileRef = E4C7226B0993979800334B2C /* DocCBXML.icns */; };
 		E4C722F80993A63600334B2C /* CBVirement.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C722F70993A63600334B2C /* CBVirement.m */; };
 		E4D4566B09A383CD00DC6D26 /* CBXMLArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4566A09A383CD00DC6D26 /* CBXMLArchiver.m */; };
@@ -57,14 +57,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E4BFF96809A5EB6600C59BC4 /* CopyFiles */ = {
+		E43611182902EA72009FBB9B /* Embed PlugIns */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Contents/Library/Spotlight;
 			dstSubfolderSpec = 1;
 			files = (
-				E4BFF97309A5EBE500C59BC4 /* CBMetadataImporter.txt in CopyFiles */,
+				E43611172902EA72009FBB9B /* CBMetadataImporter.mdimporter in Embed PlugIns */,
 			);
+			name = "Embed PlugIns";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -95,6 +96,7 @@
 		E42F8ADD09717B45000C8BD4 /* Mouvement.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Mouvement.m; sourceTree = "<group>"; };
 		E42F8ADE09717B45000C8BD4 /* Portefeuille.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Portefeuille.h; sourceTree = "<group>"; };
 		E42F8ADF09717B45000C8BD4 /* Portefeuille.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Portefeuille.m; sourceTree = "<group>"; };
+		E43611162902EA72009FBB9B /* CBMetadataImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CBMetadataImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46A9C880995491800F38C30 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = French; path = French.lproj/Credits.rtf; sourceTree = "<group>"; };
 		E46A9CAE0995499100F38C30 /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E46A9CB10995499F00F38C30 /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -136,7 +138,6 @@
 		E4BE11880994BF7C00EB9E92 /* CBChaineFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBChaineFormatter.m; sourceTree = "<group>"; };
 		E4BF66E40994207400E1D20B /* CBChoixCompteArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBChoixCompteArrayController.h; sourceTree = "<group>"; };
 		E4BF66E50994207400E1D20B /* CBChoixCompteArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBChoixCompteArrayController.m; sourceTree = "<group>"; };
-		E4BFF96409A5EB3200C59BC4 /* CBMetadataImporter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBMetadataImporter.txt; sourceTree = "<group>"; };
 		E4C6DFCA09750132007C2BC8 /* Spécifications.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Spécifications.txt"; sourceTree = "<group>"; };
 		E4C7226B0993979800334B2C /* DocCBXML.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = DocCBXML.icns; sourceTree = "<group>"; };
 		E4C722F60993A63600334B2C /* CBVirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVirement.h; sourceTree = "<group>"; };
@@ -205,7 +206,6 @@
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
 				E4F4CED30971559A00BADDA1 /* Images */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
-				E4BFF96109A5EAFC00C59BC4 /* CBMetadataImporter */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 			);
@@ -254,6 +254,7 @@
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E43611162902EA72009FBB9B /* CBMetadataImporter.mdimporter */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
 			);
@@ -351,14 +352,6 @@
 			name = "Controller objects";
 			sourceTree = "<group>";
 		};
-		E4BFF96109A5EAFC00C59BC4 /* CBMetadataImporter */ = {
-			isa = PBXGroup;
-			children = (
-				E4BFF96409A5EB3200C59BC4 /* CBMetadataImporter.txt */,
-			);
-			name = CBMetadataImporter;
-			sourceTree = "<group>";
-		};
 		E4F4CED30971559A00BADDA1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,9 +370,9 @@
 			buildConfigurationList = C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "Comptes Bancaires" */;
 			buildPhases = (
 				8D15AC2B0486D014006FF6A4 /* Resources */,
-				E4BFF96809A5EB6600C59BC4 /* CopyFiles */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
+				E43611182902EA72009FBB9B /* Embed PlugIns */,
 			);
 			buildRules = (
 			);
@@ -404,7 +397,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				English,
 				en,
+				French,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Comptes Bancaires */;
 			projectDirPath = "";
@@ -553,12 +548,15 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = "build 43";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_NAME = "Comptes Bancaires";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -569,11 +567,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = "build 43";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_NAME = "Comptes Bancaires";
 				WRAPPER_EXTENSION = app;
 			};

@@ -64,7 +64,7 @@
 	<key>CFBundleIconFile</key>
 	<string>AppCB</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.thierryboudiere.ComptesBancaires</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

@@ -87,7 +87,6 @@
 		E40A5EC6098A90D500EC9B5C /* CBMouvementMultiple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMouvementMultiple.m; sourceTree = "<group>"; };
 		E41A8F28099130CB00CBFB98 /* CBEcritureAutomatique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBEcritureAutomatique.h; sourceTree = "<group>"; };
 		E41A8F29099130CB00CBFB98 /* CBEcritureAutomatique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBEcritureAutomatique.m; sourceTree = "<group>"; };
-		E41DF68B09A7A483008A1C37 /* French */ = {isa = PBXFileReference; lastKnownFileType = folder; name = French; path = French.lproj/CBHelp; sourceTree = "<group>"; };
 		E42F8AD809717B45000C8BD4 /* Compte.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Compte.h; sourceTree = "<group>"; };
 		E42F8AD909717B45000C8BD4 /* Compte.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Compte.m; sourceTree = "<group>"; };
 		E42F8ADA09717B45000C8BD4 /* ListeLibelles.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ListeLibelles.h; sourceTree = "<group>"; };
@@ -97,9 +96,6 @@
 		E42F8ADE09717B45000C8BD4 /* Portefeuille.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Portefeuille.h; sourceTree = "<group>"; };
 		E42F8ADF09717B45000C8BD4 /* Portefeuille.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Portefeuille.m; sourceTree = "<group>"; };
 		E43611162902EA72009FBB9B /* CBMetadataImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CBMetadataImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
-		E46A9C880995491800F38C30 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = French; path = French.lproj/Credits.rtf; sourceTree = "<group>"; };
-		E46A9CAE0995499100F38C30 /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E46A9CB10995499F00F38C30 /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E478368609717BE700867CC7 /* CBPortefeuille.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPortefeuille.h; sourceTree = "<group>"; };
 		E478368709717BE700867CC7 /* CBPortefeuille.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPortefeuille.m; sourceTree = "<group>"; };
 		E478368909717C1300867CC7 /* CBCompte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCompte.h; sourceTree = "<group>"; };
@@ -121,10 +117,6 @@
 		E490F27609ABA89F0098E7B7 /* CBVueImpressionPortefeuille.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVueImpressionPortefeuille.m; sourceTree = "<group>"; };
 		E490F27B09ABA8B20098E7B7 /* CBVueImpressionCompte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBVueImpressionCompte.h; sourceTree = "<group>"; };
 		E490F27C09ABA8B20098E7B7 /* CBVueImpressionCompte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBVueImpressionCompte.m; sourceTree = "<group>"; };
-		E493795D0CE6176E00231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		E49379600CE6178600231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Pref.xib; sourceTree = "<group>"; };
-		E49379630CE6179700231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Portefeuille.xib; sourceTree = "<group>"; };
-		E49379660CE617A900231427 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Compte.xib; sourceTree = "<group>"; };
 		E4A10F350975496800FD4446 /* CBCategorieMouvement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCategorieMouvement.h; sourceTree = "<group>"; };
 		E4A10F360975496800FD4446 /* CBCategorieMouvement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCategorieMouvement.m; sourceTree = "<group>"; };
 		E4A10F47097549A100FD4446 /* CBLibellePredefini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLibellePredefini.h; sourceTree = "<group>"; };
@@ -134,6 +126,14 @@
 		E4B3BD5A0995507C000563B6 /* CBStatistiqueCategorie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStatistiqueCategorie.m; sourceTree = "<group>"; };
 		E4B3BD62099551A7000563B6 /* CBStatistiques.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStatistiques.h; sourceTree = "<group>"; };
 		E4B3BD63099551A7000563B6 /* CBStatistiques.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStatistiques.m; sourceTree = "<group>"; };
+		E4B407032904353100B096AD /* fr */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fr; path = fr.lproj/CBHelp; sourceTree = "<group>"; };
+		E4B407042904353100B096AD /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/Compte.xib; sourceTree = "<group>"; };
+		E4B407052904353100B096AD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = fr.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E4B407062904353200B096AD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4B407072904353200B096AD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E4B407082904353200B096AD /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E4B407092904353200B096AD /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/Portefeuille.xib; sourceTree = "<group>"; };
+		E4B4070A2904353200B096AD /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/Pref.xib; sourceTree = "<group>"; };
 		E4BE11870994BF7C00EB9E92 /* CBChaineFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBChaineFormatter.h; sourceTree = "<group>"; };
 		E4BE11880994BF7C00EB9E92 /* CBChaineFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBChaineFormatter.m; sourceTree = "<group>"; };
 		E4BF66E40994207400E1D20B /* CBChoixCompteArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBChoixCompteArrayController.h; sourceTree = "<group>"; };
@@ -390,16 +390,16 @@
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 1320;
 			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "CBApplication" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
 				en,
-				French,
+				fr,
+				Base,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Comptes Bancaires */;
 			projectDirPath = "";
@@ -479,7 +479,7 @@
 		E41DF68A09A7A483008A1C37 /* CBHelp */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E41DF68B09A7A483008A1C37 /* French */,
+				E4B407032904353100B096AD /* fr */,
 			);
 			name = CBHelp;
 			sourceTree = "<group>";
@@ -487,7 +487,7 @@
 		E46A9C870995491800F38C30 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E46A9C880995491800F38C30 /* French */,
+				E4B407052904353100B096AD /* fr */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -495,7 +495,7 @@
 		E46A9CAD0995499100F38C30 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E46A9CAE0995499100F38C30 /* French */,
+				E4B407062904353200B096AD /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 		E46A9CB00995499F00F38C30 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E46A9CB10995499F00F38C30 /* French */,
+				E4B407072904353200B096AD /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 		E493795C0CE6176E00231427 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E493795D0CE6176E00231427 /* French */,
+				E4B407082904353200B096AD /* fr */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -519,7 +519,7 @@
 		E493795F0CE6178600231427 /* Pref.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E49379600CE6178600231427 /* French */,
+				E4B4070A2904353200B096AD /* fr */,
 			);
 			name = Pref.xib;
 			sourceTree = "<group>";
@@ -527,7 +527,7 @@
 		E49379620CE6179700231427 /* Portefeuille.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E49379630CE6179700231427 /* French */,
+				E4B407092904353200B096AD /* fr */,
 			);
 			name = Portefeuille.xib;
 			sourceTree = "<group>";
@@ -535,7 +535,7 @@
 		E49379650CE617A900231427 /* Compte.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E49379660CE617A900231427 /* French */,
+				E4B407042904353100B096AD /* fr */,
 			);
 			name = Compte.xib;
 			sourceTree = "<group>";
@@ -546,6 +546,8 @@
 		C05733C808A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "build 43";
@@ -557,6 +559,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 2.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thierryboudiere.ComptesBancaires;
 				PRODUCT_NAME = "Comptes Bancaires";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -566,6 +569,8 @@
 		C05733C908A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = "build 43";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -575,6 +580,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 2.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thierryboudiere.ComptesBancaires;
 				PRODUCT_NAME = "Comptes Bancaires";
 				WRAPPER_EXTENSION = app;
 			};
@@ -583,7 +589,33 @@
 		C05733CC08A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -593,7 +625,32 @@
 		C05733CD08A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = macosx;
 			};

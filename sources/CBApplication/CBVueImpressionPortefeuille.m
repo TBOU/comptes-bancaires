@@ -87,7 +87,7 @@
 	nbElementsFirstPage = (int)floor( (thePaperHeight - theTopMargin - theBottomMargin - enteteGeneralHeight - tableauEnteteHeight) / tableauLigneHeight );
 	nbElementsOtherPage = (int)floor( (thePaperHeight - theTopMargin - theBottomMargin - tableauEnteteHeight) / tableauLigneHeight );
 	
-	int nbElements = [aComptesArray count];
+	int nbElements = (int)[aComptesArray count];
 	if (nbElements <= nbElementsFirstPage) {
 		nbPages = 1;
 	}
@@ -194,7 +194,7 @@
 	}
 	
 	if (*indexElementMaxPtr >= [theComptesArray count]) {
-		*indexElementMaxPtr = [theComptesArray count] - 1;
+		*indexElementMaxPtr = (int)[theComptesArray count] - 1;
 	}
 }
 

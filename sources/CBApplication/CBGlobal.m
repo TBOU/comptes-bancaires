@@ -131,23 +131,23 @@ int CBDaysSinceReferenceDate(NSDate *aDate)
         return 0;
     }
     
-	NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
-	unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
+    NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] autorelease];
+    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
 	NSDateComponents *comps = [gregorian components:unitFlags fromDate:aDate];
 	[comps setHour:0];
 	[comps setMinute:0];
 	[comps setSecond:0];
 	NSDate *normalizedDate = [gregorian dateFromComponents:comps];
 
-	unitFlags = NSDayCalendarUnit;
+    unitFlags = NSCalendarUnitDay;
 	comps = [gregorian components:unitFlags fromDate:[NSDate dateWithTimeIntervalSinceReferenceDate:0.0]  toDate:normalizedDate  options:0];
-	return [comps day];
+	return (int)[comps day];
 }
 
 extern NSDate *CBFirstDayOfYear(NSDate *aDate)
 {
-	NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
-	unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
+    NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] autorelease];
+    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
 	NSDateComponents *comps = [gregorian components:unitFlags fromDate:aDate];
 	
 	[comps setMonth:1];
@@ -158,8 +158,8 @@ extern NSDate *CBFirstDayOfYear(NSDate *aDate)
 
 extern NSDate *CBFirstDayOfMonth(NSDate *aDate)
 {
-	NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
-	unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
+    NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] autorelease];
+    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
 	NSDateComponents *comps = [gregorian components:unitFlags fromDate:aDate];
 	
 	[comps setDay:1];
@@ -169,7 +169,7 @@ extern NSDate *CBFirstDayOfMonth(NSDate *aDate)
 
 NSDate *CBDateByAddingYearsMonthsDays(NSDate *aDate, int years, int months, int days)
 {
-	NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] autorelease];
 	NSDateComponents *comps = [[[NSDateComponents alloc] init] autorelease];
 	[comps setYear:years];
 	[comps setMonth:months];

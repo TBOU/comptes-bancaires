@@ -283,7 +283,7 @@
 
 - (int)nombreEcrituresEnSuspens
 {
-	return [datesEcrituresEnSuspens count];
+	return (int)[datesEcrituresEnSuspens count];
 }
 
 - (void)calculeDatesEcrituresEnSuspens:(NSDate *)dateJour

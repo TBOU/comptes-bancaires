@@ -240,7 +240,7 @@
 - (IBAction)debutAjoutMouvement:(id)sender
 {
 	tempMouvement = [[CBMouvement alloc] init];
-	[tempMouvement setOperation:[sender tag]];
+	[tempMouvement setOperation:(CBTypeMouvement)[sender tag]];
 	[tempMouvement setNumeroCheque:[managedCompte numeroProchainCheque]];
 	[tempMouvement setNumeroChequeEmploiService:[managedCompte numeroProchainChequeEmploiService]];
 
@@ -523,7 +523,7 @@
 
 - (IBAction)debutEditionLibellesPredefinis:(id)sender
 {
-	[libellesPredefinisControler setOperation:[sender tag]];
+	[libellesPredefinisControler setOperation:(CBTypeMouvement)[sender tag]];
 	[operationMenu selectItemWithTag:[sender tag]];
 	NSSortDescriptor *libellesPredefinisDescriptor = [[NSSortDescriptor alloc] initWithKey:@"libelle" ascending:YES];
 	[libellesPredefinisControler setSortDescriptors:[NSArray arrayWithObject:libellesPredefinisDescriptor]];

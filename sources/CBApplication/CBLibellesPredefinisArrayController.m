@@ -29,7 +29,7 @@
 
 - (IBAction)filtreLibellesPredefinis:(id)sender;
 {
-	[self setOperation:[[sender selectedItem]tag]];
+	[self setOperation:(CBTypeMouvement)[[sender selectedItem]tag]];
 	[self rearrangeObjects];
 
 	if ([[self arrangedObjects] count] > 0)

@@ -55,7 +55,7 @@
 
 - (IBAction)filtreMouvementsOperation:(id)sender
 {
-	operation = [[sender selectedItem]tag];
+	operation = (CBTypeMouvement)[[sender selectedItem]tag];
 
 	[self rearrangeObjects];
 }

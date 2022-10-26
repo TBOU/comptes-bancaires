@@ -159,13 +159,15 @@
 {
     if ([typeName isEqualToString:CBTypeDocumentBinaire]) {
 		
-		NSMutableData *data = [NSMutableData data];
-		NSKeyedArchiver *keyedArchiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+		NSData *data;
+        
+		NSKeyedArchiver *keyedArchiver = [[NSKeyedArchiver alloc] initRequiringSecureCoding:NO];
 		[keyedArchiver encodeObject:CBAppArchiveVersion forKey:@"version"];
 		[keyedArchiver encodeObject:[self generateMetadata] forKey:@"metadata"];
 		[keyedArchiver encodeObject:[self printInfo] forKey:@"printInfo"];
 		[keyedArchiver encodeObject:portefeuille forKey:@"portefeuille"];
 		[keyedArchiver finishEncoding];
+        data = [keyedArchiver encodedData];
 		[keyedArchiver release];
 		return data;
     }
@@ -204,7 +206,13 @@
 		
 		@try {
 			
-			NSKeyedUnarchiver *keyedUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+            NSError *outError = nil;
+            NSKeyedUnarchiver *keyedUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingFromData:data error:&outError];
+            if (outError != nil) {
+                [NSException raise:[outError domain] format:@"%@", [outError localizedDescription]];
+            }
+            [keyedUnarchiver setRequiresSecureCoding:NO];
+            [keyedUnarchiver setDecodingFailurePolicy:NSDecodingFailurePolicyRaiseException];
 			NSPrintInfo *pInfo = [keyedUnarchiver decodeObjectForKey:@"printInfo"];
 			if (pInfo != nil) {
 				[self setPrintInfo:pInfo];

@@ -30,7 +30,13 @@ Boolean GetMetadataForFile(void* thisInterface,
 			
 			@try {
 				
-				NSKeyedUnarchiver *keyedUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:myData];
+                NSError *outError = nil;
+                NSKeyedUnarchiver *keyedUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingFromData:myData error:&outError];
+                if (outError != nil) {
+                    [NSException raise:[outError domain] format:@"%@", [outError localizedDescription]];
+                }
+                [keyedUnarchiver setRequiresSecureCoding:NO];
+                [keyedUnarchiver setDecodingFailurePolicy:NSDecodingFailurePolicyRaiseException];
 				NSString *myMetadata = [keyedUnarchiver decodeObjectForKey:@"metadata"];
 				
 				if (myMetadata != nil) {

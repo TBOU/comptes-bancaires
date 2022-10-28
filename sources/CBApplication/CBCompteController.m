@@ -16,6 +16,7 @@
 #import "CBVueImpressionCompte.h"
 #import "CBGlobal.h"
 #import "NSTableView+CBExtension.h"
+#import "NSAlert+CBExtension.h"
 
 
 @implementation CBCompteController
@@ -405,10 +406,9 @@
 	NSArray *selection = [mouvementsControler selectedObjects];
 	if ([selection count] >= 1) {
 		
-		NSAlert *myAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionMouvement", nil) 
-								defaultButton:NSLocalizedString(@"CBBoutonAnnuler", nil) 
-								alternateButton:NSLocalizedString(@"CBBoutonOK", nil) 
-								otherButton:nil 
+		NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionMouvement", nil)
+								firstButton:NSLocalizedString(@"CBBoutonAnnuler", nil)
+								secondButton:NSLocalizedString(@"CBBoutonOK", nil)
 								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionMouvement", nil)];
 
 		[myAlert beginSheetModalForWindow:[self window] 
@@ -492,11 +492,10 @@
 	NSArray *selection = [mouvementsPeriodiquesControler selectedObjects];
 	if ([selection count] == 1) {
 		
-		NSAlert *myAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionMouvementPeriodique", nil) 
-								defaultButton:NSLocalizedString(@"CBBoutonAnnuler", nil) 
-								alternateButton:NSLocalizedString(@"CBBoutonOK", nil) 
-								otherButton:nil 
-								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionMouvementPeriodique", nil), 
+		NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionMouvementPeriodique", nil)
+								firstButton:NSLocalizedString(@"CBBoutonAnnuler", nil)
+								secondButton:NSLocalizedString(@"CBBoutonOK", nil)
+								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionMouvementPeriodique", nil),
 															[(CBMouvementPeriodique *)[selection objectAtIndex:0] titre]];
 
 		[myAlert beginSheetModalForWindow:fenetreEditerMouvementsPeriodiques 
@@ -555,10 +554,9 @@
 	NSArray *selection = [libellesPredefinisControler selectedObjects];
 	if ([selection count] == 1) {
 		
-		NSAlert *myAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionLibellePredefini", nil) 
-								defaultButton:NSLocalizedString(@"CBBoutonAnnuler", nil) 
-								alternateButton:NSLocalizedString(@"CBBoutonOK", nil) 
-								otherButton:nil 
+		NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionLibellePredefini", nil)
+								firstButton:NSLocalizedString(@"CBBoutonAnnuler", nil)
+								secondButton:NSLocalizedString(@"CBBoutonOK", nil)
 								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionLibellePredefini", nil), 
 															[(CBLibellePredefini *)[selection objectAtIndex:0] libelle]];
 
@@ -709,7 +707,7 @@
     [mySavePanel beginSheetModalForWindow:[self window] 
                         completionHandler:^(NSInteger returnCode) {
                             
-                            if (returnCode == NSOKButton) {
+                            if (returnCode == NSModalResponseOK) {
                                 
                                 NSMutableString *outputString = [NSMutableString stringWithCapacity:700];
                                 CBNombreFormatter *soldeFormateur = [[self document] soldeFormateur];
@@ -832,7 +830,7 @@
 
 - (void)suppressionLibellePredefiniAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
 {
-	if (returnCode == NSAlertAlternateReturn) {
+	if (returnCode == NSAlertSecondButtonReturn) {
 		[libellesPredefinisControler remove:self];
 		[[self document] updateChangeCount:NSChangeDone];
 	}
@@ -840,7 +838,7 @@
 
 - (void)suppressionMouvementAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
 {
-	if (returnCode == NSAlertAlternateReturn) {
+	if (returnCode == NSAlertSecondButtonReturn) {
 		[mouvementsControler remove:self];
 		[[self managedCompte] calculeSoldes];
 		[[self managedPortefeuille] calculeSoldes];
@@ -851,7 +849,7 @@
 
 - (void)suppressionMouvementsPeriodiquesAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
 {
-	if (returnCode == NSAlertAlternateReturn) {
+	if (returnCode == NSAlertSecondButtonReturn) {
 		[mouvementsPeriodiquesControler remove:self];
 		[[self document] updateChangeCount:NSChangeDone];
 	}

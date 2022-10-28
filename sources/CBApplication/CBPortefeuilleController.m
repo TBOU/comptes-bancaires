@@ -17,6 +17,7 @@
 #import "CBVueImpressionPortefeuille.h"
 #import "CBGlobal.h"
 #import "NSTableView+CBExtension.h"
+#import "NSAlert+CBExtension.h"
 
 
 @implementation CBPortefeuilleController
@@ -195,10 +196,9 @@
 	// On vérifie que les fenêtre de compte sont toutes fermées
 	if ([[[self document] windowControllers] count] > 1) {
 		
-		NSAlert *myAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"CBTitreAlertFermerComptesEcritureAutomatique", nil) 
-								defaultButton:NSLocalizedString(@"CBBoutonOK", nil) 
-								alternateButton:nil 
-								otherButton:nil 
+		NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertFermerComptesEcritureAutomatique", nil)
+								firstButton:NSLocalizedString(@"CBBoutonOK", nil)
+								secondButton:nil
 								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertFermerComptesEcritureAutomatique", nil)];
 		[myAlert runModal];
 		return;
@@ -228,10 +228,9 @@
 	}
 	else if (sender != self) {
 		
-		NSAlert *myAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"CBTitreAlertAucuneEcritureAutomatique", nil) 
-								defaultButton:NSLocalizedString(@"CBBoutonOK", nil) 
-								alternateButton:nil 
-								otherButton:nil 
+		NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertAucuneEcritureAutomatique", nil)
+								firstButton:NSLocalizedString(@"CBBoutonOK", nil)
+								secondButton:nil
 								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertAucuneEcritureAutomatique", nil)];
 		[myAlert runModal];
 	}
@@ -317,10 +316,9 @@
 	NSArray *selection = [comptesControler selectedObjects];
 	if ([selection count] == 1) {
 		
-		NSAlert *myAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionCompte", nil) 
-								defaultButton:NSLocalizedString(@"CBBoutonAnnuler", nil) 
-								alternateButton:NSLocalizedString(@"CBBoutonOK", nil) 
-								otherButton:nil 
+		NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionCompte", nil) 
+								firstButton:NSLocalizedString(@"CBBoutonAnnuler", nil)
+								secondButton:NSLocalizedString(@"CBBoutonOK", nil)
 								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionCompte", nil), 
 															[(CBCompte *)[selection objectAtIndex:0] numeroCompte], 
 															[(CBCompte *)[selection objectAtIndex:0] banque]];
@@ -459,11 +457,10 @@
 	NSArray *selection = [categoriesMouvementControler selectedObjects];
 	if ([selection count] == 1) {
 		
-		NSAlert *myAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionCategorieMouvement", nil) 
-								defaultButton:NSLocalizedString(@"CBBoutonAnnuler", nil) 
-								alternateButton:NSLocalizedString(@"CBBoutonOK", nil) 
-								otherButton:nil 
-								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionCategorieMouvement", nil), 
+		NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertSuppressionCategorieMouvement", nil)
+								firstButton:NSLocalizedString(@"CBBoutonAnnuler", nil)
+								secondButton:NSLocalizedString(@"CBBoutonOK", nil)
+								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionCategorieMouvement", nil),
 															[(CBCategorieMouvement *)[selection objectAtIndex:0] titre], 
 															[(CBCategorieMouvement *)[selection objectAtIndex:0] utilisationMouvements]];
 
@@ -493,10 +490,9 @@
 	// On vérifie que les fenêtre de compte sont toutes fermées
 	if ([[[self document] windowControllers] count] > 1) {
 		
-		NSAlert *myAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"CBTitreAlertFermerComptesClotureExercice", nil) 
-								defaultButton:NSLocalizedString(@"CBBoutonOK", nil) 
-								alternateButton:nil 
-								otherButton:nil 
+		NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertFermerComptesClotureExercice", nil)
+								firstButton:NSLocalizedString(@"CBBoutonOK", nil)
+								secondButton:nil
 								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertFermerComptesClotureExercice", nil)];
 		[myAlert runModal];
 		return;
@@ -532,7 +528,7 @@
     [mySavePanel beginSheetModalForWindow:[self window] 
                         completionHandler:^(NSInteger returnCode) {
                             
-                            if (returnCode == NSOKButton) {
+                            if (returnCode == NSModalResponseOK) {
                                 
                                 NSMutableString *outputString = [NSMutableString stringWithCapacity:700];
                                 CBNombreFormatter *soldeFormateur = [[self document] soldeFormateur];
@@ -672,7 +668,7 @@
 
 - (void)suppressionCategorieMouvementAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
 {
-	if (returnCode == NSAlertAlternateReturn) {
+	if (returnCode == NSAlertSecondButtonReturn) {
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"CBCategorieMouvementWillDeallocNotification" 
 												object:(CBCategorieMouvement *)contextInfo];
 		[categoriesMouvementControler remove:self];
@@ -682,7 +678,7 @@
 
 - (void)suppressionCompteAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
 {
-	if (returnCode == NSAlertAlternateReturn) {
+	if (returnCode == NSAlertSecondButtonReturn) {
 
 		// On ferme la fenêtre du compte si elle est encore ouverte
 		NSEnumerator *enumerateur;

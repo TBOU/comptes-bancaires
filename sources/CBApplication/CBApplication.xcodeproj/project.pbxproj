@@ -19,6 +19,7 @@
 		E42F8AE209717B45000C8BD4 /* Mouvement.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADD09717B45000C8BD4 /* Mouvement.m */; };
 		E42F8AE309717B45000C8BD4 /* Portefeuille.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADF09717B45000C8BD4 /* Portefeuille.m */; };
 		E43611172902EA72009FBB9B /* CBMetadataImporter.mdimporter in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = E43611162902EA72009FBB9B /* CBMetadataImporter.mdimporter */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E44C4F05290BC98D007EDF55 /* NSAlert+CBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E44C4F03290BC98D007EDF55 /* NSAlert+CBExtension.m */; };
 		E46A9C890995491800F38C30 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E46A9C870995491800F38C30 /* Credits.rtf */; };
 		E46A9CAF0995499100F38C30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46A9CAD0995499100F38C30 /* InfoPlist.strings */; };
 		E46A9CB20995499F00F38C30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E46A9CB00995499F00F38C30 /* Localizable.strings */; };
@@ -96,6 +97,8 @@
 		E42F8ADE09717B45000C8BD4 /* Portefeuille.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Portefeuille.h; sourceTree = "<group>"; };
 		E42F8ADF09717B45000C8BD4 /* Portefeuille.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Portefeuille.m; sourceTree = "<group>"; };
 		E43611162902EA72009FBB9B /* CBMetadataImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CBMetadataImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		E44C4F03290BC98D007EDF55 /* NSAlert+CBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+CBExtension.m"; sourceTree = "<group>"; };
+		E44C4F04290BC98D007EDF55 /* NSAlert+CBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+CBExtension.h"; sourceTree = "<group>"; };
 		E478368609717BE700867CC7 /* CBPortefeuille.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPortefeuille.h; sourceTree = "<group>"; };
 		E478368709717BE700867CC7 /* CBPortefeuille.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPortefeuille.m; sourceTree = "<group>"; };
 		E478368909717C1300867CC7 /* CBCompte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCompte.h; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 				E490F27C09ABA8B20098E7B7 /* CBVueImpressionCompte.m */,
 				E4905A9B1AA32D4700E3ACE9 /* NSTableView+CBExtension.h */,
 				E4905A9C1AA32D4700E3ACE9 /* NSTableView+CBExtension.m */,
+				E44C4F04290BC98D007EDF55 /* NSAlert+CBExtension.h */,
+				E44C4F03290BC98D007EDF55 /* NSAlert+CBExtension.m */,
 			);
 			name = "Utility objects";
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 				E42F8AE109717B45000C8BD4 /* ListeLibelles.m in Sources */,
 				E42F8AE209717B45000C8BD4 /* Mouvement.m in Sources */,
 				E42F8AE309717B45000C8BD4 /* Portefeuille.m in Sources */,
+				E44C4F05290BC98D007EDF55 /* NSAlert+CBExtension.m in Sources */,
 				E478368809717BE700867CC7 /* CBPortefeuille.m in Sources */,
 				E478368B09717C1300867CC7 /* CBCompte.m in Sources */,
 				E478368E09717C2700867CC7 /* CBMouvement.m in Sources */,

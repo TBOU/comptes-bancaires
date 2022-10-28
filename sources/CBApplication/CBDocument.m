@@ -12,6 +12,7 @@
 #import "CBXMLArchiver.h"
 #import "CBXMLUnarchiver.h"
 #import "CBMetadataCreateur.h"
+#import "NSAlert+CBExtension.h"
 
 
 @implementation CBDocument
@@ -231,10 +232,9 @@
 				id ancienPortefeuille = [unarchiver decodeObject];
 				if (ancienPortefeuille != nil) {
 				
-					NSAlert *myAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"CBTitreAlertConversionAncienFichier", nil) 
-											defaultButton:NSLocalizedString(@"CBBoutonOK", nil) 
-											alternateButton:nil 
-											otherButton:nil 
+					NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertConversionAncienFichier", nil)
+											firstButton:NSLocalizedString(@"CBBoutonOK", nil)
+											secondButton:nil
 											informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertConversionAncienFichier", nil)];
 					[myAlert runModal];
 

@@ -14,10 +14,6 @@
 		E40A5EC7098A90D500EC9B5C /* CBMouvementMultiple.m in Sources */ = {isa = PBXBuildFile; fileRef = E40A5EC6098A90D500EC9B5C /* CBMouvementMultiple.m */; };
 		E41A8F2A099130CB00CBFB98 /* CBEcritureAutomatique.m in Sources */ = {isa = PBXBuildFile; fileRef = E41A8F29099130CB00CBFB98 /* CBEcritureAutomatique.m */; };
 		E41DF6B909A7A483008A1C37 /* CBHelp in Resources */ = {isa = PBXBuildFile; fileRef = E41DF68A09A7A483008A1C37 /* CBHelp */; };
-		E42F8AE009717B45000C8BD4 /* Compte.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8AD909717B45000C8BD4 /* Compte.m */; };
-		E42F8AE109717B45000C8BD4 /* ListeLibelles.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADB09717B45000C8BD4 /* ListeLibelles.m */; };
-		E42F8AE209717B45000C8BD4 /* Mouvement.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADD09717B45000C8BD4 /* Mouvement.m */; };
-		E42F8AE309717B45000C8BD4 /* Portefeuille.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F8ADF09717B45000C8BD4 /* Portefeuille.m */; };
 		E43611172902EA72009FBB9B /* CBMetadataImporter.mdimporter in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = E43611162902EA72009FBB9B /* CBMetadataImporter.mdimporter */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E44C4F05290BC98D007EDF55 /* NSAlert+CBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E44C4F03290BC98D007EDF55 /* NSAlert+CBExtension.m */; };
 		E46A9C890995491800F38C30 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E46A9C870995491800F38C30 /* Credits.rtf */; };
@@ -88,14 +84,6 @@
 		E40A5EC6098A90D500EC9B5C /* CBMouvementMultiple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBMouvementMultiple.m; sourceTree = "<group>"; };
 		E41A8F28099130CB00CBFB98 /* CBEcritureAutomatique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBEcritureAutomatique.h; sourceTree = "<group>"; };
 		E41A8F29099130CB00CBFB98 /* CBEcritureAutomatique.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBEcritureAutomatique.m; sourceTree = "<group>"; };
-		E42F8AD809717B45000C8BD4 /* Compte.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Compte.h; sourceTree = "<group>"; };
-		E42F8AD909717B45000C8BD4 /* Compte.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Compte.m; sourceTree = "<group>"; };
-		E42F8ADA09717B45000C8BD4 /* ListeLibelles.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ListeLibelles.h; sourceTree = "<group>"; };
-		E42F8ADB09717B45000C8BD4 /* ListeLibelles.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ListeLibelles.m; sourceTree = "<group>"; };
-		E42F8ADC09717B45000C8BD4 /* Mouvement.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Mouvement.h; sourceTree = "<group>"; };
-		E42F8ADD09717B45000C8BD4 /* Mouvement.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Mouvement.m; sourceTree = "<group>"; };
-		E42F8ADE09717B45000C8BD4 /* Portefeuille.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Portefeuille.h; sourceTree = "<group>"; };
-		E42F8ADF09717B45000C8BD4 /* Portefeuille.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = Portefeuille.m; sourceTree = "<group>"; };
 		E43611162902EA72009FBB9B /* CBMetadataImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CBMetadataImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44C4F03290BC98D007EDF55 /* NSAlert+CBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+CBExtension.m"; sourceTree = "<group>"; };
 		E44C4F04290BC98D007EDF55 /* NSAlert+CBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+CBExtension.h"; sourceTree = "<group>"; };
@@ -264,21 +252,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E42F8AD709717ADB000C8BD4 /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				E42F8ADE09717B45000C8BD4 /* Portefeuille.h */,
-				E42F8ADF09717B45000C8BD4 /* Portefeuille.m */,
-				E42F8AD809717B45000C8BD4 /* Compte.h */,
-				E42F8AD909717B45000C8BD4 /* Compte.m */,
-				E42F8ADA09717B45000C8BD4 /* ListeLibelles.h */,
-				E42F8ADB09717B45000C8BD4 /* ListeLibelles.m */,
-				E42F8ADC09717B45000C8BD4 /* Mouvement.h */,
-				E42F8ADD09717B45000C8BD4 /* Mouvement.m */,
-			);
-			name = Legacy;
-			sourceTree = "<group>";
-		};
 		E464B5E5098FF69800D201E3 /* Utility objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,7 +302,6 @@
 				E4B3BD63099551A7000563B6 /* CBStatistiques.m */,
 				E4B3BD590995507C000563B6 /* CBStatistiqueCategorie.h */,
 				E4B3BD5A0995507C000563B6 /* CBStatistiqueCategorie.m */,
-				E42F8AD709717ADB000C8BD4 /* Legacy */,
 			);
 			name = "Model objects";
 			sourceTree = "<group>";
@@ -446,10 +418,6 @@
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
 				E47A870B097162720067ACE0 /* CBAppController.m in Sources */,
 				E47A8710097162DE0067ACE0 /* CBPrefController.m in Sources */,
-				E42F8AE009717B45000C8BD4 /* Compte.m in Sources */,
-				E42F8AE109717B45000C8BD4 /* ListeLibelles.m in Sources */,
-				E42F8AE209717B45000C8BD4 /* Mouvement.m in Sources */,
-				E42F8AE309717B45000C8BD4 /* Portefeuille.m in Sources */,
 				E44C4F05290BC98D007EDF55 /* NSAlert+CBExtension.m in Sources */,
 				E478368809717BE700867CC7 /* CBPortefeuille.m in Sources */,
 				E478368B09717C1300867CC7 /* CBCompte.m in Sources */,

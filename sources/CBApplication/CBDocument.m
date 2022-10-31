@@ -101,8 +101,10 @@
 - (void)creeFormateursAvecSymboleMonetaire:(NSString *)aSymboleMonetaire
 {
 	[dateFormateur release];
-	dateFormateur = [[NSDateFormatter alloc] initWithDateFormat:@"%d/%m/%Y" allowNaturalLanguage:NO];
-	
+    dateFormateur = [[NSDateFormatter alloc] init];
+    [dateFormateur setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [dateFormateur setDateFormat:@"dd/MM/yyyy"];
+
 	[soldeFormateur release];
 	soldeFormateur = [[CBNombreFormatter alloc] initWithSymboleMonetaire:aSymboleMonetaire autoriseNil:NO autoriseMinus:YES];
 	
@@ -228,33 +230,10 @@
 		}
 		@catch (NSException *exception) {
 				
-				NSUnarchiver *unarchiver = [[NSUnarchiver alloc] initForReadingWithData:data];
-				id ancienPortefeuille = [unarchiver decodeObject];
-				if (ancienPortefeuille != nil) {
-				
-					NSAlert *myAlert = [NSAlert cbAlertWithMessageText:NSLocalizedString(@"CBTitreAlertConversionAncienFichier", nil)
-											firstButton:NSLocalizedString(@"CBBoutonOK", nil)
-											secondButton:nil
-											informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertConversionAncienFichier", nil)];
-					[myAlert runModal];
-
-					[portefeuille release];
-					portefeuille = [[CBPortefeuille alloc] initAvecAncienPortefeuille:ancienPortefeuille];
-					[self updateWindowControllers];
-					[self updateFormateurs];
-					[portefeuille calculeSoldes];
-					[self updateChangeCount:NSChangeDone];
-					[unarchiver release];
-					return YES;
-				}
-				else {
-				
-					NSString *message = [NSString stringWithString:NSLocalizedString(@"CBContenuFichierMessageErreur", nil)];
-					NSDictionary *userInfoDict = [NSDictionary dictionaryWithObject:message forKey:NSLocalizedRecoverySuggestionErrorKey];
-					*outError = [NSError errorWithDomain:CBAppErrorDomain code:CBContenuFichierErreur userInfo:userInfoDict];
-					[unarchiver release];
-					return NO;
-				}
+            NSString *message = [NSString stringWithString:NSLocalizedString(@"CBContenuFichierMessageErreur", nil)];
+            NSDictionary *userInfoDict = [NSDictionary dictionaryWithObject:message forKey:NSLocalizedRecoverySuggestionErrorKey];
+            *outError = [NSError errorWithDomain:CBAppErrorDomain code:CBContenuFichierErreur userInfo:userInfoDict];
+            return NO;
 		}
 		
     }

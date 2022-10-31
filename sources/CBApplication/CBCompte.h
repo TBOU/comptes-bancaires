@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Compte.h"
 #import "CBXMLCoding.h"
 #import "CBXMLArchiver.h"
 #import "CBXMLUnarchiver.h"
@@ -26,8 +25,6 @@
     NSDecimalNumber *soldeBanque;
     NSDecimalNumber *soldeCBEnCours;
 }
-
-- (id)initAvecAncienCompte:(Compte *)ancienCompte;
 
 - (NSString *)banque;
 - (void)setBanque:(NSString *)aBanque;

@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Portefeuille.h"
 #import "CBXMLCoding.h"
 #import "CBXMLArchiver.h"
 #import "CBXMLUnarchiver.h"
@@ -22,8 +21,6 @@
     NSMutableArray *comptes;
     NSDecimalNumber *soldeTotalComptes;
 }
-
-- (id)initAvecAncienPortefeuille:(Portefeuille *)ancienPortefeuille;
 
 - (NSString *)nom;
 - (void)setNom:(NSString *)aNom;

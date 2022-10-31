@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "CBGlobal.h"
 #import "CBCategorieMouvement.h"
-#import "Mouvement.h"
 #import "CBXMLCoding.h"
 #import "CBXMLArchiver.h"
 #import "CBXMLUnarchiver.h"
@@ -28,8 +27,6 @@
 	NSNumber *numeroCheque;
 	NSNumber *numeroChequeEmploiService;
 }
-
-- (id)initAvecAncienMouvement:(Mouvement *)ancienMouvement;
 
 - (NSDate *)date;
 - (void)setDate:(NSDate *)aDate;

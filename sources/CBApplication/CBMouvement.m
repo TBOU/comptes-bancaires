@@ -53,43 +53,6 @@
     return self;
 }
 
-- (id)initAvecAncienMouvement:(Mouvement *)ancienMouvement
-{
-    if (self = [self init]) {
-		[self setDate:[ancienMouvement date]];
-		
-		NSString *ancienneOperation = [ancienMouvement operation];
-		if([ancienneOperation isEqualToString:NSLocalizedString(@"CBLegacyValeurOperationCarteBleue", nil)])
-			[self setOperation:CBTypeMouvementCarteBleue];
-		else if([ancienneOperation isEqualToString:NSLocalizedString(@"CBLegacyValeurOperationPrelevement", nil)])
-			[self setOperation:CBTypeMouvementPrelevement];
-		else if([ancienneOperation isEqualToString:NSLocalizedString(@"CBLegacyValeurOperationCheque", nil)])
-			[self setOperation:CBTypeMouvementCheque];
-		else if([ancienneOperation isEqualToString:NSLocalizedString(@"CBLegacyValeurOperationVirement", nil)])
-			[self setOperation:CBTypeMouvementVirementCrediteur];
-		else if([ancienneOperation isEqualToString:NSLocalizedString(@"CBLegacyValeurOperationDepot", nil)])
-			[self setOperation:CBTypeMouvementDepot];
-		
-		[self setLibelle:[ancienMouvement libelle]];
-		
-		if (CBSignePourTypeMouvement([self operation]) == CBSigneMouvementDebit)
-			[self setMontant:[ancienMouvement debit]];
-		else if (CBSignePourTypeMouvement([self operation]) == CBSigneMouvementCredit)
-			[self setMontant:[ancienMouvement credit]];
-
-		if([[ancienMouvement pointage] isEqualToString:NSLocalizedString(@"CBLegacyValeurPointage", nil)])
-			[self setPointage:YES];
-		else
-			[self setPointage:NO];
-
-		//[self setAvoir:[ancienMouvement avoir]];
-		
-		if ([self isCheque])
-			[self setNumeroCheque:[NSNumber numberWithLongLong:[[ancienMouvement numeroCheque] longLongValue]]];
-    }
-    return self;
-}
-
 - (id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {

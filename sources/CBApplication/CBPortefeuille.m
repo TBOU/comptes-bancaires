@@ -8,7 +8,6 @@
 
 #import "CBPortefeuille.h"
 #import "CBCompte.h"
-#import "Compte.h"
 #import "CBCategorieMouvement.h"
 
 
@@ -29,26 +28,6 @@
 		categoriesMouvement = [[NSMutableArray alloc] initWithCapacity:7];
 		comptes = [[NSMutableArray alloc] initWithCapacity:7];
 		[self setSoldeTotalComptes:[NSDecimalNumber zero]];
-    }
-    return self;
-}
-
-- (id)initAvecAncienPortefeuille:(Portefeuille *)ancienPortefeuille
-{
-    if (self = [self init]) {
-		[self setNom:[ancienPortefeuille nom]];
-		[self setPrenom:[ancienPortefeuille prenom]];
-		//[self setSoldeTotalComptes:[ancienPortefeuille soldeTotalComptes]];
-		
-		// On récupère les comptes
-		NSEnumerator *enumerator = [[ancienPortefeuille comptes] objectEnumerator];
-		id anObject;
-		while (anObject = [enumerator nextObject]) {
-			CBCompte *myCompte = [[CBCompte alloc] initAvecAncienCompte:(Compte *)anObject];
-			[myCompte calculeSoldes];
-			[[self comptes] addObject:myCompte];
-			[myCompte release];
-		}
     }
     return self;
 }

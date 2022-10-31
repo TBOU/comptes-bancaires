@@ -48,7 +48,7 @@
 
 - (IBAction)filtreMouvementsPointage:(id)sender
 {
-	nonPointes = [sender state] == NSOnState;
+	nonPointes = [sender state] == NSControlStateValueOn;
 
 	[self rearrangeObjects];
 }

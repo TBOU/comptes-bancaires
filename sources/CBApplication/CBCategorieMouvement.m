@@ -7,6 +7,7 @@
 //
 
 #import "CBCategorieMouvement.h"
+#import "CBMouvement.h"
 
 
 @implementation CBCategorieMouvement

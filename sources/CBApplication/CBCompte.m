@@ -8,9 +8,7 @@
 
 #import "CBCompte.h"
 #import "CBMouvement.h"
-#import "Mouvement.h"
 #import "CBLibellePredefini.h"
-#import "ListeLibelles.h"
 #import "CBMouvementPeriodique.h"
 #import "CBGlobal.h"
 
@@ -36,68 +34,6 @@
 		[self setSoldeReel:[NSDecimalNumber zero]];
 		[self setSoldeBanque:[NSDecimalNumber zero]];
 		[self setSoldeCBEnCours:[NSDecimalNumber zero]];
-    }
-    return self;
-}
-
-- (id)initAvecAncienCompte:(Compte *)ancienCompte
-{
-    if (self = [self init]) {
-		[self setBanque:[ancienCompte banque]];
-		[self setNumeroCompte:[ancienCompte numeroCompte]];
-		[self setNumeroProchainCheque:[NSNumber numberWithLongLong:[[ancienCompte numeroProchainCheque] longLongValue]]];
-		[self setSoldeInitial:[ancienCompte soldeInitial]];
-		//[self setSoldeReel:[ancienCompte soldeCompte]];
-		//[self setSoldeBanque:[ancienCompte soldeCalcule]];
-		//[self setSoldeCBEnCours:[ancienCompte soldeCBEnCours]];
-		
-		// On récupère les mouvements
-		NSEnumerator *enumerator = [[ancienCompte mouvements] objectEnumerator];
-		id anObject;
-		while (anObject = [enumerator nextObject]) {
-			CBMouvement *myMouvement = [[CBMouvement alloc] initAvecAncienMouvement:(Mouvement *)anObject];
-			[[self mouvements] addObject:myMouvement];
-			[myMouvement release];
-		}
-		
-		
-		// On récupère les libellés prédéfinis
-		CBTypeMouvement myTypeMouvement;
-		CBTypeMouvement myTableauTypeMouvement [] = {	CBTypeMouvementCarteBleue, 
-														CBTypeMouvementPrelevement, 
-														CBTypeMouvementCheque, 
-														CBTypeMouvementVirementCrediteur, 
-														CBTypeMouvementDepot
-														};
-		
-		ListeLibelles *myListeLibelles;
-		ListeLibelles *myTableauListeLibelles [] = {	[ancienCompte sourceLibellesCarteBleue], 
-														[ancienCompte sourceLibellesPrelevement], 
-														[ancienCompte sourceLibellesCheque], 
-														[ancienCompte sourceLibellesVirement], 
-														[ancienCompte sourceLibellesDepot]
-														};
-		
-		NSArray *myLibelles;
-		NSArray *myMontants;
-		int k, i;
-
-		for (k = 0; k < 5; k++) {
-			myTypeMouvement = myTableauTypeMouvement[k];
-			myListeLibelles = myTableauListeLibelles[k];
-			myLibelles = [myListeLibelles libelles];
-			myMontants = [myListeLibelles montants];
-			for (i = 0; i < [myLibelles count]; i++) {
-				CBLibellePredefini *myLibellePredefini = [[CBLibellePredefini alloc] init];
-				[myLibellePredefini setOperation:myTypeMouvement];
-				[myLibellePredefini setLibelle:[myLibelles objectAtIndex:i]];
-				NSDecimalNumber *montant = [myMontants objectAtIndex:i];
-				if (montant != nil && ![montant isEqualToNumber:[NSDecimalNumber zero]])
-					[myLibellePredefini setMontant:montant];
-				[[self libellesPredefinis] addObject:myLibellePredefini];
-				[myLibellePredefini release];
-			}
-		}
     }
     return self;
 }

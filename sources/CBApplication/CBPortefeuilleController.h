@@ -120,9 +120,6 @@
 
 - (IBAction)sauveFichierTXT:(id)sender;
 
-- (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode  contextInfo:(void  *)contextInfo;
-- (void)suppressionCategorieMouvementAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo;
-- (void)suppressionCompteAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo;
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem;
 - (void)textDidChange:(NSNotification *)aNotification;
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification;

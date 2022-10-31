@@ -259,10 +259,29 @@
 	[categoriesMouvementControler rearrangeObjects];
 
 	[fenetreEditerMouvementSingle makeFirstResponder:[fenetreEditerMouvementSingle initialFirstResponder]];
-	[NSApp beginSheet:fenetreEditerMouvementSingle modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreEditerMouvementSingle completionHandler:^(NSModalResponse returnCode) {
+        
+        if (returnCode == 1) {
+
+            if (![tempMouvement isCheque])
+                [tempMouvement setNumeroCheque:[NSNumber numberWithLongLong:0]];
+            if (![tempMouvement isChequeEmploiService])
+                [tempMouvement setNumeroChequeEmploiService:[NSNumber numberWithLongLong:0]];
+
+            if ([tempMouvement isCheque] && [[tempMouvement numeroCheque] isEqualToNumber:[managedCompte numeroProchainCheque]])
+                [managedCompte augmenteNumeroProchainCheque];
+            if ([tempMouvement isChequeEmploiService] && [[tempMouvement numeroChequeEmploiService] isEqualToNumber:[managedCompte numeroProchainChequeEmploiService]])
+                [managedCompte augmenteNumeroProchainChequeEmploiService];
+
+            [mouvementsControler addObject:tempMouvement];
+            [[self managedCompte] calculeSoldes];
+            [[self managedPortefeuille] calculeSoldes];
+            [[self document] updateChangeCount:NSChangeDone];
+            [mouvementsControler rearrangeObjects];
+        }
+        [tempMouvementControler setContent:nil];
+        [tempMouvement release];
+    }];
 }
 
 - (IBAction)debutEditionMouvement:(id)sender
@@ -292,10 +311,29 @@
 			[categoriesMouvementControler rearrangeObjects];
 
 			[fenetreEditerMouvementSingle makeFirstResponder:[fenetreEditerMouvementSingle initialFirstResponder]];
-			[NSApp beginSheet:fenetreEditerMouvementSingle modalForWindow:[self window] 
-										modalDelegate:self 
-										didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-										contextInfo:(void  *)[selection objectAtIndex:0]];
+            [[self window] beginSheet:fenetreEditerMouvementSingle completionHandler:^(NSModalResponse returnCode) {
+                
+                if (returnCode == 1) {
+
+                    if (![tempMouvement isCheque])
+                        [tempMouvement setNumeroCheque:[NSNumber numberWithLongLong:0]];
+                    if (![tempMouvement isChequeEmploiService])
+                        [tempMouvement setNumeroChequeEmploiService:[NSNumber numberWithLongLong:0]];
+
+                    if ([tempMouvement isCheque] && [[tempMouvement numeroCheque] isEqualToNumber:[managedCompte numeroProchainCheque]])
+                        [managedCompte augmenteNumeroProchainCheque];
+                    if ([tempMouvement isChequeEmploiService] && [[tempMouvement numeroChequeEmploiService] isEqualToNumber:[managedCompte numeroProchainChequeEmploiService]])
+                        [managedCompte augmenteNumeroProchainChequeEmploiService];
+
+                    [(CBMouvement *)[selection objectAtIndex:0] copieParametresDepuis:tempMouvement];
+                    [[self managedCompte] calculeSoldes];
+                    [[self managedPortefeuille] calculeSoldes];
+                    [[self document] updateChangeCount:NSChangeDone];
+                    [mouvementsControler rearrangeObjects];
+                }
+                [tempMouvementControler setContent:nil];
+                [tempMouvement release];
+            }];
 		}
 		else if ([selection count] > 1) {
 			tempMouvementMultiple = [[CBMouvementMultiple alloc] init];
@@ -319,10 +357,34 @@
 			[categoriesMouvementControler rearrangeObjects];
 
 			[fenetreEditerMouvementMultiple makeFirstResponder:[fenetreEditerMouvementMultiple initialFirstResponder]];
-			[NSApp beginSheet:fenetreEditerMouvementMultiple modalForWindow:[self window] 
-										modalDelegate:self 
-										didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-										contextInfo:(void  *)selection];
+            [[self window] beginSheet:fenetreEditerMouvementMultiple completionHandler:^(NSModalResponse returnCode) {
+                
+                if (returnCode == 1) {
+
+                    if (![tempMouvementMultiple isCheque])
+                        [tempMouvementMultiple setNumeroCheque:[NSNumber numberWithLongLong:0]];
+                    if (![tempMouvementMultiple isChequeEmploiService])
+                        [tempMouvementMultiple setNumeroChequeEmploiService:[NSNumber numberWithLongLong:0]];
+
+                    if ([tempMouvementMultiple isCheque] && [[tempMouvementMultiple numeroCheque] isEqualToNumber:[managedCompte numeroProchainCheque]])
+                        [managedCompte augmenteNumeroProchainCheque];
+                    if ([tempMouvementMultiple isChequeEmploiService] && [[tempMouvementMultiple numeroChequeEmploiService] isEqualToNumber:[managedCompte numeroProchainChequeEmploiService]])
+                        [managedCompte augmenteNumeroProchainChequeEmploiService];
+
+                    NSEnumerator *enumerator = [(NSArray *)selection objectEnumerator];
+                    CBMouvement *anObject;
+                    while (anObject = [enumerator nextObject]) {
+                        [anObject copieParametresDepuisMultiple:tempMouvementMultiple];
+                    }
+
+                    [[self managedCompte] calculeSoldes];
+                    [[self managedPortefeuille] calculeSoldes];
+                    [[self document] updateChangeCount:NSChangeDone];
+                    [mouvementsControler rearrangeObjects];
+                }
+                [tempMouvementMultipleControler setContent:nil];
+                [tempMouvementMultiple release];
+            }];
 		}
 		else {
 			NSBeep();
@@ -368,7 +430,7 @@
 {
 	if ([tempMouvementControler commitEditing]) {
 		[fenetreEditerMouvementSingle orderOut:sender];
-		[NSApp endSheet:fenetreEditerMouvementSingle returnCode:[sender tag]];
+		[[self window] endSheet:fenetreEditerMouvementSingle returnCode:[sender tag]];
 	}
 	else {
 		NSBeep();
@@ -379,7 +441,7 @@
 {
 	if ([tempMouvementMultipleControler commitEditing]) {
 		[fenetreEditerMouvementMultiple orderOut:sender];
-		[NSApp endSheet:fenetreEditerMouvementMultiple returnCode:[sender tag]];
+		[[self window] endSheet:fenetreEditerMouvementMultiple returnCode:[sender tag]];
 	}
 	else {
 		NSBeep();
@@ -411,10 +473,16 @@
 								secondButton:NSLocalizedString(@"CBBoutonOK", nil)
 								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionMouvement", nil)];
 
-		[myAlert beginSheetModalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(suppressionMouvementAlertDidEnd:returnCode:contextInfo:)
-								contextInfo:NULL];
+        [myAlert beginSheetModalForWindow:[self window] completionHandler:^(NSModalResponse returnCode) {
+            
+            if (returnCode == NSAlertSecondButtonReturn) {
+                [mouvementsControler remove:self];
+                [[self managedCompte] calculeSoldes];
+                [[self managedPortefeuille] calculeSoldes];
+                [[self document] updateChangeCount:NSChangeDone];
+                [mouvementsControler rearrangeObjects];
+            }
+        }];
 	}
 	else {
 		NSBeep();
@@ -427,17 +495,24 @@
 	[tempCompte copieParametresDepuis:managedCompte];
 	[tempCompteControler setContent:tempCompte];
 	[fenetreParametres makeFirstResponder:[fenetreParametres initialFirstResponder]];
-	[NSApp beginSheet:fenetreParametres modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreParametres completionHandler:^(NSModalResponse returnCode) {
+        
+        if (returnCode == 1) {
+            [managedCompte copieParametresDepuis:tempCompte];
+            [[self managedCompte] calculeSoldes];
+            [[self managedPortefeuille] calculeSoldes];
+            [[self document] updateChangeCount:NSChangeDone];
+        }
+        [tempCompteControler setContent:nil];
+        [tempCompte release];
+    }];
 }
 
 - (IBAction)finEditionParametresCompte:(id)sender
 {
 	if ([tempCompteControler commitEditing]) {
 		[fenetreParametres orderOut:sender];
-		[NSApp endSheet:fenetreParametres returnCode:[sender tag]];
+		[[self window] endSheet:fenetreParametres returnCode:[sender tag]];
 	}
 	else {
 		NSBeep();
@@ -473,10 +548,7 @@
 
 	[fenetreEditerMouvementsPeriodiques makeFirstResponder:[fenetreEditerMouvementsPeriodiques initialFirstResponder]];
     [tableMouvementsPeriodiques cbRepairLayoutDeferred];
-	[NSApp beginSheet:fenetreEditerMouvementsPeriodiques modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreEditerMouvementsPeriodiques completionHandler:NULL];
 }
 
 - (IBAction)ajoutMouvementsPeriodiques:(id)sender
@@ -498,10 +570,13 @@
 								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionMouvementPeriodique", nil),
 															[(CBMouvementPeriodique *)[selection objectAtIndex:0] titre]];
 
-		[myAlert beginSheetModalForWindow:fenetreEditerMouvementsPeriodiques 
-								modalDelegate:self 
-								didEndSelector:@selector(suppressionMouvementsPeriodiquesAlertDidEnd:returnCode:contextInfo:)
-								contextInfo:NULL];
+        [myAlert beginSheetModalForWindow:fenetreEditerMouvementsPeriodiques completionHandler:^(NSModalResponse returnCode) {
+            
+            if (returnCode == NSAlertSecondButtonReturn) {
+                [mouvementsPeriodiquesControler remove:self];
+                [[self document] updateChangeCount:NSChangeDone];
+            }
+        }];
 	}
 	else {
 		NSBeep();
@@ -513,7 +588,7 @@
 	if ([mouvementsPeriodiquesControler commitEditing]) {
 		[[self document] updateChangeCount:NSChangeDone];
 		[fenetreEditerMouvementsPeriodiques orderOut:sender];
-		[NSApp endSheet:fenetreEditerMouvementsPeriodiques returnCode:[sender tag]];
+		[[self window] endSheet:fenetreEditerMouvementsPeriodiques returnCode:[sender tag]];
 	}
 	else {
 		NSBeep();
@@ -534,10 +609,7 @@
 	
 	[fenetreLibellesPredefinis makeFirstResponder:[fenetreLibellesPredefinis initialFirstResponder]];
     [tableLibellesPredefinis cbRepairLayoutDeferred];
-	[NSApp beginSheet:fenetreLibellesPredefinis modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreLibellesPredefinis completionHandler:NULL];
 }
 
 - (IBAction)ajoutLibellesPredefinis:(id)sender
@@ -560,10 +632,13 @@
 								informativeTextWithFormat:NSLocalizedString(@"CBContenuAlertSuppressionLibellePredefini", nil), 
 															[(CBLibellePredefini *)[selection objectAtIndex:0] libelle]];
 
-		[myAlert beginSheetModalForWindow:fenetreLibellesPredefinis 
-								modalDelegate:self 
-								didEndSelector:@selector(suppressionLibellePredefiniAlertDidEnd:returnCode:contextInfo:)
-								contextInfo:NULL];
+        [myAlert beginSheetModalForWindow:fenetreLibellesPredefinis completionHandler:^(NSModalResponse returnCode) {
+            
+            if (returnCode == NSAlertSecondButtonReturn) {
+                [libellesPredefinisControler remove:self];
+                [[self document] updateChangeCount:NSChangeDone];
+            }
+        }];
 	}
 	else {
 		NSBeep();
@@ -574,7 +649,7 @@
 {
 	if ([libellesPredefinisControler commitEditing]) {
 		[fenetreLibellesPredefinis orderOut:sender];
-		[NSApp endSheet:fenetreLibellesPredefinis returnCode:[sender tag]];
+		[[self window] endSheet:fenetreLibellesPredefinis returnCode:[sender tag]];
 	}
 	else {
 		NSBeep();
@@ -598,10 +673,7 @@
 
 	[fenetreStatistiques makeFirstResponder:[fenetreStatistiques initialFirstResponder]];
     [tableTempStatistiquesCategories cbRepairLayoutDeferred];
-	[NSApp beginSheet:fenetreStatistiques modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreStatistiques completionHandler:NULL];
 }
 
 - (IBAction)calculeStatistiques:(id)sender
@@ -691,7 +763,7 @@
 - (IBAction)finStatistiques:(id)sender
 {
 	[fenetreStatistiques orderOut:sender];
-	[NSApp endSheet:fenetreStatistiques returnCode:0];
+	[[self window] endSheet:fenetreStatistiques returnCode:0];
 	[tempStatistiquesControler setContent:nil];
 	[tempStatistiques release];
 }
@@ -756,103 +828,6 @@
                                 
                             }
                         }];
-}
-
-- (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
-{
-	if (sheet == fenetreEditerMouvementSingle) {
-		if (returnCode == 1) {
-
-			if (![tempMouvement isCheque])
-				[tempMouvement setNumeroCheque:[NSNumber numberWithLongLong:0]];
-			if (![tempMouvement isChequeEmploiService])
-				[tempMouvement setNumeroChequeEmploiService:[NSNumber numberWithLongLong:0]];
-
-			if ([tempMouvement isCheque] && [[tempMouvement numeroCheque] isEqualToNumber:[managedCompte numeroProchainCheque]])
-				[managedCompte augmenteNumeroProchainCheque];
-			if ([tempMouvement isChequeEmploiService] && [[tempMouvement numeroChequeEmploiService] isEqualToNumber:[managedCompte numeroProchainChequeEmploiService]])
-				[managedCompte augmenteNumeroProchainChequeEmploiService];
-
-			if (contextInfo == NULL) {
-				[mouvementsControler addObject:tempMouvement];
-			}
-			else {
-				[(CBMouvement *)contextInfo copieParametresDepuis:tempMouvement];
-			}
-			[[self managedCompte] calculeSoldes];
-			[[self managedPortefeuille] calculeSoldes];
-			[[self document] updateChangeCount:NSChangeDone];
-			[mouvementsControler rearrangeObjects];
-		}
-		[tempMouvementControler setContent:nil];
-		[tempMouvement release];
-	}
-
-	else if (sheet == fenetreEditerMouvementMultiple) {
-		if (returnCode == 1) {
-
-			if (![tempMouvementMultiple isCheque])
-				[tempMouvementMultiple setNumeroCheque:[NSNumber numberWithLongLong:0]];
-			if (![tempMouvementMultiple isChequeEmploiService])
-				[tempMouvementMultiple setNumeroChequeEmploiService:[NSNumber numberWithLongLong:0]];
-
-			if ([tempMouvementMultiple isCheque] && [[tempMouvementMultiple numeroCheque] isEqualToNumber:[managedCompte numeroProchainCheque]])
-				[managedCompte augmenteNumeroProchainCheque];
-			if ([tempMouvementMultiple isChequeEmploiService] && [[tempMouvementMultiple numeroChequeEmploiService] isEqualToNumber:[managedCompte numeroProchainChequeEmploiService]])
-				[managedCompte augmenteNumeroProchainChequeEmploiService];
-
-			NSEnumerator *enumerator = [(NSArray *)contextInfo objectEnumerator];
-			CBMouvement *anObject;
-			while (anObject = [enumerator nextObject]) {
-				[anObject copieParametresDepuisMultiple:tempMouvementMultiple];
-			}
-
-			[[self managedCompte] calculeSoldes];
-			[[self managedPortefeuille] calculeSoldes];
-			[[self document] updateChangeCount:NSChangeDone];
-			[mouvementsControler rearrangeObjects];
-		}
-		[tempMouvementMultipleControler setContent:nil];
-		[tempMouvementMultiple release];
-	}
-	
-	else if (sheet == fenetreParametres) {
-		if (returnCode == 1) {
-			[managedCompte copieParametresDepuis:tempCompte];
-			[[self managedCompte] calculeSoldes];
-			[[self managedPortefeuille] calculeSoldes];
-			[[self document] updateChangeCount:NSChangeDone];
-		}
-		[tempCompteControler setContent:nil];
-		[tempCompte release];
-	}
-}
-
-- (void)suppressionLibellePredefiniAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
-{
-	if (returnCode == NSAlertSecondButtonReturn) {
-		[libellesPredefinisControler remove:self];
-		[[self document] updateChangeCount:NSChangeDone];
-	}
-}
-
-- (void)suppressionMouvementAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
-{
-	if (returnCode == NSAlertSecondButtonReturn) {
-		[mouvementsControler remove:self];
-		[[self managedCompte] calculeSoldes];
-		[[self managedPortefeuille] calculeSoldes];
-		[[self document] updateChangeCount:NSChangeDone];
-		[mouvementsControler rearrangeObjects];
-	}
-}
-
-- (void)suppressionMouvementsPeriodiquesAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
-{
-	if (returnCode == NSAlertSecondButtonReturn) {
-		[mouvementsPeriodiquesControler remove:self];
-		[[self document] updateChangeCount:NSChangeDone];
-	}
 }
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem

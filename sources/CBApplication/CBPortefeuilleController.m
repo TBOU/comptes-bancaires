@@ -281,17 +281,26 @@
 	tempCompte = [[CBCompte alloc] init];
 	[tempCompteControler setContent:tempCompte];
 	[fenetreAjouterCompte makeFirstResponder:[fenetreAjouterCompte initialFirstResponder]];
-	[NSApp beginSheet:fenetreAjouterCompte modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreAjouterCompte completionHandler:^(NSModalResponse returnCode) {
+        
+        if (returnCode == 1) {
+            [tempCompte calculeSoldes];
+            [comptesControler addObject:tempCompte];
+            [boutonVirement setEnabled:[[comptesControler  arrangedObjects] count] > 1];
+            [[self managedPortefeuille] calculeSoldes];
+            [[self document] updateChangeCount:NSChangeDone];
+            [comptesControler rearrangeObjects];
+        }
+        [tempCompteControler setContent:nil];
+        [tempCompte release];
+    }];
 }
 
 - (IBAction)finAjoutCompte:(id)sender
 {
 	if ([tempCompteControler commitEditing]) {
 		[fenetreAjouterCompte orderOut:sender];
-		[NSApp endSheet:fenetreAjouterCompte returnCode:[sender tag]];
+		[[self window] endSheet:fenetreAjouterCompte returnCode:[sender tag]];
 	}
 	else {
 		NSBeep();
@@ -323,10 +332,26 @@
 															[(CBCompte *)[selection objectAtIndex:0] numeroCompte], 
 															[(CBCompte *)[selection objectAtIndex:0] banque]];
 
-		[myAlert beginSheetModalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(suppressionCompteAlertDidEnd:returnCode:contextInfo:)
-								contextInfo:(void  *)[selection objectAtIndex:0]];
+        [myAlert beginSheetModalForWindow:[self window] completionHandler:^(NSModalResponse returnCode) {
+            
+            if (returnCode == NSAlertSecondButtonReturn) {
+
+                // On ferme la fenêtre du compte si elle est encore ouverte
+                NSEnumerator *enumerateur;
+                id anObject;
+                enumerateur = [[[self document] windowControllers] objectEnumerator];
+                while (anObject = [enumerateur nextObject]) {
+                    if ( [anObject respondsToSelector:@selector(managedCompte)] && [anObject managedCompte] == (CBCompte *)[selection objectAtIndex:0])  {
+                        [anObject close];
+                    }
+                }
+
+                [comptesControler remove:self];
+                [boutonVirement setEnabled:[[comptesControler  arrangedObjects] count] > 1];
+                [[self managedPortefeuille] calculeSoldes];
+                [[self document] updateChangeCount:NSChangeDone];
+            }
+        }];
 	}
 	else {
 		NSBeep();
@@ -356,10 +381,28 @@
 	[categoriesMouvementControler rearrangeObjects];
 
 	[fenetreVirement makeFirstResponder:[fenetreVirement initialFirstResponder]];
-	[NSApp beginSheet:fenetreVirement modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreVirement completionHandler:^(NSModalResponse returnCode) {
+        
+        if (returnCode == 1) {
+            [tempVirement genereVirement];
+            // On met à jour l'affichage de la liste des mouvements dans les windows controllers des comptes concernés par le virement
+            NSEnumerator *enumerateur;
+            id anObject;
+            enumerateur = [[[self document] windowControllers] objectEnumerator];
+            while (anObject = [enumerateur nextObject]) {
+                if ( [anObject respondsToSelector:@selector(managedCompte)]
+                                            && ( [anObject managedCompte] == [tempVirement compteDebiteur]
+                                                            || [anObject managedCompte] == [tempVirement compteCrediteur] ) )  {
+                    [anObject rearrangeMouvements];
+                }
+            }
+            
+            [[self managedPortefeuille] calculeSoldes];
+            [[self document] updateChangeCount:NSChangeDone];
+        }
+        [tempVirementControler setContent:nil];
+        [tempVirement release];
+    }];
 }
 
 - (IBAction)updateMontantVirement:(id)sender
@@ -398,7 +441,7 @@
 {
 	if ([tempVirementControler commitEditing]) {
 		[fenetreVirement orderOut:sender];
-		[NSApp endSheet:fenetreVirement returnCode:[sender tag]];
+		[[self window] endSheet:fenetreVirement returnCode:[sender tag]];
 	}
 	else {
 		NSBeep();
@@ -411,17 +454,23 @@
 	[tempPortefeuille copieParametresDepuis:managedPortefeuille];
 	[tempPortefeuilleControler setContent:tempPortefeuille];
 	[fenetreParametres makeFirstResponder:[fenetreParametres initialFirstResponder]];
-	[NSApp beginSheet:fenetreParametres modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreParametres completionHandler:^(NSModalResponse returnCode) {
+        
+        if (returnCode == 1) {
+            [managedPortefeuille copieParametresDepuis:tempPortefeuille];
+            [[self document] updateFormateurs];
+            [[self document] updateChangeCount:NSChangeDone];
+        }
+        [tempPortefeuilleControler setContent:nil];
+        [tempPortefeuille release];
+    }];
 }
 
 - (IBAction)finEditionParametres:(id)sender
 {
 	if ([tempPortefeuilleControler commitEditing]) {
 		[fenetreParametres orderOut:sender];
-		[NSApp endSheet:fenetreParametres returnCode:[sender tag]];
+		[[self window] endSheet:fenetreParametres returnCode:[sender tag]];
 	}
 	else {
 		NSBeep();
@@ -440,10 +489,7 @@
 	
 	[fenetreCategoriesMouvement makeFirstResponder:[fenetreCategoriesMouvement initialFirstResponder]];
     [tableCategoriesMouvement cbRepairLayoutDeferred];
-	[NSApp beginSheet:fenetreCategoriesMouvement modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreCategoriesMouvement completionHandler:NULL];
 }
 
 - (IBAction)ajoutCategoriesMouvement:(id)sender
@@ -464,10 +510,15 @@
 															[(CBCategorieMouvement *)[selection objectAtIndex:0] titre], 
 															[(CBCategorieMouvement *)[selection objectAtIndex:0] utilisationMouvements]];
 
-		[myAlert beginSheetModalForWindow:fenetreCategoriesMouvement 
-								modalDelegate:self 
-								didEndSelector:@selector(suppressionCategorieMouvementAlertDidEnd:returnCode:contextInfo:)
-								contextInfo:(void  *)[selection objectAtIndex:0]];
+        [myAlert beginSheetModalForWindow:fenetreCategoriesMouvement completionHandler:^(NSModalResponse returnCode) {
+            
+            if (returnCode == NSAlertSecondButtonReturn) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"CBCategorieMouvementWillDeallocNotification"
+                                                        object:(CBCategorieMouvement *)[selection objectAtIndex:0]];
+                [categoriesMouvementControler remove:self];
+                [[self document] updateChangeCount:NSChangeDone];
+            }
+        }];
 	}
 	else {
 		NSBeep();
@@ -478,7 +529,7 @@
 {
 	if ([categoriesMouvementControler commitEditing]) {
 		[fenetreCategoriesMouvement orderOut:sender];
-		[NSApp endSheet:fenetreCategoriesMouvement returnCode:[sender tag]];
+		[[self window] endSheet:fenetreCategoriesMouvement returnCode:[sender tag]];
 	}
 	else {
 		NSBeep();
@@ -505,16 +556,61 @@
 	[self setSauvegardeCloture:YES];
 	
 	[fenetreCloturerExercice makeFirstResponder:[fenetreCloturerExercice initialFirstResponder]];
-	[NSApp beginSheet:fenetreCloturerExercice modalForWindow:[self window] 
-								modalDelegate:self 
-								didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-								contextInfo:NULL];
+    [[self window] beginSheet:fenetreCloturerExercice completionHandler:^(NSModalResponse returnCode) {
+        
+        if (returnCode == 1) {
+
+            if([self sauvegardeCloture]) {
+                
+                NSString *nomFichier;
+                nomFichier = @"~";
+                nomFichier = [nomFichier stringByAppendingPathComponent:@"Desktop"];
+                nomFichier = [nomFichier stringByAppendingPathComponent:[[[self document] displayName] stringByDeletingPathExtension]];
+                nomFichier = [nomFichier stringByAppendingString:CBStringFromDate([self dateCloture], @"_dd_MM_yyyy")];
+                nomFichier = [nomFichier stringByAppendingPathExtension:@"cba"];
+                nomFichier = [nomFichier stringByExpandingTildeInPath];
+                
+                BOOL flag = [managedPortefeuille verifieEcrituresAutomatiquesEnSuspens];
+                [managedPortefeuille setVerifieEcrituresAutomatiquesEnSuspens:NO];
+                
+                NSError *outError = nil;
+                if (![[self document] writeToURL:[NSURL fileURLWithPath:nomFichier] ofType:CBTypeDocumentBinaire error:&outError] && outError != nil) {
+                    
+                    NSMutableDictionary *raisedErrorDict = [[[outError userInfo] mutableCopy] autorelease];
+                    NSString *titreErreur = [NSString stringWithString:NSLocalizedString(@"CBFichierSauvegardeMessageErreur", nil)];
+                    [raisedErrorDict setObject:titreErreur forKey:NSLocalizedDescriptionKey];
+                    NSError *raisedError = [NSError errorWithDomain:[outError domain] code:[outError code] userInfo:raisedErrorDict];
+                    [self presentError:raisedError modalForWindow:[self window]
+                                                        delegate:nil
+                                                        didPresentSelector:NULL
+                                                        contextInfo:NULL];
+                    
+                    [managedPortefeuille setVerifieEcrituresAutomatiquesEnSuspens:flag];
+                    return;
+                }
+                
+                [managedPortefeuille setVerifieEcrituresAutomatiquesEnSuspens:flag];
+            }
+
+            NSEnumerator *comptesEnumerateur;
+            CBCompte *myCompte;
+            comptesEnumerateur = [[managedPortefeuille comptes] objectEnumerator];
+            while (myCompte = (CBCompte *)[comptesEnumerateur nextObject]) {
+                
+                [myCompte clotureExercicePourDate:[self dateCloture]];
+                [myCompte calculeSoldes];
+            }
+            
+            [[self managedPortefeuille] calculeSoldes];
+            [[self document] updateChangeCount:NSChangeDone];
+        }
+    }];
 }
 
 - (IBAction)finClotureExercice:(id)sender
 {
 	[fenetreCloturerExercice orderOut:sender];
-	[NSApp endSheet:fenetreCloturerExercice returnCode:[sender tag]];
+	[[self window] endSheet:fenetreCloturerExercice returnCode:[sender tag]];
 }
 
 - (IBAction)sauveFichierTXT:(id)sender
@@ -569,132 +665,6 @@
                                 
                             }
                         }];
-}
-
-- (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
-{
-	if (sheet == fenetreAjouterCompte) {
-		if (returnCode == 1) {
-			[tempCompte calculeSoldes];
-			[comptesControler addObject:tempCompte];
-			[boutonVirement setEnabled:[[comptesControler  arrangedObjects] count] > 1];
-			[[self managedPortefeuille] calculeSoldes];
-			[[self document] updateChangeCount:NSChangeDone];
-			[comptesControler rearrangeObjects];
-		}
-		[tempCompteControler setContent:nil];
-		[tempCompte release];
-	}
-	
-	else if (sheet == fenetreVirement) {
-		if (returnCode == 1) {
-			[tempVirement genereVirement];
-			// On met à jour l'affichage de la liste des mouvements dans les windows controllers des comptes concernés par le virement
-			NSEnumerator *enumerateur;
-			id anObject;
-			enumerateur = [[[self document] windowControllers] objectEnumerator];
-			while (anObject = [enumerateur nextObject]) {
-				if ( [anObject respondsToSelector:@selector(managedCompte)] 
-											&& ( [anObject managedCompte] == [tempVirement compteDebiteur] 
-															|| [anObject managedCompte] == [tempVirement compteCrediteur] ) )  {
-					[anObject rearrangeMouvements];
-				}
-			}
-			
-			[[self managedPortefeuille] calculeSoldes];
-			[[self document] updateChangeCount:NSChangeDone];
-		}
-		[tempVirementControler setContent:nil];
-		[tempVirement release];
-	}
-	
-	else if (sheet == fenetreParametres) {
-		if (returnCode == 1) {
-			[managedPortefeuille copieParametresDepuis:tempPortefeuille];
-			[[self document] updateFormateurs];
-			[[self document] updateChangeCount:NSChangeDone];
-		}
-		[tempPortefeuilleControler setContent:nil];
-		[tempPortefeuille release];
-	}
-	
-	else if (sheet == fenetreCloturerExercice && returnCode == 1) {
-
-		if([self sauvegardeCloture]) {
-			
-			NSString *nomFichier;
-			nomFichier = @"~";
-			nomFichier = [nomFichier stringByAppendingPathComponent:@"Desktop"];
-			nomFichier = [nomFichier stringByAppendingPathComponent:[[[self document] displayName] stringByDeletingPathExtension]];
-			nomFichier = [nomFichier stringByAppendingString:CBStringFromDate([self dateCloture], @"_dd_MM_yyyy")];
-			nomFichier = [nomFichier stringByAppendingPathExtension:@"cba"];
-			nomFichier = [nomFichier stringByExpandingTildeInPath];
-			
-            BOOL flag = [managedPortefeuille verifieEcrituresAutomatiquesEnSuspens];
-            [managedPortefeuille setVerifieEcrituresAutomatiquesEnSuspens:NO];
-            
-			NSError *outError = nil;
-			if (![[self document] writeToURL:[NSURL fileURLWithPath:nomFichier] ofType:CBTypeDocumentBinaire error:&outError] && outError != nil) {
-				
-				NSMutableDictionary *raisedErrorDict = [[[outError userInfo] mutableCopy] autorelease];
-				NSString *titreErreur = [NSString stringWithString:NSLocalizedString(@"CBFichierSauvegardeMessageErreur", nil)];
-				[raisedErrorDict setObject:titreErreur forKey:NSLocalizedDescriptionKey];
-				NSError *raisedError = [NSError errorWithDomain:[outError domain] code:[outError code] userInfo:raisedErrorDict];
-				[self presentError:raisedError modalForWindow:[self window] 
-													delegate:nil 
-													didPresentSelector:NULL 
-													contextInfo:NULL];
-				
-                [managedPortefeuille setVerifieEcrituresAutomatiquesEnSuspens:flag];
-                return;
-			}
-            
-            [managedPortefeuille setVerifieEcrituresAutomatiquesEnSuspens:flag];
-		}
-
-		NSEnumerator *comptesEnumerateur;
-		CBCompte *myCompte;
-		comptesEnumerateur = [[managedPortefeuille comptes] objectEnumerator];
-		while (myCompte = (CBCompte *)[comptesEnumerateur nextObject]) {
-			
-			[myCompte clotureExercicePourDate:[self dateCloture]];
-			[myCompte calculeSoldes];
-		}
-		
-		[[self managedPortefeuille] calculeSoldes];
-		[[self document] updateChangeCount:NSChangeDone];
-	}
-}
-
-- (void)suppressionCategorieMouvementAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
-{
-	if (returnCode == NSAlertSecondButtonReturn) {
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"CBCategorieMouvementWillDeallocNotification" 
-												object:(CBCategorieMouvement *)contextInfo];
-		[categoriesMouvementControler remove:self];
-		[[self document] updateChangeCount:NSChangeDone];
-	}
-}
-
-- (void)suppressionCompteAlertDidEnd:(NSAlert *)alert returnCode:(int)returnCode  contextInfo:(void  *)contextInfo
-{
-	if (returnCode == NSAlertSecondButtonReturn) {
-
-		// On ferme la fenêtre du compte si elle est encore ouverte
-		NSEnumerator *enumerateur;
-		id anObject;
-		enumerateur = [[[self document] windowControllers] objectEnumerator];
-		while (anObject = [enumerateur nextObject]) {
-			if ( [anObject respondsToSelector:@selector(managedCompte)] && [anObject managedCompte] == (CBCompte *)contextInfo)  {
-				[anObject close];
-			}
-		}
-
-		[comptesControler remove:self];
-		[boutonVirement setEnabled:[[comptesControler  arrangedObjects] count] > 1];
-		[[self managedPortefeuille] calculeSoldes];
-		[[self document] updateChangeCount:NSChangeDone];
-	}
 }
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem

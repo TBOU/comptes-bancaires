@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" promptedForUpgradeToXcode5="NO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CBPortefeuilleController">
@@ -47,20 +49,20 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Portefeuille" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Portefeuille">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="28" y="355" width="716" height="477"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
-            <value key="minSize" type="size" width="716" height="477"/>
+            <rect key="contentRect" x="28" y="355" width="719" height="480"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1175"/>
+            <value key="minSize" type="size" width="719" height="480"/>
             <view key="contentView" id="6">
-                <rect key="frame" x="0.0" y="0.0" width="716" height="477"/>
+                <rect key="frame" x="0.0" y="0.0" width="719" height="480"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="9">
-                        <rect key="frame" x="20" y="385" width="225" height="22"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="221" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                        <rect key="frame" x="20" y="385" width="225" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Solde total des comptes :" id="394">
                             <font key="font" metaFont="system" size="18"/>
@@ -68,8 +70,8 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="10">
-                        <rect key="frame" x="253" y="385" width="310" height="22"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="306" translatesAutoresizingMaskIntoConstraints="NO" id="10">
+                        <rect key="frame" x="253" y="385" width="310" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="&lt;soldeTotalComptes&gt;" id="395">
                             <font key="font" metaFont="system" size="18"/>
@@ -80,8 +82,8 @@
                             <binding destination="12" name="value" keyPath="selection.soldeTotalComptes" id="20"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="11">
-                        <rect key="frame" x="20" y="435" width="546" height="22"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="542" translatesAutoresizingMaskIntoConstraints="NO" id="11">
+                        <rect key="frame" x="18" y="436" width="546" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="&lt;nomPrenom&gt;" id="396">
                             <font key="font" metaFont="systemBold" size="18"/>
@@ -92,24 +94,23 @@
                             <binding destination="12" name="value" keyPath="selection.nomPrenom" id="19"/>
                         </connections>
                     </textField>
-                    <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="66">
+                    <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66">
                         <rect key="frame" x="20" y="20" width="676" height="268"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="V2q-fy-Hha">
-                            <rect key="frame" x="1" y="17" width="674" height="250"/>
+                            <rect key="frame" x="1" y="1" width="674" height="266"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" headerView="463" id="67">
-                                    <rect key="frame" x="0.0" y="0.0" width="674" height="250"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="674" height="249"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <tableViewGridLines key="gridStyleMask" vertical="YES"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="banque" editable="NO" width="241" minWidth="233" maxWidth="1000" id="69">
+                                        <tableColumn identifier="banque" editable="NO" width="239" minWidth="239" maxWidth="1000" id="69">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Banque">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
@@ -123,9 +124,8 @@
                                                 <binding destination="65" name="value" keyPath="arrangedObjects.banque" id="81"/>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn identifier="numeroCompte" editable="NO" width="167" minWidth="160" maxWidth="1000" id="68">
+                                        <tableColumn identifier="numeroCompte" editable="NO" width="160" minWidth="160" maxWidth="1000" id="68">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Numéro de compte">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
@@ -141,7 +141,6 @@
                                         </tableColumn>
                                         <tableColumn identifier="soldeReel" editable="NO" width="127" minWidth="127" maxWidth="127" id="70">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Solde réel">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -161,7 +160,6 @@
                                         </tableColumn>
                                         <tableColumn identifier="soldeBanque" editable="NO" width="127" minWidth="127" maxWidth="127" id="71">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Solde banque">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -182,14 +180,13 @@
                                     </tableColumns>
                                 </tableView>
                             </subviews>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="462">
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="462">
                             <rect key="frame" x="-100" y="-100" width="659" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="461">
-                            <rect key="frame" x="660" y="17" width="15" height="250"/>
+                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="461">
+                            <rect key="frame" x="659" y="18" width="16" height="249"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="463">
@@ -197,13 +194,8 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <imageView id="86">
-                        <rect key="frame" x="571" y="332" width="128" height="128"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppCB" id="397"/>
-                    </imageView>
-                    <button verticalHuggingPriority="750" id="159">
-                        <rect key="frame" x="20" y="295" width="106" height="23"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="159">
+                        <rect key="frame" x="19" y="294" width="106" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Ajouter compte" bezelStyle="texturedSquare" alignment="center" borderStyle="border" inset="2" id="398">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -213,8 +205,8 @@
                             <action selector="debutAjoutCompte:" target="-2" id="162"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="160">
-                        <rect key="frame" x="134" y="295" width="96" height="23"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="160">
+                        <rect key="frame" x="131" y="294" width="98" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Editer compte" bezelStyle="texturedSquare" alignment="center" borderStyle="border" inset="2" id="399">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -225,8 +217,8 @@
                             <binding destination="65" name="enabled" keyPath="canRemove" id="166"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="161">
-                        <rect key="frame" x="238" y="295" width="125" height="23"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="161">
+                        <rect key="frame" x="235" y="294" width="126" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Supprimer compte" bezelStyle="texturedSquare" alignment="center" borderStyle="border" inset="2" id="400">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -237,8 +229,8 @@
                             <binding destination="65" name="enabled" keyPath="canRemove" id="168"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="377">
-                        <rect key="frame" x="497" y="295" width="199" height="23"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="377">
+                        <rect key="frame" x="501" y="294" width="196" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Virement de compte à compte" bezelStyle="texturedSquare" alignment="center" borderStyle="border" inset="2" id="401">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -248,17 +240,24 @@
                             <action selector="debutVirement:" target="-2" id="378"/>
                         </connections>
                     </button>
+                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="86">
+                        <rect key="frame" x="568" y="332" width="128" height="128"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppCB" id="397"/>
+                    </imageView>
                 </subviews>
             </view>
             <connections>
                 <outlet property="initialFirstResponder" destination="67" id="138"/>
             </connections>
+            <point key="canvasLocation" x="140" y="126"/>
         </window>
         <objectController objectClassName="CBPortefeuille" id="12" userLabel="portefeuille">
             <declaredKeys>
                 <string>nomPrenom</string>
                 <string>soldeTotalComptes</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBPortefeuille"/>
             <connections>
                 <binding destination="-2" name="contentObject" keyPath="managedPortefeuille" id="174"/>
             </connections>
@@ -266,15 +265,15 @@
         <window title="Parametres" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="21" userLabel="Parametres">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="397" y="627" width="360" height="193"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="contentRect" x="397" y="627" width="430" height="187"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1175"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="22">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="193"/>
+                <rect key="frame" x="0.0" y="0.0" width="430" height="187"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="23">
-                        <rect key="frame" x="36" y="153" width="42" height="17"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="38" translatesAutoresizingMaskIntoConstraints="NO" id="23">
+                        <rect key="frame" x="107" y="149" width="40" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Nom :" id="402">
                             <font key="font" metaFont="system"/>
@@ -282,12 +281,12 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="24">
-                        <rect key="frame" x="83" y="151" width="257" height="22"/>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24">
+                        <rect key="frame" x="153" y="146" width="257" height="21"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="403">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -295,8 +294,8 @@
                             <outlet property="nextKeyView" destination="26" id="29"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="25">
-                        <rect key="frame" x="17" y="120" width="61" height="17"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="57" translatesAutoresizingMaskIntoConstraints="NO" id="25">
+                        <rect key="frame" x="89" y="118" width="58" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Prénom :" id="404">
                             <font key="font" metaFont="system"/>
@@ -304,12 +303,12 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="26">
-                        <rect key="frame" x="83" y="118" width="257" height="22"/>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26">
+                        <rect key="frame" x="153" y="115" width="257" height="21"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="405">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -317,8 +316,41 @@
                             <outlet property="nextKeyView" destination="185" id="187"/>
                         </connections>
                     </textField>
-                    <button verticalHuggingPriority="750" tag="1" id="27">
-                        <rect key="frame" x="264" y="12" width="82" height="32"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="130" translatesAutoresizingMaskIntoConstraints="NO" id="184">
+                        <rect key="frame" x="18" y="87" width="129" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Symbole monétaire :" id="408">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="185">
+                        <rect key="frame" x="153" y="84" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="409">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="169" name="value" keyPath="selection.symboleMonetaire" id="186"/>
+                            <outlet property="nextKeyView" destination="24" id="188"/>
+                        </connections>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="470">
+                        <rect key="frame" x="92" y="59" width="318" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="check" title="Proposer les écritures automatiques en suspens" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="471">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="169" name="value" keyPath="selection.verifieEcrituresAutomatiquesEnSuspens" id="473"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="27">
+                        <rect key="frame" x="335" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" tag="1" inset="2" id="406">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -331,8 +363,8 @@ DQ
                             <action selector="finEditionParametres:" target="-2" id="115"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="28">
-                        <rect key="frame" x="174" y="12" width="90" height="32"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28">
+                        <rect key="frame" x="255" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Annuler" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="407">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -345,57 +377,25 @@ Gw
                             <action selector="finEditionParametres:" target="-2" id="114"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" id="184">
-                        <rect key="frame" x="17" y="87" width="134" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Symbole monétaire :" id="408">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="185">
-                        <rect key="frame" x="156" y="85" width="42" height="22"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="409">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="169" name="value" keyPath="selection.symboleMonetaire" id="186"/>
-                            <outlet property="nextKeyView" destination="24" id="188"/>
-                        </connections>
-                    </textField>
-                    <button id="470">
-                        <rect key="frame" x="18" y="58" width="324" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Proposer les écritures automatiques en suspens" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="471">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <binding destination="169" name="value" keyPath="selection.verifieEcrituresAutomatiquesEnSuspens" id="473"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <connections>
                 <outlet property="initialFirstResponder" destination="24" id="136"/>
             </connections>
+            <point key="canvasLocation" x="166" y="144"/>
         </window>
         <window title="CategoriesMouvement" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="31" userLabel="CategoriesMouvement">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="536" y="525" width="382" height="313"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1175"/>
             <value key="minSize" type="size" width="382" height="313"/>
             <view key="contentView" id="32">
                 <rect key="frame" x="0.0" y="0.0" width="382" height="313"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" tag="1" id="38">
-                        <rect key="frame" x="283" y="12" width="85" height="32"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="38">
+                        <rect key="frame" x="291" y="13" width="78" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Fermer" bezelStyle="rounded" alignment="center" borderStyle="border" tag="1" inset="2" id="410">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -408,24 +408,23 @@ DQ
                             <action selector="finEditionCategoriesMouvement:" target="-2" id="116"/>
                         </connections>
                     </button>
-                    <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="40">
+                    <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40">
                         <rect key="frame" x="20" y="60" width="342" height="233"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" id="kOV-km-jtE">
-                            <rect key="frame" x="1" y="17" width="340" height="215"/>
+                            <rect key="frame" x="1" y="1" width="340" height="231"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" headerView="466" id="41">
-                                    <rect key="frame" x="0.0" y="0.0" width="340" height="215"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="214"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <tableViewGridLines key="gridStyleMask" vertical="YES"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="titre" width="234" minWidth="223" maxWidth="1000" id="43">
+                                        <tableColumn identifier="titre" width="225" minWidth="225" maxWidth="1000" id="43">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Titre">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
@@ -441,7 +440,6 @@ DQ
                                         </tableColumn>
                                         <tableColumn identifier="utilisationMouvements" editable="NO" width="100" minWidth="100" maxWidth="100" id="121">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Mouvements liés">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -457,14 +455,13 @@ DQ
                                     </tableColumns>
                                 </tableView>
                             </subviews>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="small" horizontal="YES" id="465">
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" controlSize="small" horizontal="YES" id="465">
                             <rect key="frame" x="-100" y="-100" width="329" height="11"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="464">
-                            <rect key="frame" x="330" y="17" width="11" height="215"/>
+                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="464">
+                            <rect key="frame" x="327" y="18" width="14" height="214"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="466">
@@ -472,8 +469,8 @@ DQ
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <button verticalHuggingPriority="750" id="50">
-                        <rect key="frame" x="20" y="33" width="15" height="20"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="50">
+                        <rect key="frame" x="19" y="34" width="18" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="squareTextured" title="+" bezelStyle="texturedSquare" alignment="center" controlSize="small" borderStyle="border" inset="2" id="411">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -484,8 +481,8 @@ DQ
                             <binding destination="56" name="enabled" keyPath="canAdd" id="124"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="51">
-                        <rect key="frame" x="36" y="33" width="15" height="20"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51">
+                        <rect key="frame" x="43" y="34" width="18" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="squareTextured" title="-" bezelStyle="texturedSquare" alignment="center" controlSize="small" borderStyle="border" inset="2" id="412">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -501,12 +498,14 @@ DQ
             <connections>
                 <outlet property="initialFirstResponder" destination="41" id="137"/>
             </connections>
+            <point key="canvasLocation" x="180" y="80.5"/>
         </window>
         <arrayController objectClassName="CBCategorieMouvement" id="56" userLabel="categoriesMouvement">
             <declaredKeys>
                 <string>titre</string>
                 <string>utilisationMouvements</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBCategorieMouvement"/>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="managedPortefeuille.categoriesMouvement" id="58"/>
             </connections>
@@ -518,6 +517,7 @@ DQ
                 <string>soldeReel</string>
                 <string>soldeBanque</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBCompte"/>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="managedPortefeuille.comptes" id="78"/>
             </connections>
@@ -530,19 +530,130 @@ DQ
                 <string>numeroProchainCheque</string>
                 <string>numeroProchainChequeEmploiService</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBCompte"/>
         </objectController>
         <window title="AjouterCompte" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="91" userLabel="AjouterCompte">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="193" y="560" width="559" height="230"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="contentRect" x="193" y="560" width="550" height="229"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1175"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="92">
-                <rect key="frame" x="1" y="9" width="559" height="230"/>
+                <rect key="frame" x="0.0" y="0.0" width="550" height="229"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" tag="1" id="117">
-                        <rect key="frame" x="463" y="12" width="82" height="32"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="283" translatesAutoresizingMaskIntoConstraints="NO" id="126">
+                        <rect key="frame" x="236" y="191" width="58" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Banque :" id="415">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="283" translatesAutoresizingMaskIntoConstraints="NO" id="127">
+                        <rect key="frame" x="166" y="160" width="128" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Numéro de compte :" id="416">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="283" translatesAutoresizingMaskIntoConstraints="NO" id="128">
+                        <rect key="frame" x="212" y="129" width="82" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Solde initial :" id="417">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="283" translatesAutoresizingMaskIntoConstraints="NO" id="129">
+                        <rect key="frame" x="111" y="98" width="183" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Numéro du prochain chèque :" id="418">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="283" translatesAutoresizingMaskIntoConstraints="NO" id="130">
+                        <rect key="frame" x="18" y="67" width="276" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Numéro du prochain chèque Emploi Service :" id="419">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="131">
+                        <rect key="frame" x="300" y="188" width="230" height="21"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="420">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="90" name="value" keyPath="selection.banque" id="147"/>
+                            <outlet property="nextKeyView" destination="132" id="140"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="132">
+                        <rect key="frame" x="300" y="157" width="230" height="21"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="421">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="90" name="value" keyPath="selection.numeroCompte" id="148"/>
+                            <outlet property="nextKeyView" destination="133" id="141"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="133">
+                        <rect key="frame" x="300" y="126" width="230" height="21"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="422">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="90" name="value" keyPath="selection.soldeInitial" id="149"/>
+                            <outlet property="nextKeyView" destination="134" id="142"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="134">
+                        <rect key="frame" x="300" y="95" width="230" height="21"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="423">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="90" name="value" keyPath="selection.numeroProchainCheque" id="150"/>
+                            <outlet property="nextKeyView" destination="135" id="143"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="135">
+                        <rect key="frame" x="300" y="64" width="230" height="21"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="424">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="90" name="value" keyPath="selection.numeroProchainChequeEmploiService" id="151"/>
+                            <outlet property="nextKeyView" destination="131" id="144"/>
+                        </connections>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="117">
+                        <rect key="frame" x="455" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" tag="1" inset="2" id="413">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -555,8 +666,8 @@ DQ
                             <action selector="finAjoutCompte:" target="-2" id="145"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="118">
-                        <rect key="frame" x="373" y="12" width="90" height="32"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="118">
+                        <rect key="frame" x="375" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Annuler" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="414">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -569,134 +680,25 @@ Gw
                             <action selector="finAjoutCompte:" target="-2" id="146"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" id="126">
-                        <rect key="frame" x="17" y="190" width="287" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Banque :" id="415">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="127">
-                        <rect key="frame" x="17" y="158" width="287" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Numéro de compte :" id="416">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="128">
-                        <rect key="frame" x="17" y="126" width="287" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Solde initial :" id="417">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="129">
-                        <rect key="frame" x="17" y="94" width="287" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Numéro du prochain chèque :" id="418">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="130">
-                        <rect key="frame" x="17" y="62" width="287" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Numéro du prochain chèque Emploi Service :" id="419">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="131">
-                        <rect key="frame" x="309" y="188" width="230" height="22"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="420">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="90" name="value" keyPath="selection.banque" id="147"/>
-                            <outlet property="nextKeyView" destination="132" id="140"/>
-                        </connections>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="132">
-                        <rect key="frame" x="309" y="156" width="230" height="22"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="421">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="90" name="value" keyPath="selection.numeroCompte" id="148"/>
-                            <outlet property="nextKeyView" destination="133" id="141"/>
-                        </connections>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="133">
-                        <rect key="frame" x="309" y="124" width="230" height="22"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="422">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="90" name="value" keyPath="selection.soldeInitial" id="149"/>
-                            <outlet property="nextKeyView" destination="134" id="142"/>
-                        </connections>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="134">
-                        <rect key="frame" x="309" y="92" width="230" height="22"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="423">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="90" name="value" keyPath="selection.numeroProchainCheque" id="150"/>
-                            <outlet property="nextKeyView" destination="135" id="143"/>
-                        </connections>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="135">
-                        <rect key="frame" x="309" y="60" width="230" height="22"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="424">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="90" name="value" keyPath="selection.numeroProchainChequeEmploiService" id="151"/>
-                            <outlet property="nextKeyView" destination="131" id="144"/>
-                        </connections>
-                    </textField>
                 </subviews>
             </view>
             <connections>
                 <outlet property="initialFirstResponder" destination="131" id="139"/>
             </connections>
+            <point key="canvasLocation" x="230.5" y="172"/>
         </window>
         <window title="CloturerExercice" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="102" userLabel="CloturerExercice">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="125" y="567" width="500" height="266"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="contentRect" x="125" y="567" width="496" height="255"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1175"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="103">
-                <rect key="frame" x="1" y="1" width="500" height="266"/>
+                <rect key="frame" x="0.0" y="0.0" width="496" height="255"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="105">
-                        <rect key="frame" x="17" y="195" width="242" height="51"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="105">
+                        <rect key="frame" x="18" y="184" width="242" height="51"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Supprimer pour l'ensemble des comptes tous les mouvements pointés antérieurs à la date suivante :" id="426">
                             <font key="font" metaFont="system"/>
@@ -704,8 +706,8 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="104">
-                        <rect key="frame" x="20" y="88" width="460" height="72"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="456" translatesAutoresizingMaskIntoConstraints="NO" id="104">
+                        <rect key="frame" x="18" y="88" width="460" height="72"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="425">
                             <font key="font" metaFont="systemBold" size="14"/>
@@ -714,8 +716,8 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button id="110">
-                        <rect key="frame" x="105" y="58" width="303" height="18"/>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="110">
+                        <rect key="frame" x="111" y="59" width="295" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Créer un fichier de sauvegarde sur le bureau" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="427">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -725,8 +727,8 @@ Gw
                             <binding destination="-2" name="value" keyPath="sauvegardeCloture" id="248"/>
                         </connections>
                     </button>
-                    <datePicker verticalHuggingPriority="750" id="113">
-                        <rect key="frame" x="264" y="195" width="104" height="27"/>
+                    <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="113">
+                        <rect key="frame" x="266" y="184" width="98" height="28"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="428">
                             <font key="font" metaFont="system"/>
@@ -740,8 +742,8 @@ Gw
                             <binding destination="-2" name="value" keyPath="dateCloture" id="247"/>
                         </connections>
                     </datePicker>
-                    <button verticalHuggingPriority="750" tag="1" id="153">
-                        <rect key="frame" x="314" y="12" width="82" height="32"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="153">
+                        <rect key="frame" x="321" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" tag="1" inset="2" id="429">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -751,8 +753,8 @@ Gw
                             <action selector="finClotureExercice:" target="-2" id="157"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="154">
-                        <rect key="frame" x="396" y="12" width="90" height="32"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="154">
+                        <rect key="frame" x="401" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Annuler" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="430">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -770,6 +772,7 @@ DQ
             <connections>
                 <outlet property="initialFirstResponder" destination="113" id="183"/>
             </connections>
+            <point key="canvasLocation" x="171" y="120"/>
         </window>
         <objectController objectClassName="CBPortefeuille" id="169" userLabel="tempPortefeuille">
             <declaredKeys>
@@ -778,6 +781,7 @@ DQ
                 <string>symboleMonetaire</string>
                 <string>verifieEcrituresAutomatiquesEnSuspens</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBPortefeuille"/>
         </objectController>
         <arrayController objectClassName="CBEcritureAutomatique" id="197" userLabel="ecrituresAutomatiques">
             <declaredKeys>
@@ -788,6 +792,7 @@ DQ
                 <string>mouvement.montant</string>
                 <string>mouvement.libelleOperation</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBEcritureAutomatique"/>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="ecrituresAutomatiques" id="222"/>
             </connections>
@@ -795,31 +800,30 @@ DQ
         <window title="Ecritures automatiques en suspens" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="198" userLabel="EcrituresAutomatiques">
             <windowStyleMask key="styleMask" titled="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="60" y="413" width="985" height="404"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
-            <value key="minSize" type="size" width="985" height="404"/>
+            <rect key="contentRect" x="60" y="413" width="985" height="421"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1175"/>
+            <value key="minSize" type="size" width="985" height="421"/>
             <view key="contentView" id="199">
-                <rect key="frame" x="0.0" y="0.0" width="985" height="404"/>
+                <rect key="frame" x="0.0" y="0.0" width="985" height="421"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="200">
-                        <rect key="frame" x="20" y="78" width="945" height="306"/>
+                    <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="200">
+                        <rect key="frame" x="20" y="80" width="945" height="321"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="dqE-jg-XR4">
-                            <rect key="frame" x="1" y="17" width="943" height="288"/>
+                            <rect key="frame" x="1" y="1" width="943" height="319"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnReordering="NO" emptySelection="NO" autosaveColumns="NO" headerView="469" id="201">
-                                    <rect key="frame" x="0.0" y="0.0" width="943" height="288"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="943" height="302"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <tableViewGridLines key="gridStyleMask" vertical="YES"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="titre" editable="NO" width="238" minWidth="233" maxWidth="1000" id="203">
+                                        <tableColumn identifier="titre" editable="NO" width="235" minWidth="235" maxWidth="1000" id="203">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Banque">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                             </tableHeaderCell>
@@ -833,9 +837,8 @@ DQ
                                                 <binding destination="197" name="value" keyPath="arrangedObjects.compte.banque" id="215"/>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn identifier="utilisationMouvements" editable="NO" width="165" minWidth="160" maxWidth="1000" id="202">
+                                        <tableColumn identifier="utilisationMouvements" editable="NO" width="162" minWidth="162" maxWidth="1000" id="202">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Compte">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -855,7 +858,6 @@ DQ
                                         </tableColumn>
                                         <tableColumn editable="NO" width="90" minWidth="90" maxWidth="90" id="205">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Date">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -871,7 +873,6 @@ DQ
                                         </tableColumn>
                                         <tableColumn editable="NO" width="127" minWidth="127" maxWidth="127" id="206">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Opération">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -885,9 +886,8 @@ DQ
                                                 <binding destination="197" name="value" keyPath="arrangedObjects.mouvement.libelleOperation" id="218"/>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn editable="NO" width="178" minWidth="173" maxWidth="1000" id="207">
+                                        <tableColumn editable="NO" width="175" minWidth="175" maxWidth="1000" id="207">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Libellé">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -903,7 +903,6 @@ DQ
                                         </tableColumn>
                                         <tableColumn width="127" minWidth="127" maxWidth="127" id="208">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Montant">
-                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -920,14 +919,13 @@ DQ
                                     </tableColumns>
                                 </tableView>
                             </subviews>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="468">
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="468">
                             <rect key="frame" x="-100" y="-100" width="928" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="467">
-                            <rect key="frame" x="929" y="17" width="15" height="288"/>
+                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="467">
+                            <rect key="frame" x="928" y="18" width="16" height="302"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="469">
@@ -935,8 +933,8 @@ DQ
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <button verticalHuggingPriority="750" tag="1" id="223">
-                        <rect key="frame" x="657" y="48" width="134" height="23"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="223">
+                        <rect key="frame" x="636" y="48" width="162" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Générer maintenant" bezelStyle="texturedSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="431">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -947,20 +945,8 @@ DQ
                             <binding destination="197" name="enabled" keyPath="canRemove" id="227"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" tag="3" id="224">
-                        <rect key="frame" x="657" y="19" width="134" height="23"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="squareTextured" title="Générer plus tard" bezelStyle="texturedSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="432">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="actionSelectionEcrituresAutomatiques:" target="-2" id="244"/>
-                            <binding destination="197" name="enabled" keyPath="canRemove" id="229"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" tag="2" id="225">
-                        <rect key="frame" x="799" y="48" width="166" height="23"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="225">
+                        <rect key="frame" x="804" y="48" width="162" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Tout générer maintenant" bezelStyle="texturedSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="433">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -971,8 +957,8 @@ DQ
                             <binding destination="197" name="enabled" keyPath="canRemove" id="231"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" tag="4" id="232">
-                        <rect key="frame" x="799" y="19" width="166" height="23"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="232">
+                        <rect key="frame" x="804" y="18" width="162" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Tout générer plus tard" bezelStyle="texturedSquare" alignment="center" borderStyle="border" tag="4" inset="2" id="434">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -983,24 +969,223 @@ DQ
                             <binding destination="197" name="enabled" keyPath="canRemove" id="234"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="224">
+                        <rect key="frame" x="636" y="18" width="162" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" title="Générer plus tard" bezelStyle="texturedSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="432">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="actionSelectionEcrituresAutomatiques:" target="-2" id="244"/>
+                            <binding destination="197" name="enabled" keyPath="canRemove" id="229"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <connections>
                 <outlet property="initialFirstResponder" destination="201" id="221"/>
             </connections>
+            <point key="canvasLocation" x="142" y="-309"/>
         </window>
         <window title="Virement" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="249" userLabel="Virement">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="299" y="544" width="516" height="290"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
-            <value key="minSize" type="size" width="516" height="290"/>
+            <rect key="contentRect" x="299" y="544" width="495" height="262"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1175"/>
+            <value key="minSize" type="size" width="495" height="262"/>
             <view key="contentView" id="250">
-                <rect key="frame" x="1" y="9" width="516" height="290"/>
+                <rect key="frame" x="0.0" y="0.0" width="495" height="262"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" tag="1" id="261">
-                        <rect key="frame" x="420" y="12" width="82" height="32"/>
+                    <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="263">
+                        <rect key="frame" x="129" y="152" width="98" height="28"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="437">
+                            <font key="font" metaFont="system"/>
+                            <date key="date" timeIntervalSinceReferenceDate="0.0">
+                                <!--2001-01-01 00:00:00 +0000-->
+                            </date>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        </datePickerCell>
+                        <connections>
+                            <binding destination="258" name="value" keyPath="selection.mouvement.date" id="302"/>
+                            <outlet property="nextKeyView" destination="283" id="383"/>
+                        </connections>
+                    </datePicker>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="106" translatesAutoresizingMaskIntoConstraints="NO" id="264">
+                        <rect key="frame" x="83" y="156" width="40" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Date :" id="438">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="106" translatesAutoresizingMaskIntoConstraints="NO" id="275">
+                        <rect key="frame" x="72" y="127" width="51" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Libellé :" id="439">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="106" translatesAutoresizingMaskIntoConstraints="NO" id="276">
+                        <rect key="frame" x="52" y="96" width="71" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Catégorie :" id="440">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="277">
+                        <rect key="frame" x="126" y="89" width="239" height="25"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="279" id="441">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="278">
+                                <items>
+                                    <menuItem title="Item1" state="on" id="279"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="56" name="content" keyPath="arrangedObjects" id="309">
+                                <dictionary key="options">
+                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
+                                </dictionary>
+                            </binding>
+                            <binding destination="56" name="contentValues" keyPath="arrangedObjects.titre" previousBinding="309" id="313">
+                                <dictionary key="options">
+                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
+                                    <string key="NSNullPlaceholder">Aucune</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="258" name="selectedObject" keyPath="selection.mouvement.categorie" previousBinding="313" id="314"/>
+                        </connections>
+                    </popUpButton>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="106" translatesAutoresizingMaskIntoConstraints="NO" id="280">
+                        <rect key="frame" x="61" y="67" width="62" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Montant :" id="442">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="281">
+                        <rect key="frame" x="129" y="64" width="232" height="21"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="443">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="258" name="value" keyPath="selection.mouvement.montant" id="306"/>
+                            <outlet property="nextKeyView" destination="263" id="384"/>
+                        </connections>
+                    </textField>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="283">
+                        <rect key="frame" x="129" y="121" width="349" height="25"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="7" id="444">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </comboBoxCell>
+                        <connections>
+                            <action selector="updateMontantVirement:" target="-2" id="367"/>
+                            <binding destination="256" name="content" keyPath="arrangedObjects" id="315"/>
+                            <binding destination="256" name="contentValues" keyPath="arrangedObjects.libelle" previousBinding="315" id="317"/>
+                            <binding destination="258" name="value" keyPath="selection.mouvement.libelle" previousBinding="317" id="318"/>
+                            <outlet property="nextKeyView" destination="281" id="382"/>
+                        </connections>
+                    </comboBox>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="106" translatesAutoresizingMaskIntoConstraints="NO" id="289">
+                        <rect key="frame" x="22" y="225" width="101" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Compte débité :" id="445">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="106" translatesAutoresizingMaskIntoConstraints="NO" id="290">
+                        <rect key="frame" x="18" y="195" width="105" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Compte crédité :" id="446">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="291">
+                        <rect key="frame" x="126" y="218" width="353" height="25"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="294" id="447">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="292">
+                                <items>
+                                    <menuItem title="Item1" state="on" id="294"/>
+                                    <menuItem title="Item2" id="293"/>
+                                    <menuItem title="Item3" id="295"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="filtrePourCompteDebiteurVirement:" target="-2" id="375"/>
+                            <binding destination="252" name="content" keyPath="arrangedObjects" id="351">
+                                <dictionary key="options">
+                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
+                                </dictionary>
+                            </binding>
+                            <binding destination="252" name="contentValues" keyPath="arrangedObjects.numeroCompteBanque" previousBinding="351" id="352">
+                                <dictionary key="options">
+                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
+                                    <string key="NSNullPlaceholder">Aucune sélection</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="258" name="selectedObject" keyPath="selection.compteDebiteur" previousBinding="352" id="353"/>
+                        </connections>
+                    </popUpButton>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="296">
+                        <rect key="frame" x="126" y="188" width="353" height="25"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="299" id="448">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="297">
+                                <items>
+                                    <menuItem title="Item1" state="on" id="299"/>
+                                    <menuItem title="Item2" id="298"/>
+                                    <menuItem title="Item3" id="300"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="filtrePourCompteCrediteurVirement:" target="-2" id="376"/>
+                            <binding destination="253" name="content" keyPath="arrangedObjects" id="362">
+                                <dictionary key="options">
+                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
+                                </dictionary>
+                            </binding>
+                            <binding destination="253" name="contentValues" keyPath="arrangedObjects.numeroCompteBanque" previousBinding="362" id="365">
+                                <dictionary key="options">
+                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
+                                    <string key="NSNullPlaceholder">Aucune sélection</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="258" name="selectedObject" keyPath="selection.compteCrediteur" previousBinding="365" id="366"/>
+                        </connections>
+                    </popUpButton>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="261">
+                        <rect key="frame" x="400" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" tag="1" inset="2" id="435">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1027,8 +1212,8 @@ DQ
                             </binding>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="262">
-                        <rect key="frame" x="330" y="12" width="90" height="32"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="262">
+                        <rect key="frame" x="320" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Annuler" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="436">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1041,202 +1226,18 @@ Gw
                             <action selector="finVirement:" target="-2" id="287"/>
                         </connections>
                     </button>
-                    <datePicker verticalHuggingPriority="750" id="263">
-                        <rect key="frame" x="132" y="178" width="104" height="27"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="437">
-                            <font key="font" metaFont="system"/>
-                            <date key="date" timeIntervalSinceReferenceDate="0.0">
-                                <!--2001-01-01 00:00:00 +0000-->
-                            </date>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        </datePickerCell>
-                        <connections>
-                            <binding destination="258" name="value" keyPath="selection.mouvement.date" id="302"/>
-                            <outlet property="nextKeyView" destination="283" id="383"/>
-                        </connections>
-                    </datePicker>
-                    <textField verticalHuggingPriority="750" id="264">
-                        <rect key="frame" x="17" y="181" width="110" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Date :" id="438">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="275">
-                        <rect key="frame" x="17" y="142" width="110" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Libellé :" id="439">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="276">
-                        <rect key="frame" x="17" y="104" width="110" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Catégorie :" id="440">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <popUpButton verticalHuggingPriority="750" id="277">
-                        <rect key="frame" x="129" y="98" width="238" height="26"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="279" id="441">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <menu key="menu" title="OtherViews" id="278">
-                                <items>
-                                    <menuItem title="Item1" state="on" id="279"/>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                        <connections>
-                            <binding destination="56" name="content" keyPath="arrangedObjects" id="309">
-                                <dictionary key="options">
-                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
-                                </dictionary>
-                            </binding>
-                            <binding destination="56" name="contentValues" keyPath="arrangedObjects.titre" previousBinding="309" id="313">
-                                <dictionary key="options">
-                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
-                                    <string key="NSNullPlaceholder">Aucune</string>
-                                </dictionary>
-                            </binding>
-                            <binding destination="258" name="selectedObject" keyPath="selection.mouvement.categorie" previousBinding="313" id="314"/>
-                        </connections>
-                    </popUpButton>
-                    <textField verticalHuggingPriority="750" id="280">
-                        <rect key="frame" x="17" y="62" width="110" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Montant :" id="442">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="281">
-                        <rect key="frame" x="132" y="60" width="232" height="22"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="443">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="258" name="value" keyPath="selection.mouvement.montant" id="306"/>
-                            <outlet property="nextKeyView" destination="263" id="384"/>
-                        </connections>
-                    </textField>
-                    <comboBox verticalHuggingPriority="750" id="283">
-                        <rect key="frame" x="132" y="138" width="349" height="26"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="7" id="444">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </comboBoxCell>
-                        <connections>
-                            <action selector="updateMontantVirement:" target="-2" id="367"/>
-                            <binding destination="256" name="content" keyPath="arrangedObjects" id="315"/>
-                            <binding destination="256" name="contentValues" keyPath="arrangedObjects.libelle" previousBinding="315" id="317"/>
-                            <binding destination="258" name="value" keyPath="selection.mouvement.libelle" previousBinding="317" id="318"/>
-                            <outlet property="nextKeyView" destination="281" id="382"/>
-                        </connections>
-                    </comboBox>
-                    <textField verticalHuggingPriority="750" id="289">
-                        <rect key="frame" x="17" y="252" width="110" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Compte débité :" id="445">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="290">
-                        <rect key="frame" x="17" y="222" width="110" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Compte crédité :" id="446">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <popUpButton verticalHuggingPriority="750" id="291">
-                        <rect key="frame" x="129" y="246" width="352" height="26"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="294" id="447">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <menu key="menu" title="OtherViews" id="292">
-                                <items>
-                                    <menuItem title="Item1" state="on" id="294"/>
-                                    <menuItem title="Item2" id="293"/>
-                                    <menuItem title="Item3" id="295"/>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                        <connections>
-                            <action selector="filtrePourCompteDebiteurVirement:" target="-2" id="375"/>
-                            <binding destination="252" name="content" keyPath="arrangedObjects" id="351">
-                                <dictionary key="options">
-                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
-                                </dictionary>
-                            </binding>
-                            <binding destination="252" name="contentValues" keyPath="arrangedObjects.numeroCompteBanque" previousBinding="351" id="352">
-                                <dictionary key="options">
-                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
-                                    <string key="NSNullPlaceholder">Aucune sélection</string>
-                                </dictionary>
-                            </binding>
-                            <binding destination="258" name="selectedObject" keyPath="selection.compteDebiteur" previousBinding="352" id="353"/>
-                        </connections>
-                    </popUpButton>
-                    <popUpButton verticalHuggingPriority="750" id="296">
-                        <rect key="frame" x="129" y="216" width="352" height="26"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="299" id="448">
-                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <menu key="menu" title="OtherViews" id="297">
-                                <items>
-                                    <menuItem title="Item1" state="on" id="299"/>
-                                    <menuItem title="Item2" id="298"/>
-                                    <menuItem title="Item3" id="300"/>
-                                </items>
-                            </menu>
-                        </popUpButtonCell>
-                        <connections>
-                            <action selector="filtrePourCompteCrediteurVirement:" target="-2" id="376"/>
-                            <binding destination="253" name="content" keyPath="arrangedObjects" id="362">
-                                <dictionary key="options">
-                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
-                                </dictionary>
-                            </binding>
-                            <binding destination="253" name="contentValues" keyPath="arrangedObjects.numeroCompteBanque" previousBinding="362" id="365">
-                                <dictionary key="options">
-                                    <integer key="NSInsertsNullPlaceholder" value="1"/>
-                                    <string key="NSNullPlaceholder">Aucune sélection</string>
-                                </dictionary>
-                            </binding>
-                            <binding destination="258" name="selectedObject" keyPath="selection.compteCrediteur" previousBinding="365" id="366"/>
-                        </connections>
-                    </popUpButton>
                 </subviews>
             </view>
             <connections>
                 <outlet property="initialFirstResponder" destination="263" id="381"/>
             </connections>
+            <point key="canvasLocation" x="187" y="-282.5"/>
         </window>
         <arrayController objectClassName="CBCompte" editable="NO" avoidsEmptySelection="NO" id="252" userLabel="compteDebiteur" customClass="CBChoixCompteArrayController">
             <declaredKeys>
                 <string>numeroCompteBanque</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBCompte"/>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="managedPortefeuille.comptes" id="339"/>
             </connections>
@@ -1245,6 +1246,7 @@ Gw
             <declaredKeys>
                 <string>numeroCompteBanque</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBCompte"/>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="managedPortefeuille.comptes" id="340"/>
             </connections>
@@ -1254,6 +1256,7 @@ Gw
                 <string>libelle</string>
                 <string>montant</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBLibellePredefini"/>
             <connections>
                 <binding destination="258" name="contentArray" keyPath="selection.compteDebiteur.libellesPredefinis" id="342"/>
             </connections>
@@ -1268,6 +1271,7 @@ Gw
                 <string>compteCrediteur</string>
                 <string>compteDebiteur.libellesPredefinis</string>
             </declaredKeys>
+            <classReference key="objectClass" className="CBVirement"/>
         </objectController>
     </objects>
     <resources>

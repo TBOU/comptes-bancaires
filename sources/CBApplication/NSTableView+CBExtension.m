@@ -12,6 +12,15 @@
 
 - (void)cbRepairLayout
 {
+    NSEnumerator *objectsEnumerator = [[self tableColumns] objectEnumerator];
+    NSTableColumn *column;
+    while (column = (NSTableColumn *)[objectsEnumerator nextObject]) {
+        if ([[column dataCell] isKindOfClass:[NSTextFieldCell class]]) {
+            NSTextFieldCell *cell = (NSTextFieldCell *)[column dataCell];
+            [cell setFont:[NSFont monospacedDigitSystemFontOfSize:[[cell font] pointSize] weight:NSFontWeightRegular]];
+        }
+    }
+
     [self reloadData];
     [self scrollRowToVisible:[self selectedRow]];
 }

@@ -84,7 +84,7 @@
 		NSMutableDictionary *md = [attributes mutableCopy];
 		
 		if (autoriseMinus && nombreDecimal && [anObject isKindOfClass:[NSDecimalNumber class]] && [anObject compare:[NSDecimalNumber zero]] == NSOrderedAscending) {
-			NSColor *fgColor = [NSColor redColor];
+			NSColor *fgColor = [NSColor systemRedColor];
 			[md setObject:fgColor forKey:NSForegroundColorAttributeName];
 		}
 		

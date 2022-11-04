@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="&lt;soldeTotalComptes&gt;" id="395">
                             <font key="font" metaFont="system" size="18"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -712,7 +712,7 @@ Gw
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="425">
                             <font key="font" metaFont="systemBold" size="14"/>
                             <string key="title">ATTENTION : cette opération va supprimer toutes les écritures pointées antérieures à la date saisie ; il est conseillé de faire une sauvegarde du fichier actuel afin d'archiver vos comptes antérieurs</string>
-                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
